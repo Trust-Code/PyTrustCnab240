@@ -20,8 +20,7 @@
       "nome": "controle_registro",
       "posicao_inicio": 8,
       "posicao_fim": 8,
-      "formato": "num",
-      "default": "batata"
+      "formato": "num"
     },
 
     "04.3P": {

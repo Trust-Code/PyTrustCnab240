@@ -5,16 +5,20 @@ from pycnab240 import errors
 
 class Event(object):
 
-    def __init__(self, bank, event_code):
+    def __init__(self, bank):  # event_code):
         self._segments = []
         self.bank = bank
-        self.event_code = event_code
+        # self.event_code = event_code TODO FIND OUT WHAT IS THIS
         self._lot_code = None
+        self._is_open = True
 
-    def add_segment(self, segment):
-        self._segments.append(segment)
-        for segment in self._segments:
-            segment.servico_codigo_movimento = self.event_code
+    def add_segment(self, seg_name, vals):
+        #
+        # CREATE DINAMIC SEGMENT 'ADDER'
+        #
+        #  self._segments.append(segment)
+        # for segment in self._segments:
+        #     segment.servico_codigo_movimento = self.event_code
 
     @property
     def segments(self):
@@ -49,6 +53,9 @@ class Event(object):
             segment.servico_numero_registro = current_id
         return current_id
 
+    def close_event(self):
+        self._is_open = False
+
 
 class Lot(object):
 
@@ -58,6 +65,7 @@ class Lot(object):
         self.trailer = trailer
         self._code = None
         self._events = []
+        self._is_open = True
 
     @property
     def code(self):
@@ -85,6 +93,40 @@ class Lot(object):
     def events(self):
         return self._events
 
+    def add_event(self, event):
+        if not isinstance(event, Event):
+            raise TypeError('Object must be an instance of Lot')
+        self._events.append(event)
+
+    def create_new_event(self):
+        event = self.get_active_event()
+        if event:
+            raise errors.ExistsOpenInstance(event)
+        new_event = Event(self.bank)
+        self._events.append(new_event)
+        return new_event
+
+    def get_active_event(self):
+        open_event = False
+        for event in self._events:
+            if event._is_open:
+                open_event = event
+        return open_event
+
+    def total_register_lot(self):
+        total = 0
+        for event in self._events:
+            total += len(event)
+        return total
+
+    def close_lot(self, header=None, trailer=None):
+        self.header = self.bank.records.HeaderLoteCobranca(header)
+        self.header = self.bank.records.TrailerLoteCobranca(trailer)
+        if hasattr(self.trailer, 'quantidade_registros') and\
+                not trailer.get('quantidade_registros'):
+            self.trailer.quantidade_registros = self.total_register_lot()
+        self._is_open = False
+
     # Breakpoint
     def __str__(self):
         if not self._events:
@@ -109,12 +151,54 @@ class File(object):
 
         self._lots = []
         self.bank = bank
-        self.header = self.bank.records.HeaderArquivo(**kwargs)
-        self.trailer = self.bank.records.TrailerArquivo(**kwargs)
+        # self.header = self.bank.records.HeaderArquivo(**kwargs)
+        # self.trailer = self.bank.records.TrailerArquivo(**kwargs)
 
     @property
     def lots(self):
         return self._lots
 
     def add_lots(self, lot):
+        if not isinstance(lot, Lot):
+            raise TypeError('Object must be an instance of Lot')
         self._lots.append(lot)
+        lot.code = len(self._lots)
+
+    def create_new_lot(self):
+        lot = self.get_active_lot()
+        if lot:
+            raise errors.ExistsOpenInstance(lot)
+        new_lot = Lot(self.bank)
+        self.add_lots(new_lot)
+        return new_lot
+
+    def get_active_lot(self):
+        open_lot = False
+        for lot in self._lots:
+            if lot._is_open:
+                open_lot = lot
+        return open_lot
+
+# SICOOB = 'sicoob'
+
+# CODIGO_MOVIMENTO = {
+#     SICOOB: {
+#         '10': '7', # Liquidação
+#         '11': '6', # Baixa
+#     },
+#     BRADESCO: {
+#         '10': '8', # Liquidação
+#         '11': '9', # Baixa
+#     }
+# }
+
+    def add_segment(self, seg_name, vals):
+        import ipdb
+        ipdb.set_trace()
+        lot = self.get_active_lot()
+        if not lot:
+            lot = self.create_new_lot()
+        event = lot.get_active_event()
+        if not event:
+            event = lot.create_new_event()
+        event.add_segment(seg_name, vals)
