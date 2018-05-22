@@ -1,6 +1,6 @@
 # -*- encoding: utf8 -*-
 
-from cnab240 import errors
+from pycnab240 import errors
 
 
 class Event(object):
@@ -111,8 +111,10 @@ class File(object):
         self.bank = bank
         self.header = self.bank.records.HeaderArquivo(**kwargs)
         self.trailer = self.bank.records.TrailerArquivo(**kwargs)
-        # file = kwargs.get('arquivo')
 
     @property
     def lots(self):
         return self._lots
+
+    def add_lots(self, lot):
+        self._lots.append(lot)

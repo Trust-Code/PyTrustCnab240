@@ -2,3 +2,4 @@ coveralls
 ordereddict
 pytest
 pytest-cov
+future

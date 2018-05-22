@@ -1,7 +1,7 @@
 import os
 import importlib
 
-from cnab240.registro import Records
+from pycnab240.record import Records
 
 
 cwd = os.path.abspath(os.path.dirname(__file__))

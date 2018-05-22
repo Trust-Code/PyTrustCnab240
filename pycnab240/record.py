@@ -2,13 +2,13 @@
 import os
 import json
 import unicodedata
-import re
 import numbers
 
 from glob import iglob
 from decimal import Decimal
 from collections import OrderedDict
-from cnab240 import errors
+from pycnab240 import errors
+from past.builtins import basestring
 
 
 class BaseField(object):
@@ -33,20 +33,15 @@ class BaseField(object):
 
     @value.setter
     def value(self, value):
-        # TODO REMOVE THE TRUNCANTING CODE
-        # SHOW ERROR WHEN VALUE IS BIGGER THAN FIELD DIGITS
         if self.format == 'alfa':
-            if not isinstance(value, str):
+            if not isinstance(value, basestring):
                 print("{0} - {1}".format(self.name, value))
                 raise errors.TypeError(self, value)
 
             value = self._normalize_str(value)
 
             if len(value) > self.digits:
-                print("truncating - {0}".format(self.name))
-                # reduz o len(value)
-                cortar = len(value) - self.digits
-                value = value[:-(cortar)]
+                raise errors.DigitsNumberExceeded(self, value)
 
         elif self.decimals:
             if not isinstance(value, Decimal):
@@ -140,8 +135,8 @@ class BaseRecord(object):
 
         for Field in list(cls._fields_cls.values()):
             field = Field()
-            fields.update({field.nome: field})
-            attrs.update({field.nome: field})
+            fields.update({field.name: field})
+            attrs.update({field.name: field})
 
         new_cls = type(cls.__name__, (cls, ), attrs)
         return super(BaseRecord, cls).__new__(new_cls)
@@ -151,8 +146,8 @@ class BaseRecord(object):
 
     def required(self):
         for field in list(self._fields.values()):
-            is_control = field.nome.startswith('controle_') or\
-                field.nome.startswith('servico_')
+            is_control = field.name.startswith('controle_') or\
+                field.name.startswith('servico_')
             if not is_control and field.value is not None:
                 return True
 
@@ -161,8 +156,8 @@ class BaseRecord(object):
     def todict(self):
         data_dict = dict()
         for campo in list(self._campos.values()):
-            if campo.valor is not None:
-                data_dict[campo.nome] = campo.valor
+            if campo.value is not None:
+                data_dict[campo.name] = campo.value
         return data_dict
 
     def fromdict(self, data_dict):
@@ -195,32 +190,33 @@ class Records(object):
         fields = spec['campos']
         names = [item['nome'] for item in fields.values()]
         if len(names) != len(set(names)):
-            raise errors.UniqueSpecFieldName(self, spec)
+            raise errors.UniqueSpecFieldName(spec)
 
     def check_record_positions(self, spec):
         fields = spec['campos']
-        init_pos = fields[fields.keys()[0]]
-        end_pos = fields[fields.keys()[-1]]
+        sorted_keys = sorted(fields.keys())
+        init_pos = fields[sorted_keys[0]]['posicao_inicio']
+        end_pos = fields[sorted_keys[-1]]['posicao_fim']
         if not (init_pos == 1 and end_pos == 240):
-            raise errors.SpecPositionError(self, spec)
+            raise errors.SpecPositionError(spec)
         init_pos = 1
-        for item in fields.values():
-            if item['posicao_inicio'] != init_pos:
-                raise errors.SpecPositionError(self, spec, item)
-            init_pos = item['posicao_fim'] + 1
+        for key in sorted_keys:
+            if fields[key]['posicao_inicio'] != init_pos:
+                raise errors.SpecPositionError(spec, fields[key])
+            init_pos = fields[key]['posicao_fim'] + 1
 
     def check_record_format(self, spec):
         fields = spec['campos']
         for field in fields.values():
             if not field.get('default'):
                 continue
-            if field.formato == 'num' and isinstance(
+            if field['formato'] == 'num' and isinstance(
                     field['default'], numbers.Number):
                 continue
-            elif field.formato == 'alfa' and isinstance(
-                    field['default'], str):
+            elif field['formato'] == 'alfa' and isinstance(
+                    field['default'], basestring):
                 continue
-            raise errors.SpecDefaultValueError(self, spec, field)
+            raise errors.SpecDefaultValueError(spec, field)
 
     def check_json_spec(self, spec):
         self.check_record_names(spec)
@@ -239,4 +235,4 @@ class Records(object):
 
             fields.update(field_input)
 
-        return type(cls_name, (RegistroBase, ), attrs)
+        return type(cls_name, (BaseRecord, ), attrs)

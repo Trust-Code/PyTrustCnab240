@@ -16,11 +16,11 @@ class FieldAttributionError(Cnab240Error):
     def __str__(self):
         return 'field:{0} format:{1} decimals:{2} digits:{3} - value:{4}'.\
             format(
-                self.field.nome,
-                self.field.formato,
-                self.field.decimais,
-                self.field.digitos,
-                repr(self.valor),
+                self.field.name,
+                self.field.format,
+                self.field.decimals,
+                self.field.digits,
+                repr(self.value),
             )
 
 
@@ -84,9 +84,9 @@ class SpecPositionError(SpecErrors):
     """Error on spec fields positions"""
 
     def __str__(self):
-        message = 'Position error in spec {}'.format(self.spec['name'])
+        message = 'Position error in spec {}'.format(self.spec['nome'])
         if self.field:
-            message += ' on field {}'.format(self.field)
+            message += ' on field {}'.format(self.field['nome'])
         return message
 
 
@@ -94,5 +94,5 @@ class SpecDefaultValueError(SpecErrors):
     """Default field value doesn't match field format"""
 
     def __str__(self):
-        return ("Default value of field {} doesn't match field format in spec\
-            {}".format(self.field, self.spec['nome']))
+        return ("Default value of field {} doesn't match field format in spec"
+                " {}".format(self.field['nome'], self.spec['nome']))
