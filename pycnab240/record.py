@@ -142,6 +142,8 @@ class BaseRecord(object):
         return super(BaseRecord, cls).__new__(new_cls)
 
     def __init__(self, **kwargs):
+        import ipdb
+        ipdb.set_trace()
         self.fromdict(kwargs)
 
     def required(self):
@@ -160,19 +162,33 @@ class BaseRecord(object):
                 data_dict[campo.name] = campo.value
         return data_dict
 
-    def fromdict(self, data_dict):
-        ignore_fields = lambda key: any((
-            key.startswith('vazio'),
-            key.startswith('servico_'),
-            key.startswith('controle_'),
-        ))
+    def ignore_fields(self, key):
+        return any(key.startswith('vazio'),
+                   key.startswith('servico_'),
+                   key.startswith('controle_'), )
 
+    def fromdict(self, data_dict):
         for key, value in list(data_dict.items()):
-            if hasattr(self, key) and not ignore_fields(key):
+            if hasattr(self, key):  # and not self.ignore_fields(key):
                 setattr(self, key, value)
 
     def __str__(self):
         return ''.join([str(field) for field in list(self._fields.values())])
+
+    def load_line(self, line):
+        for field in self._fields.values():
+            value = line[field.start:field.end].strip()
+            if field.decimals:
+                exponente = field.decimals * -1
+                dec = value[:exponente] + '.' + value[exponente:]
+                field.value = Decimal(dec)
+            elif field.formato == 'num':
+                try:
+                    field.value = int(value)
+                except ValueError:
+                    raise errors.TipoError(field, value)
+            else:
+                field.value = value
 
 
 class Records(object):
@@ -185,6 +201,9 @@ class Records(object):
             record_file.close()
             self.check_json_spec(spec)
             setattr(self, spec.get('nome'), self.create_record_class(spec))
+
+    def __getitem__(self, key):
+        return getattr(self, key)
 
     def check_record_names(self, spec):
         fields = spec['campos']
@@ -228,10 +247,10 @@ class Records(object):
         attrs = {'_fields_cls': fields}
         cls_name = spec.get('nome')
 
-        field_specs = spec.get('fields', {})
+        field_specs = spec.get('campos', {})
         for key in sorted(field_specs.keys()):
             Field = create_field_class(field_specs[key])
-            field_input = {Field.nome: Field}
+            field_input = {Field.name: Field}
 
             fields.update(field_input)
 

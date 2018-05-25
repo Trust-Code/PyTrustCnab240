@@ -1,6 +1,13 @@
 # -*- encoding: utf8 -*-
 
+import codecs
 from pycnab240 import errors
+from io import IOBase
+
+
+REGISTER_TYPE_SPECS = {
+    2: 'SegmentoTeste'
+}
 
 
 class Event(object):
@@ -13,12 +20,8 @@ class Event(object):
         self._is_open = True
 
     def add_segment(self, seg_name, vals):
-        #
-        # CREATE DINAMIC SEGMENT 'ADDER'
-        #
-        #  self._segments.append(segment)
-        # for segment in self._segments:
-        #     segment.servico_codigo_movimento = self.event_code
+        segment = self.bank.records[seg_name](**vals)
+        self._segments.append(segment)
 
     @property
     def segments(self):
@@ -126,6 +129,8 @@ class Lot(object):
                 not trailer.get('quantidade_registros'):
             self.trailer.quantidade_registros = self.total_register_lot()
         self._is_open = False
+        for event in self._events:
+            event.close_event()
 
     # Breakpoint
     def __str__(self):
@@ -179,22 +184,7 @@ class File(object):
                 open_lot = lot
         return open_lot
 
-# SICOOB = 'sicoob'
-
-# CODIGO_MOVIMENTO = {
-#     SICOOB: {
-#         '10': '7', # Liquidação
-#         '11': '6', # Baixa
-#     },
-#     BRADESCO: {
-#         '10': '8', # Liquidação
-#         '11': '9', # Baixa
-#     }
-# }
-
     def add_segment(self, seg_name, vals):
-        import ipdb
-        ipdb.set_trace()
         lot = self.get_active_lot()
         if not lot:
             lot = self.create_new_lot()
@@ -202,3 +192,27 @@ class File(object):
         if not event:
             event = lot.create_new_event()
         event.add_segment(seg_name, vals)
+
+    def __str__(self):
+        if not self._lots:
+            raise errors.EmptyFileError()
+        result = []
+        # result.append(str(self.header)) Append header and trailer later
+        result.extend(str(lot) for lot in self._lots)
+        # result.append(str(self.trailer))
+        # Empty element so the file will end with \r\n
+        result.append('')
+        return '\r\n'.join(result)
+
+    def write_to_file(self, file_):
+        file_.write(str(self))
+
+    def load_return_file(self, file_):
+        if isinstance(file_, (IOBase, codecs.StreamReaderWriter)):
+            return TypeError("Wrong file type")
+        for line in file:
+            register_type = REGISTER_TYPE_SPECS[line[7]]
+            segment = self.bank.records[register_type].load_line(line)
+            self.add_segment(segment)
+            if register_type == 'TrailerLote':
+                self.get_active_lot().close_lot()
