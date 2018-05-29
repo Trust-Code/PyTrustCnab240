@@ -1,0 +1,74 @@
+{
+    "nome": "TrailerLote",
+    "campos": {
+        "01.5": {
+            "nome": "controle_banco",
+            "posicao_inicio": 1,
+            "posicao_fim": 3,
+            "formato": "num",
+            "default": 33
+        },
+        "02.5": {
+            "nome": "controle_lote",
+            "posicao_inicio": 4,
+            "posicao_fim": 7,
+            "formato": "num",
+            "default": 0
+        },
+        "03.5": {
+            "nome": "controle_registro",
+            "posicao_inicio": 8,
+            "posicao_fim": 8,
+            "formato": "num",
+            "default": 5
+        },
+        "04.5": {
+            "nome": "vazio1",
+            "posicao_inicio": 9,
+            "posicao_fim": 17,
+            "formato": "alfa",
+            "default": ""
+        },
+        "05.5": {
+            "nome": "quantidade_registros",
+            "posicao_inicio": 18,
+            "posicao_fim": 23,
+            "formato": "num",
+            "default": 0
+        },
+        "06.5": {
+            "nome": "somatorio_valores",
+            "posicao_inicio": 24,
+            "posicao_fim": 41,
+            "formato": "num",
+            "decimais": 2
+        },
+        "07.5": {
+            "nome": "somatorio_quantidade_moeda",
+            "posicao_inicio": 42,
+            "posicao_fim": 59,
+            "formato": "num",
+            "decimais": 5
+        },
+        "08.5": {
+            "nome": "numero_aviso_debito",
+            "posicao_inicio": 60,
+            "posicao_fim": 65,
+            "formato": "num"
+        },
+        "09.5": {
+            "nome": "vazio2",
+            "posicao_inicio": 66,
+            "posicao_fim": 230,
+            "formato": "alfa",
+            "default": ""
+        },
+        "10.5": {
+            "nome": "ocorrencias_retorno",
+            "posicao_inicio": 231,
+            "posicao_fim": 240,
+            "formato": "alfa",
+            "default": ""
+        }
+    }
+}
