@@ -1,0 +1,468 @@
+{
+    "nome": "SegmentoN",
+    "campos": {
+        "01.3N": {
+            "nome": "controle_banco",
+            "posicao_inicio": 1,
+            "posicao_fim": 3,
+            "formato": "num",
+            "default": 33
+        },
+        "02.3N": {
+            "nome": "controle_lote",
+            "posicao_inicio": 4,
+            "posicao_fim": 7,
+            "formato": "num"
+        },
+        "03.3N": {
+            "nome": "controle_registro",
+            "posicao_inicio": 8,
+            "posicao_fim": 8,
+            "formato": "num",
+            "default": 3
+        },
+        "04.3N": {
+            "nome": "sequencial_registro_lote",
+            "posicao_inicio": 9,
+            "posicao_fim": 13,
+            "formato": "num"
+        },
+        "05.3N": {
+            "nome": "servico_segmento",
+            "posicao_inicio": 14,
+            "posicao_fim": 14,
+            "formato": "alfa",
+            "default": "N"
+        },
+        "06.3N": {
+            "nome": "tipo_movimento",
+            "posicao_inicio": 15,
+            "posicao_fim": 15,
+            "formato": "num"
+        },
+        "07.3N": {
+            "nome": "codigo_instrucao_movimento",
+            "posicao_inicio": 16,
+            "posicao_fim": 17,
+            "formato": "num"
+        },
+        "08.3N": {
+            "nome": "numero_documento_cliente",
+            "posicao_inicio": 18,
+            "posicao_fim": 37,
+            "formato": "alfa"
+        },
+        "09.3N": {
+            "nome": "numero_documento_banco",
+            "posicao_inicio": 38,
+            "posicao_fim": 57,
+            "formato": "num"
+        },
+        "10.3N": {
+            "nome": "contribuinte_nome",
+            "posicao_inicio": 58,
+            "posicao_fim": 87,
+            "formato": "alfa"
+        },
+        "11.3N": {
+            "nome": "data_pagamento",
+            "posicao_inicio": 88,
+            "posicao_fim": 95,
+            "formato": "num"
+        },
+        "12.3N": {
+            "nome": "valor_total_pagamento",
+            "posicao_inicio": 96,
+            "posicao_fim": 110,
+            "formato": "num",
+            "decimais": 2
+        },
+        "13.3N": {
+            "nome": "codigo_receita_tributo",
+            "posicao_inicio": 111,
+            "posicao_fim": 116,
+            "formato": "alfa"
+        },
+        "14.3N": {
+            "nome": "tipo_identificacao_contribuinte",
+            "posicao_inicio": 117,
+            "posicao_fim": 118,
+            "formato": "num"
+        },
+        "15.3N": {
+            "nome": "identificacao_contribuinte",
+            "posicao_inicio": 119,
+            "posicao_fim": 132,
+            "formato": "num"
+        },
+        "16.3N": {
+            "nome": "informacoes_complementares",
+            "posicao_inicio": 133,
+            "posicao_fim": 230,
+            "subsegmentos": [
+                {
+                    "nome": "GPS",
+                    "campos": {
+                        "01.3N1": {
+                            "nome": "mes_ano_competencia",
+                            "posicao_inicio": 135,
+                            "posicao_fim": 140,
+                            "formato": "num"
+                        },
+                        "02.3N1": {
+                            "nome": "valor_previsto_inss",
+                            "posicao_inicio": 141,
+                            "posicao_fim": 155,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "03.3N1": {
+                            "nome": "valor_outras_entidades",
+                            "posicao_inicio": 156,
+                            "posicao_fim": 170,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "04.3N1": {
+                            "nome": "atualizacao_monetaria",
+                            "posicao_inicio": 171,
+                            "posicao_fim": 185,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "05.3N1": {
+                            "nome": "vazio1n1",
+                            "posicao_inicio": 186,
+                            "posicao_fim": 230,
+                            "formato": "alfa",
+                            "default": ""
+                        }
+                    }
+                },
+                {
+                    "nome": "DarfNormal",
+                    "campos": {
+                        "01.3N2": {
+                            "nome": "periodo_apuracao",
+                            "posicao_inicio": 135,
+                            "posicao_fim": 142,
+                            "formato": "num"
+                        },
+                        "02.3N2": {
+                            "nome": "numero_referencia",
+                            "posicao_inicio": 143,
+                            "posicao_fim": 159,
+                            "formato": "num"
+                        },
+                        "03.3N2": {
+                            "nome": "valor_principal",
+                            "posicao_inicio": 160,
+                            "posicao_fim": 174,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "04.3N2": {
+                            "nome": "valor_multa",
+                            "posicao_inicio": 175,
+                            "posicao_fim": 189,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "05.3N2": {
+                            "nome": "valor_juros_encargos",
+                            "posicao_inicio": 190,
+                            "posicao_fim": 204,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "06.3N2": {
+                            "nome": "data_vencimento",
+                            "posicao_inicio": 205,
+                            "posicao_fim": 212,
+                            "formato": "num"
+                        },
+                        "07.3N2": {
+                            "nome": "vazio1n2",
+                            "posicao_inicio": 213,
+                            "posicao_fim": 230,
+                            "formato": "alfa",
+                            "default": ""
+                        }
+                    }
+                },
+                {
+                    "nome": "DarfSimples",
+                    "campos": {
+                        "01.3N3": {
+                            "nome": "periodo_apuracao",
+                            "posicao_inicio": 135,
+                            "posicao_fim": 142,
+                            "formato": "num"
+                        },
+                        "02.3N3": {
+                            "nome": "valor_receita_bruta_acumulada",
+                            "posicao_inicio": 143,
+                            "posicao_fim": 157,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "03.3N3": {
+                            "nome": "percentual_receita_bruta_acumulada",
+                            "posicao_inicio": 158,
+                            "posicao_fim": 164,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "04.3N3": {
+                            "nome": "valor_principal",
+                            "posicao_inicio": 165,
+                            "posicao_fim": 179,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "05.3N3": {
+                            "nome": "valor_multa",
+                            "posicao_inicio": 180,
+                            "posicao_fim": 194,
+                            "formato": "num"
+                        },
+                        "06.3N3": {
+                            "nome": "valor_juros_encargos",
+                            "posicao_inicio": 195,
+                            "posicao_fim": 209,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "07.3N3": {
+                            "nome": "vazio1n3",
+                            "posicao_inicio": 210,
+                            "posicao_fim": 230,
+                            "formato": "alfa",
+                            "default": ""
+                        }
+                    }
+                },
+                {
+                    "nome": "GareSP",
+                    "campos": {
+                        "01.3N4": {
+                            "nome": "data_vencimento",
+                            "posicao_inicio": 135,
+                            "posicao_fim": 142,
+                            "formato": "num"
+                        },
+                        "02.3N4": {
+                            "nome": "inscricao_estadual",
+                            "posicao_inicio": 143,
+                            "posicao_fim": 154,
+                            "formato": "num"
+                        },
+                        "03.3N4": {
+                            "nome": "divida_ativa_etiqueta",
+                            "posicao_inicio": 155,
+                            "posicao_fim": 167,
+                            "formato": "num"
+                        },
+                        "04.3N4": {
+                            "nome": "periodo_referencia",
+                            "posicao_inicio": 168,
+                            "posicao_fim": 173,
+                            "formato": "num"
+                        },
+                        "05.3N4": {
+                            "nome": "numero_parcela",
+                            "posicao_inicio": 174,
+                            "posicao_fim": 186,
+                            "formato": "num"
+                        },
+                        "06.3N4": {
+                            "nome": "valor_receita",
+                            "posicao_inicio": 187,
+                            "posicao_fim": 201,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "07.3N4": {
+                            "nome": "valor_juros_encargos",
+                            "posicao_inicio": 202,
+                            "posicao_fim": 215,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "08.3N4": {
+                            "nome": "valor_multa",
+                            "posicao_inicio": 216,
+                            "posicao_fim": 229,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "09.3N4": {
+                            "nome": "vazio1n4",
+                            "posicao_inicio": 230,
+                            "posicao_fim": 230,
+                            "formato": "alfa",
+                            "default": ""
+                        }
+                    }
+                },
+                {
+                    "nome": "IPVA",
+                    "campos": {
+                        "01.3N5": {
+                            "nome": "ano_base_exercicio",
+                            "posicao_inicio": 135,
+                            "posicao_fim": 138,
+                            "formato": "num"
+                        },
+                        "02.3N5": {
+                            "nome": "codigo_renavam",
+                            "posicao_inicio": 139,
+                            "posicao_fim": 147,
+                            "formato": "num"
+                        },
+                        "03.3N5": {
+                            "nome": "unidade_federacao",
+                            "posicao_inicio": 148,
+                            "posicao_fim": 149,
+                            "formato": "num"
+                        },
+                        "04.3N5": {
+                            "nome": "codigo_municipio",
+                            "posicao_inicio": 150,
+                            "posicao_fim": 154,
+                            "formato": "num"
+                        },
+                        "05.3N5": {
+                            "nome": "placa_veiculo",
+                            "posicao_inicio": 155,
+                            "posicao_fim": 161,
+                            "formato": "alfa"
+                        },
+                        "06.3N5": {
+                            "nome": "opcao_pagamento",
+                            "posicao_inicio": 162,
+                            "posicao_fim": 162,
+                            "formato": "alfa"
+                        },
+                        "07.3N5": {
+                            "nome": "vazio1n5",
+                            "posicao_inicio": 163,
+                            "posicao_fim": 230,
+                            "formato": "alfa",
+                            "default": ""
+                        }
+                    }
+                },
+                {
+                    "nome": "DPVAT",
+                    "campos": {
+                        "01.3N6": {
+                            "nome": "ano_base_exercicio",
+                            "posicao_inicio": 135,
+                            "posicao_fim": 138,
+                            "formato": "num"
+                        },
+                        "02.3N6": {
+                            "nome": "codigo_renavam",
+                            "posicao_inicio": 139,
+                            "posicao_fim": 147,
+                            "formato": "num"
+                        },
+                        "03.3N6": {
+                            "nome": "unidade_federacao",
+                            "posicao_inicio": 148,
+                            "posicao_fim": 149,
+                            "formato": "num"
+                        },
+                        "04.3N6": {
+                            "nome": "codigo_municipio",
+                            "posicao_inicio": 150,
+                            "posicao_fim": 154,
+                            "formato": "num"
+                        },
+                        "05.3N6": {
+                            "nome": "placa_veiculo",
+                            "posicao_inicio": 155,
+                            "posicao_fim": 161,
+                            "formato": "alfa"
+                        },
+                        "06.3N6": {
+                            "nome": "opcao_pagamento",
+                            "posicao_inicio": 162,
+                            "posicao_fim": 162,
+                            "formato": "alfa",
+                            "default": ""
+                        },
+                        "07.3N6": {
+                            "nome": "vazio1n6",
+                            "posicao_inicio": 163,
+                            "posicao_fim": 230,
+                            "formato": "alfa",
+                            "default": ""
+                        }
+                    }
+                },
+                {
+                    "nome": "Licenciamento",
+                    "campos": {
+                        "01.3N7": {
+                            "nome": "ano_base_exercicio",
+                            "posicao_inicio": 135,
+                            "posicao_fim": 138,
+                            "formato": "num"
+                        },
+                        "02.3N7": {
+                            "nome": "codigo_renavam",
+                            "posicao_inicio": 139,
+                            "posicao_fim": 147,
+                            "formato": "num"
+                        },
+                        "03.3N7": {
+                            "nome": "unidade_federacao",
+                            "posicao_inicio": 148,
+                            "posicao_fim": 149,
+                            "formato": "num"
+                        },
+                        "04.3N7": {
+                            "nome": "codigo_municipio",
+                            "posicao_inicio": 150,
+                            "posicao_fim": 154,
+                            "formato": "num"
+                        },
+                        "05.3N7": {
+                            "nome": "placa_veiculo",
+                            "posicao_inicio": 155,
+                            "posicao_fim": 161,
+                            "formato": "alfa"
+                        },
+                        "06.3N7": {
+                            "nome": "opcao_pagamento",
+                            "posicao_inicio": 162,
+                            "posicao_fim": 162,
+                            "formato": "alfa"
+                        },
+                        "07.3N7": {
+                            "nome": "opcao_retirada_crlv",
+                            "posicao_inicio": 163,
+                            "posicao_fim": 163,
+                            "formato": "alfa"
+                        },
+                        "08.3N7": {
+                            "nome": "vazio1n7",
+                            "posicao_inicio": 163,
+                            "posicao_fim": 230,
+                            "formato": "alfa",
+                            "default": ""
+                        }
+                    }
+                }
+            ]
+        },
+        "17.3N": {
+            "nome": "ocorrencias_retorno",
+            "posicao_inicio": 231,
+            "posicao_fim": 240,
+            "formato": "alfa"
+        }
+    }
+}
