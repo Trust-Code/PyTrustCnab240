@@ -51,7 +51,7 @@
         "08.3Z": {
             "nome": "vazio1",
             "posicao_inicio": 104,
-            "posicao_fim": 203,
+            "posicao_fim": 230,
             "formato": "alfa",
             "default": ""
         },
