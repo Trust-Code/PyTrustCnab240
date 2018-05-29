@@ -26,7 +26,7 @@
     },
 
     "04.3U": {
-      "nome": "servico_numero_registro",
+      "nome": "sequencial_registro_lote",
       "posicao_inicio": 9,
       "posicao_fim": 13,
       "formato": "num",
