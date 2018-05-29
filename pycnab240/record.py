@@ -142,8 +142,6 @@ class BaseRecord(object):
         return super(BaseRecord, cls).__new__(new_cls)
 
     def __init__(self, **kwargs):
-        import ipdb
-        ipdb.set_trace()
         self.fromdict(kwargs)
 
     def required(self):
