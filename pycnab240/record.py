@@ -124,7 +124,7 @@ def create_field_class(spec):
         'default': spec.get('default'),
     }
 
-    return type(name, (BaseField,), attrs)
+    return type(str(name), (BaseField,), attrs)
 
 
 class BaseRecord(object):
@@ -197,11 +197,43 @@ class Records(object):
             record_file = open(record_filepath)
             spec = json.load(record_file)
             record_file.close()
-            self.check_json_spec(spec)
-            setattr(self, spec.get('nome'), self.create_record_class(spec))
+            specs = self.create_specs_from_subsegments(spec)
+            for spec in specs:
+                self.check_json_spec(spec)
+                setattr(self, spec.get('nome'), self.create_record_class(spec))
 
     def __getitem__(self, key):
         return getattr(self, key)
+
+    def create_specs_from_subsegments(self, spec):
+        if not any("subsegmentos" in campo for campo in spec.get(
+                "campos").values()):
+            return [spec]
+        default_fields, subsegment_field = self.get_subsegments(spec)
+        specs = []
+        for sub in spec.get('campos')[subsegment_field]['subsegmentos']:
+            campos = {field: spec.get('campos')[field] for field in
+                      default_fields}
+            campos.update({'{}.{}'.format(subsegment_field, key): value for
+                          key, value in sub.get('campos').items()})
+            specs.append({
+                'nome': '{}_{}'.format(spec.get('nome'), sub.get('nome')),
+                'campos': campos
+            })
+        return specs
+
+    def get_subsegments(self, spec):
+        campos = spec.get('campos')
+        default_fields = [campo for campo, value in campos.items() if
+                          "subsegmentos" not in value]
+        subsegment_field = [campo for campo in campos if campo not in
+                            default_fields][0]
+        return default_fields, subsegment_field
+
+    def check_json_spec(self, spec):
+        self.check_record_names(spec)
+        self.check_record_positions(spec)
+        self.check_record_format(spec)
 
     def check_record_names(self, spec):
         fields = spec['campos']
@@ -235,11 +267,6 @@ class Records(object):
                 continue
             raise errors.SpecDefaultValueError(spec, field)
 
-    def check_json_spec(self, spec):
-        self.check_record_names(spec)
-        self.check_record_positions(spec)
-        self.check_record_format(spec)
-
     def create_record_class(self, spec):
         fields = OrderedDict()
         attrs = {'_fields_cls': fields}
@@ -252,4 +279,4 @@ class Records(object):
 
             fields.update(field_input)
 
-        return type(cls_name, (BaseRecord, ), attrs)
+        return type(str(cls_name), (BaseRecord, ), attrs)

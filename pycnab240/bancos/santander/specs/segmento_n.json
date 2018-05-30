@@ -96,6 +96,12 @@
             "formato": "num"
         },
         "16.3N": {
+            "nome": "codigo_identificacao_tributo",
+            "posicao_inicio": 133,
+            "posicao_fim": 134,
+            "formato": "alfa"
+        },
+        "17.3N": {
             "nome": "informacoes_complementares",
             "posicao_inicio": 133,
             "posicao_fim": 230,
@@ -449,7 +455,7 @@
                         },
                         "08.3N7": {
                             "nome": "vazio1n7",
-                            "posicao_inicio": 163,
+                            "posicao_inicio": 164,
                             "posicao_fim": 230,
                             "formato": "alfa",
                             "default": ""
@@ -458,7 +464,7 @@
                 }
             ]
         },
-        "17.3N": {
+        "18.3N": {
             "nome": "ocorrencias_retorno",
             "posicao_inicio": 231,
             "posicao_fim": 240,
