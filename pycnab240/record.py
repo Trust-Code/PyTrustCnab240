@@ -20,8 +20,8 @@ class BaseField(object):
         Remove special characters and strip spaces
         """
         if string:
-            if not isinstance(string, str):
-                string = str(string, 'utf-8', 'replace')
+            if not isinstance(string, basestring):
+                string = str(string).encode('utf-8')
 
             return unicodedata.normalize('NFKD', string).encode(
                 'ASCII', 'ignore').decode('ASCII')
@@ -67,34 +67,30 @@ class BaseField(object):
 
         self._value = value
 
+    def get_field_default_value(self):
+        if self.decimals:
+            value = Decimal('{0:0.{1}f}'.format(self.default or 0,
+                                                self.decimals))
+        elif self.format == 'num':
+            value = self.default or 0
+        else:
+            value = self.default or ''
+        return value
+
     def __str__(self):
 
         if self.value is None:
-            if self.default is not None:
-                if self.decimals:
-                    self.value = Decimal(
-                        '{0:0.{1}f}'.format(self.default,
-                                            self.decimals)
-                    )
-                else:
-                    self.value = self.default
-            elif (self.default is None) & (self.value is None):
-                if self.decimals or self.format == 'num':
-                    self.value = 0
-                else:
-                    self.value = ''
-            else:
-                raise errors.RequiredFieldError(self.name)
+            self.value = self.get_field_default_value()
 
         if self.format == 'alfa' or self.decimals:
             if self.decimals:
-                valor = str(self.value).replace('.', '')
-                missing_chars = self.digits - len(valor)
-                return ('0' * missing_chars) + valor
+                value = str(self.value).replace('.', '')
+                missing_chars = self.digits - len(value)
+                return ('0' * missing_chars) + value
             else:
-                valor = self.value
-                missing_chars = self.digits - len(valor)
-                return valor + (' ' * missing_chars)
+                value = self.value
+                missing_chars = self.digits - len(value)
+                return value + (' ' * missing_chars)
 
         return '{0:0{1}d}'.format(self.value, self.digits)
 
@@ -173,14 +169,14 @@ class BaseRecord(object):
     def __str__(self):
         return ''.join([str(field) for field in list(self._fields.values())])
 
-    def load_line(self, line):
+    def load_line(self, string):
         for field in self._fields.values():
-            value = line[field.start:field.end].strip()
+            value = string[field.start:field.end].strip()
             if field.decimals:
                 exponente = field.decimals * -1
                 dec = value[:exponente] + '.' + value[exponente:]
                 field.value = Decimal(dec)
-            elif field.formato == 'num':
+            elif field.format == 'num':
                 try:
                     field.value = int(value)
                 except ValueError:

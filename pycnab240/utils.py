@@ -26,8 +26,8 @@ def get_forma_de_lancamento(bank_name, code):
     try:
         value = FORMA_DE_LANCAMENTO[bank_name][code]
     except KeyError:
-        message = 'Code'
+        message, value = 'Code', code
         if not FORMA_DE_LANCAMENTO.get(bank_name):
-            message = 'Bank'
-        raise KeyError("{} not found!".format(message))
+            message, value = 'Bank', bank_name
+        raise KeyError("{} {} not found!".format(message, value))
     return value

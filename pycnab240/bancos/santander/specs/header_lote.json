@@ -155,7 +155,7 @@
             "posicao_inicio": 218,
             "posicao_fim": 220,
             "formato": "num",
-            "default": ""
+            "default": 0
         },
         "25.1": {
             "nome": "cedente_uf",

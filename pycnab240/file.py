@@ -5,8 +5,22 @@ from pycnab240 import errors
 from io import IOBase
 
 
-REGISTER_TYPE_SPECS = {
-    2: 'SegmentoTeste'
+RECORD_NAMES = {
+    '0': 'HeaderArquivo',
+    '1': 'HeaderLote',
+    '3': {
+        'A': 'SegmentoA',
+        'B': 'SegmentoB',
+        'G': 'SegmentoG',
+        'H': 'SegmentoH',
+        'J': 'SegmentoJ',
+        'N': 'SegmentoN',
+        'O': 'SegmentoO',
+        'W': 'SegmentoW',
+        'Z': 'SegmentoZ',
+    },
+    '5': 'TrailerLote',
+    '9': 'TrailerArquivo'
 }
 
 
@@ -15,12 +29,12 @@ class Event(object):
     def __init__(self, bank):  # event_code):
         self._segments = []
         self.bank = bank
-        # self.event_code = event_code TODO FIND OUT WHAT IS THIS
         self._lot_code = None
         self._is_open = True
 
-    def add_segment(self, seg_name, vals):
-        segment = self.bank.records[seg_name](**vals)
+    def add_segment(self, seg_name, segment):
+        if type(segment) == dict:
+            segment = self.bank.records[seg_name](**segment)
         self._segments.append(segment)
 
     @property
@@ -62,17 +76,26 @@ class Event(object):
 
 class Lot(object):
 
-    def __init__(self, bank, header=None, trailer=None):
+    def __init__(self, bank):
         self.bank = bank
-        self.header = header
-        self.trailer = trailer
         self._code = None
+        self.header, self.trailer = None, None
         self._events = []
         self._is_open = True
 
     @property
     def code(self):
         return self._code
+
+    def add_header(self, header):
+        if type(header) == dict:
+            header = self.bank.records.HeaderLote(**header)
+        self.header = header
+
+    def add_trailer(self, trailer):
+        if type(trailer) == dict:
+            self.trailer = self.bank.records.TrailerLote(**trailer)
+        self.trailer = trailer
 
     @code.setter
     def code(self, value):
@@ -98,41 +121,32 @@ class Lot(object):
 
     def add_event(self, event):
         if not isinstance(event, Event):
-            raise TypeError('Object must be an instance of Lot')
+            raise TypeError('Object must be an instance of Event')
         self._events.append(event)
 
     def create_new_event(self):
-        event = self.get_active_event()
-        if event:
-            raise errors.ExistsOpenInstance(event)
         new_event = Event(self.bank)
         self._events.append(new_event)
         return new_event
 
     def get_active_event(self):
-        open_event = False
         for event in self._events:
             if event._is_open:
-                open_event = event
-        return open_event
+                return event
+        return self.create_new_event()
 
-    def total_register_lot(self):
-        total = 0
-        for event in self._events:
-            total += len(event)
-        return total
-
-    def close_lot(self, header=None, trailer=None):
-        self.header = self.bank.records.HeaderLoteCobranca(header)
-        self.header = self.bank.records.TrailerLoteCobranca(trailer)
-        if hasattr(self.trailer, 'quantidade_registros') and\
-                not trailer.get('quantidade_registros'):
-            self.trailer.quantidade_registros = self.total_register_lot()
+    def close_lot(self):
+        if not self.trailer:
+            self.trailer = self.bank.records.TrailerLote()
+        if not self.trailer.quantidade_registros:
+            self.trailer.quantidade_registros = self.get_records_lot()
         self._is_open = False
         for event in self._events:
             event.close_event()
 
-    # Breakpoint
+    def get_records_lot(self):
+        return sum(len(event) for event in self._events)
+
     def __str__(self):
         if not self._events:
             raise errors.NoEventError()
@@ -151,17 +165,22 @@ class Lot(object):
 
 class File(object):
 
-    def __init__(self, bank, **kwargs):
+    def __init__(self, bank):
         """Cnab240 File"""
 
         self._lots = []
         self.bank = bank
-        # self.header = self.bank.records.HeaderArquivo(**kwargs)
-        # self.trailer = self.bank.records.TrailerArquivo(**kwargs)
+        self.header, self.trailer = None, None
 
     @property
     def lots(self):
         return self._lots
+
+    def add_header(self, header):
+        self.header = self.bank.records.HeaderArquivo(**header)
+
+    def add_trailer(self, trailer):
+        self.trailer = self.bank.records.TrailerArquivo(**trailer)
 
     def add_lots(self, lot):
         if not isinstance(lot, Lot):
@@ -170,36 +189,51 @@ class File(object):
         lot.code = len(self._lots)
 
     def create_new_lot(self):
-        lot = self.get_active_lot()
-        if lot:
-            raise errors.ExistsOpenInstance(lot)
         new_lot = Lot(self.bank)
         self.add_lots(new_lot)
         return new_lot
 
     def get_active_lot(self):
-        open_lot = False
         for lot in self._lots:
             if lot._is_open:
-                open_lot = lot
-        return open_lot
+                return lot
+        return self.create_new_lot()
 
     def add_segment(self, seg_name, vals):
         lot = self.get_active_lot()
-        if not lot:
-            lot = self.create_new_lot()
-        event = lot.get_active_event()
-        if not event:
-            event = lot.create_new_event()
-        event.add_segment(seg_name, vals)
+        if seg_name == 'HeaderLote':
+            lot.add_header(vals)
+        elif seg_name == 'TrailerLote':
+            lot.add_trailer(vals)
+        else:
+            event = lot.get_active_event()
+            event.add_segment(seg_name, vals)
+
+    def close_file(self):
+        self.get_active_lot().close_lot()
+        if not self.trailer:
+            self.trailer = self.bank.records.TrailerArquivo()
+        if not self.trailer.totais_quantidade_lotes:
+            self.trailer.totais_quantidade_lotes = self.get_total_lots()
+        if not self.trailer.totais_quantidade_registros:
+            self.trailer.totais_quantidade_registros = self.get_total_records()
+
+    def get_total_lots(self):
+        return len(self._lots)
+
+    def get_total_records(self):
+        total = 2
+        for lot in self._lots:
+            total += 2 + len(lot.events)
+        return total
 
     def __str__(self):
         if not self._lots:
             raise errors.EmptyFileError()
         result = []
-        # result.append(str(self.header)) Append header and trailer later
+        result.append(str(self.header))
         result.extend(str(lot) for lot in self._lots)
-        # result.append(str(self.trailer))
+        result.append(str(self.trailer))
         # Empty element so the file will end with \r\n
         result.append('')
         return '\r\n'.join(result)
@@ -208,11 +242,24 @@ class File(object):
         file_.write(str(self))
 
     def load_return_file(self, file_):
-        if isinstance(file_, (IOBase, codecs.StreamReaderWriter)):
+        if not isinstance(file_, (IOBase, codecs.StreamReaderWriter)):
             return TypeError("Wrong file type")
-        for line in file:
-            register_type = REGISTER_TYPE_SPECS[line[7]]
-            segment = self.bank.records[register_type].load_line(line)
-            self.add_segment(segment)
-            if register_type == 'TrailerLote':
-                self.get_active_lot().close_lot()
+        for line in file_:
+            record_name = self.get_record_name(line)
+            segment = self.bank.records[record_name]()
+            segment.load_line(string=line)
+            if record_name == 'HeaderArquivo':
+                self.header = segment
+            elif record_name == 'TrailerArquivo':
+                self.trailer = segment
+            else:
+                self.add_segment(record_name, segment)
+            if record_name == 'TrailerLote':
+                self.get_active_lot()._is_open = False
+
+    def get_record_name(self, line):
+        record_code = line[7]
+        if record_code == '3':
+            return RECORD_NAMES[record_code][line[13]]
+        else:
+            return RECORD_NAMES[record_code]

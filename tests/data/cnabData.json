@@ -1,0 +1,43 @@
+{
+    "HeaderArquivo": {
+        "cedente_inscricao_tipo": 1,
+        "cedente_inscricao_numero": 24158233000185,
+        "codigo_convenio": "9999999",
+        "cedente_agencia": 1234,
+        "cedente_agencia_dv": "5",
+        "cedente_conta": 12345,
+        "cedente_conta_dv": "6",
+        "cedente_nome": "Trustcode",
+        "data_geracao_arquivo": 4062018,
+        "hora_geracao_arquivo": 165237,
+        "numero_sequencial_arquivo": 33333
+    },
+    "HeaderLote": {
+        "tipo_servico": 20,
+        "numero_versao_lote": 30,
+        "cedente_inscricao_tipo": 1,
+        "cedente_inscricao_numero": 24158233000185,
+        "codigo_convenio": "9999999",
+        "cedente_agencia": 1234,
+        "cedente_agencia_dv": "5",
+        "cedente_conta": 12345,
+        "cedente_conta_dv": "6",
+        "cedente_nome": "Trustcode",
+        "mensagem1": "primeiramensagem"
+    },
+    "SegmentoJ": {
+        "sequencial_registro_lote": 1,
+        "tipo_movimento": 1,
+        "codigo_instrucao_movimento": 2,
+        "codigo_de_barras": 999999999999999999999999999,
+        "cedente_nome": "Trustcode",
+        "data_vencimento": 10062018,
+        "valor_nominal_titulo": "50.10",
+        "valor_desconto_abatimento": "10.10",
+        "valor_multa_juros": "1.25",
+        "valor_pagamento": "40.00",
+        "data_pagamento": 7062018,
+        "numero_documento_cliente": "9999",
+        "numero_documento_banco": "8888"
+    }
+}

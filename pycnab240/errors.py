@@ -56,10 +56,6 @@ class NoEventError(Cnab240Error):
     """Trying to write a Lot without any Event"""
 
 
-class RequiredFieldError(Cnab240Error):
-    """Required field empty."""
-
-
 class SpecErrors(Exception):
     """Invalid Spec File"""
 
@@ -96,14 +92,3 @@ class SpecDefaultValueError(SpecErrors):
     def __str__(self):
         return ("Default value of field {} doesn't match field format in spec"
                 " {}".format(self.field['nome'], self.spec['nome']))
-
-
-class ExistsOpenInstance(Exception):
-    """One instance of the object is already opened"""
-
-    def __init__(self, obj):
-        self.obj = obj
-
-    def __str__(self):
-        return "Exists one instance of the following object already opened {}"\
-            .format(self.obj)
