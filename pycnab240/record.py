@@ -8,7 +8,7 @@ from glob import iglob
 from decimal import Decimal
 from collections import OrderedDict
 from pycnab240 import errors
-from past.builtins import basestring
+from past.builtins import basestring, long
 
 
 class BaseField(object):
@@ -58,7 +58,7 @@ class BaseField(object):
                 raise errors.DigitsNumberExceeded(self, value)
 
         else:
-            if not isinstance(value, int):
+            if not isinstance(value, (int, long)):
                 print("{0} - {1}".format(self.name, value))
                 raise errors.TypeError(self, value)
             if len(str(value)) > self.digits:
