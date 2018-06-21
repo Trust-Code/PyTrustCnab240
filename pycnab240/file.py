@@ -129,11 +129,12 @@ class Lot(object):
         self._events.append(new_event)
         return new_event
 
-    def get_active_event(self):
+    def get_active_event(self, create=False):
         for event in self._events:
             if event._is_open:
                 return event
-        return self.create_new_event()
+        if create:
+            return self.create_new_event()
 
     def close_lot(self):
         if not self.trailer:
@@ -193,20 +194,21 @@ class File(object):
         self.add_lots(new_lot)
         return new_lot
 
-    def get_active_lot(self):
+    def get_active_lot(self, create=False):
         for lot in self._lots:
             if lot._is_open:
                 return lot
-        return self.create_new_lot()
+        if create:
+            return self.create_new_lot()
 
     def add_segment(self, seg_name, vals):
-        lot = self.get_active_lot()
+        lot = self.get_active_lot(create=True)
         if seg_name == 'HeaderLote':
             lot.add_header(vals)
         elif seg_name == 'TrailerLote':
             lot.add_trailer(vals)
         else:
-            event = lot.get_active_event()
+            event = lot.get_active_event(create=True)
             event.add_segment(seg_name, vals)
 
     def close_file(self):
