@@ -94,7 +94,7 @@ class Lot(object):
 
     def add_trailer(self, trailer):
         if type(trailer) == dict:
-            self.trailer = self.bank.records.TrailerLote(**trailer)
+            trailer = self.bank.records.TrailerLote(**trailer)
         self.trailer = trailer
 
     @code.setter
