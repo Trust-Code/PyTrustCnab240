@@ -212,7 +212,9 @@ class File(object):
             event.add_segment(seg_name, vals)
 
     def close_file(self):
-        self.get_active_lot().close_lot()
+        lot = self.get_active_lot()
+        if lot:
+            lot.close_lot()
         if not self.trailer:
             self.trailer = self.bank.records.TrailerArquivo()
         if not self.trailer.totais_quantidade_lotes:
