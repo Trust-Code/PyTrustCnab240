@@ -40,7 +40,7 @@
             "nome": "tipo_movimento",
             "posicao_inicio": 15,
             "posicao_fim": 15,
-            "formato": "alfa"
+            "formato": "num"
         },
         "07.3O": {
             "nome": "codigo_instrucao_movimento",
@@ -52,7 +52,7 @@
             "nome": "codigo_de_barras",
             "posicao_inicio": 18,
             "posicao_fim": 61,
-            "formato": "alfa"
+            "formato": "num"
         },
         "09.3O": {
             "nome": "nome_concessionaria",
