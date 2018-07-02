@@ -1,0 +1,151 @@
+{
+    "nome": "SegmentoH",
+    "campos": {
+        "01.3H": {
+            "nome": "controle_banco",
+            "posicao_inicio": 1,
+            "posicao_fim": 3,
+            "formato": "num",
+            "default": 237
+        },
+        "02.3H": {
+            "nome": "controle_lote",
+            "posicao_inicio": 4,
+            "posicao_fim": 7,
+            "formato": "num"
+        },
+        "03.3H": {
+            "nome": "controle_registro",
+            "posicao_inicio": 8,
+            "posicao_fim": 8,
+            "formato": "num",
+            "default": 3
+        },
+        "04.3H": {
+            "nome": "sequencial_registro_lote",
+            "posicao_inicio": 9,
+            "posicao_fim": 13,
+            "formato": "num"
+        },
+        "05.3H": {
+            "nome": "servico_segmento",
+            "posicao_inicio": 14,
+            "posicao_fim": 14,
+            "formato": "alfa",
+            "default": "H"
+        },
+        "06.3H": {
+            "nome": "vazio1",
+            "posicao_inicio": 15,
+            "posicao_fim": 15,
+            "formato": "alfa",
+            "default": ""
+        },
+        "07.3H": {
+            "nome": "codigo_movimento_remessa",
+            "posicao_inicio": 16,
+            "posicao_fim": 17,
+            "formato": "num"
+        },
+        "08.3H": {
+            "nome": "sacador_tipo_inscricao",
+            "posicao_inicio": 18,
+            "posicao_fim": 18,
+            "formato": "num"
+        },
+        "09.3H": {
+            "nome": "sacador_numero_inscricao",
+            "posicao_inicio": 19,
+            "posicao_fim": 33,
+            "formato": "num"
+        },
+        "10.3H": {
+            "nome": "sacador_nome",
+            "posicao_inicio": 34,
+            "posicao_fim": 73,
+            "formato": "alfa"
+        },
+        "11.3H": {
+            "nome": "codigo_desconto_2",
+            "posicao_inicio": 74,
+            "posicao_fim": 74,
+            "formato": "num"
+        },
+        "12.3H": {
+            "nome": "data_desconto_2",
+            "posicao_inicio": 75,
+            "posicao_fim": 82,
+            "formato": "num"
+        },
+        "13.3H": {
+            "nome": "valor_ou_percentual_desconto_2",
+            "posicao_inicio": 83,
+            "posicao_fim": 97,
+            "formato": "num",
+            "decimais": 2
+        },
+        "14.3H": {
+            "nome": "codigo_desconto_3",
+            "posicao_inicio": 98,
+            "posicao_fim": 98,
+            "formato": "num"
+        },
+        "15.3H": {
+            "nome": "data_desconto_3",
+            "posicao_inicio": 99,
+            "posicao_fim": 106,
+            "formato": "num"
+        },
+        "16.3H": {
+            "nome": "valor_ou_percentual_desconto_3",
+            "posicao_inicio": 107,
+            "posicao_fim": 121,
+            "formato": "num",
+            "decimais": 2
+        },
+        "17.3H": {
+            "nome": "codigo_multa",
+            "posicao_inicio": 122,
+            "posicao_fim": 122,
+            "formato": "num"
+        },
+        "18.3H": {
+            "nome": "data_inicio_multa",
+            "posicao_inicio": 123,
+            "posicao_fim": 130,
+            "formato": "num"
+        },
+        "19.3H": {
+            "nome": "valor_aplicado_multa",
+            "posicao_inicio": 131,
+            "posicao_fim": 145,
+            "formato": "num",
+            "decimais": 2
+        },
+        "20.3H": {
+            "nome": "valor_abatimento",
+            "posicao_inicio": 146,
+            "posicao_fim": 160,
+            "formato": "num",
+            "decimais": 2
+        },
+        "21.3H": {
+            "nome": "numero_documento_banco",
+            "posicao_inicio": 161,
+            "posicao_fim": 180,
+            "formato": "alfa"
+        },
+        "22.3H": {
+            "nome": "vazio2",
+            "posicao_inicio": 181,
+            "posicao_fim": 200,
+            "formato": "alfa"
+        },
+        "23.3H": {
+            "nome": "mensagem2",
+            "posicao_inicio": 201,
+            "posicao_fim": 240,
+            "formato": "alfa"
+        }
+    }
+}
