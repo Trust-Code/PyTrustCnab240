@@ -13,6 +13,7 @@ RECORD_NAMES = {
         'B': 'SegmentoB',
         'G': 'SegmentoG',
         'H': 'SegmentoH',
+        'J-52': 'SegmentoJ',
         'J': 'SegmentoJ',
         'N': 'SegmentoN',
         'O': 'SegmentoO',
