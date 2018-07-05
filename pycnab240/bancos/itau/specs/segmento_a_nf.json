@@ -147,7 +147,7 @@
             "nome": "favorecido_nome",
             "posicao_inicio": 44,
             "posicao_fim": 73,
-            "formato": "alfa",
+            "formato": "alfa"
         },
         "11.3A": {
             "nome": "numero_documento_cliente",

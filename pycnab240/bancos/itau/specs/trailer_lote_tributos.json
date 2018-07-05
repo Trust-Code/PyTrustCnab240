@@ -50,27 +50,27 @@
             "formato": "num",
             "decimais": 2
         },
-        "07.5": {
+        "08.5": {
             "nome": "total_valor_acrecimos",
             "posicao_inicio": 52,
             "posicao_fim": 65,
             "formato": "num",
             "decimais": 2
         },
-        "07.5": {
+        "09.5": {
             "nome": "total_valor_arrecadado",
             "posicao_inicio": 66,
             "posicao_fim": 79,
             "formato": "num",
             "decimais": 2
         },
-        "08.5": {
+        "10.5": {
             "nome": "vazio3",
             "posicao_inicio": 80,
             "posicao_fim": 230,
             "formato": "alfa"
         },
-        "09.5": {
+        "11.5": {
             "nome": "ocorrencias_retorno",
             "posicao_inicio": 231,
             "posicao_fim": 240,

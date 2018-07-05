@@ -43,13 +43,13 @@
             "formato": "alfa",
             "default": ""
         },
-        "08.3W": {
+        "07.3W": {
             "nome": "info_1",
             "posicao_inicio": 17,
             "posicao_fim": 56,
             "formato": "alfa"
         },
-        "09.3W": {
+        "08.3W": {
             "nome": "info_2",
             "posicao_inicio": 57,
             "posicao_fim": 96,
@@ -61,13 +61,13 @@
             "posicao_fim": 136,
             "formato": "alfa"
         },
-        "09.3W": {
+        "10.3W": {
             "nome": "info_4",
             "posicao_inicio": 137,
             "posicao_fim": 176,
             "formato": "alfa"
         },
-        "18.3W": {
+        "11.3W": {
             "nome": "vazio2",
             "posicao_inicio": 177,
             "posicao_fim": 240,

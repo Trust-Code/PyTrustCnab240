@@ -13,6 +13,7 @@ setup(
     package_data={
         'pycnab240': [
             'bancos/santander/specs/*.json',
+            'bancos/itau/specs/*.json',
         ],
     },
     install_requires=[

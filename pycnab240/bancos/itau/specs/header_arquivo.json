@@ -99,7 +99,7 @@
             "posicao_inicio": 103,
             "posicao_fim": 132,
             "formato": "alfa",
-            "default": "Itaú"
+            "default": "Itau"
         },
         "16.0": {
             "nome": "vazio3",
@@ -131,8 +131,7 @@
             "nome": "vazio4",
             "posicao_inicio": 158,
             "posicao_fim": 166,
-            "formato": "num",
-            "default": ""
+            "formato": "num"
         },
         "21.0": {
             "nome": "unidade_densidade",

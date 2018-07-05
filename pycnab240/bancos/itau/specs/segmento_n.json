@@ -111,8 +111,7 @@
                             "nome": "vazio1n1",
                             "posicao_inicio": 108,
                             "posicao_fim": 115,
-                            "formato": "alfa",
-                            "decimais": 2
+                            "formato": "alfa"
                         },
                         "11.3N1": {
                             "nome": "vazio2n1",
