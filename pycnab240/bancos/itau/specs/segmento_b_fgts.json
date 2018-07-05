@@ -1,0 +1,121 @@
+{
+    "nome": "SegmentoB_FGTS",
+    "campos": {
+        "01.3B": {
+            "nome": "controle_banco",
+            "posicao_inicio": 1,
+            "posicao_fim": 3,
+            "formato": "num",
+            "default": 341
+        },
+        "02.3B": {
+            "nome": "controle_lote",
+            "posicao_inicio": 4,
+            "posicao_fim": 7,
+            "formato": "num"
+        },
+        "03.3B": {
+            "nome": "controle_registro",
+            "posicao_inicio": 8,
+            "posicao_fim": 8,
+            "formato": "num",
+            "default": 3
+        },
+        "04.3B": {
+            "nome": "sequencial_registro_lote",
+            "posicao_inicio": 9,
+            "posicao_fim": 13,
+            "formato": "num"
+        },
+        "05.3B": {
+            "nome": "servico_segmento",
+            "posicao_inicio": 14,
+            "posicao_fim": 14,
+            "formato": "alfa",
+            "default": "B"
+        },
+        "06.3B": {
+            "nome": "vazio1",
+            "posicao_inicio": 15,
+            "posicao_fim": 32,
+            "formato": "alfa",
+            "default": ""
+        },
+        "07.3B": {
+            "nome": "favorecido_endereco_rua",
+            "posicao_inicio": 33,
+            "posicao_fim": 62,
+            "formato": "alfa",
+            "default": ""
+        },
+        "08.3B": {
+            "nome": "favorecido_endereco_numero",
+            "posicao_inicio": 63,
+            "posicao_fim": 67,
+            "formato": "num",
+            "default": 0
+        },
+        "09.3B": {
+            "nome": "favorecido_endereco_complemento",
+            "posicao_inicio": 68,
+            "posicao_fim": 82,
+            "formato": "alfa"
+        },
+        "10.3B": {
+            "nome": "favorecido_bairro",
+            "posicao_inicio": 83,
+            "posicao_fim": 97,
+            "formato": "alfa",
+            "default": ""
+        },
+        "11.3B": {
+            "nome": "favorecido_cidade",
+            "posicao_inicio": 98,
+            "posicao_fim": 117,
+            "formato": "alfa",
+            "default": ""
+        },
+        "12.3B": {
+            "nome": "favorecido_cep",
+            "posicao_inicio": 118,
+            "posicao_fim": 125,
+            "formato": "num",
+            "default": 0
+        },
+        "13.3B": {
+            "nome": "favorecido_uf",
+            "posicao_inicio": 126,
+            "posicao_fim": 127,
+            "formato": "alfa",
+            "default": ""
+        },
+        "14.3B": {
+            "nome": "numero_telefone",
+            "posicao_inicio": 128,
+            "posicao_fim": 138,
+            "formato": "alfa",
+            "default": ""
+        },
+        "15.3B": {
+            "nome": "valor_acrescimo",
+            "posicao_inicio": 139,
+            "posicao_fim": 152,
+            "formato": "num",
+            "decimais": 2
+        },
+        "16.3B": {
+            "nome": "valor_honorarios",
+            "posicao_inicio": 153,
+            "posicao_fim": 166,
+            "formato": "num",
+            "decimais": 2
+        },
+        "17.3B": {
+            "nome": "vazio2",
+            "posicao_inicio": 167,
+            "posicao_fim": 240,
+            "formato": "alfa",
+            "default": ""
+        }
+    }
+}
