@@ -1,0 +1,275 @@
+{
+    "nome": "SegmentoA_Diversos",
+    "campos": {
+        "01.3A": {
+            "nome": "controle_banco",
+            "posicao_inicio": 1,
+            "posicao_fim": 3,
+            "formato": "num",
+            "default": 341
+        },
+        "02.3A": {
+            "nome": "controle_lote",
+            "posicao_inicio": 4,
+            "posicao_fim": 7,
+            "formato": "num"
+        },
+        "03.3A": {
+            "nome": "controle_registro",
+            "posicao_inicio": 8,
+            "posicao_fim": 8,
+            "formato": "num",
+            "default": 3
+        },
+        "04.3A": {
+            "nome": "sequencial_registro_lote",
+            "posicao_inicio": 9,
+            "posicao_fim": 13,
+            "formato": "num"
+        },
+        "05.3A": {
+            "nome": "servico_segmento",
+            "posicao_inicio": 14,
+            "posicao_fim": 14,
+            "formato": "alfa",
+            "default": "A"
+        },
+        "06.3A": {
+            "nome": "tipo_movimento",
+            "posicao_inicio": 15,
+            "posicao_fim": 17,
+            "formato": "num"
+        },
+        "07.3A": {
+            "nome": "codigo_camara_compensacao",
+            "posicao_inicio": 18,
+            "posicao_fim": 20,
+            "formato": "num",
+            "default": 888
+        },
+        "08.3A": {
+            "nome": "favorecido_banco",
+            "posicao_inicio": 21,
+            "posicao_fim": 23,
+            "formato": "num",
+            "default": 0
+        },
+        "09.3A": {
+            "nome": "favorecido_agencia_conta",
+            "posicao_inicio": 24,
+            "posicao_fim": 43,
+            "subsegmentos": [
+                {
+                    "nome": "Itau_Unibanco",
+                    "campos": {
+                        "01.3A1": {
+                            "nome": "vazio1a1",
+                            "posicao_inicio": 24,
+                            "posicao_fim": 24,
+                            "formato": "num"
+                        },
+                        "02.3A1": {
+                            "nome": "favorecido_agencia",
+                            "posicao_inicio": 25,
+                            "posicao_fim": 28,
+                            "formato": "num"
+                        },
+                        "03.3A1": {
+                            "nome": "vazio2a1",
+                            "posicao_inicio": 29,
+                            "posicao_fim": 29,
+                            "formato": "alfa"
+                        },
+                        "04.3A1": {
+                            "nome": "vazio3a1",
+                            "posicao_inicio": 30,
+                            "posicao_fim": 35,
+                            "formato": "alfa"
+                        },
+                        "05.3A1": {
+                            "nome": "favorecido_conta",
+                            "posicao_inicio": 36,
+                            "posicao_fim": 41,
+                            "formato": "num"
+                        },
+                        "06.3A1": {
+                            "nome": "vazio4a1",
+                            "posicao_inicio": 42,
+                            "posicao_fim": 42,
+                            "formato": "alfa"
+                        },
+                        "07.3A1": {
+                            "nome": "dac",
+                            "posicao_inicio": 43,
+                            "posicao_fim": 43,
+                            "formato": "num"
+                        }
+                    }
+                },
+                {
+                    "nome": "outros_bancos",
+                    "campos": {
+                        "01.3A2": {
+                            "nome": "favorecido_agencia",
+                            "posicao_inicio": 24,
+                            "posicao_fim": 28,
+                            "formato": "num"
+                        },
+                        "02.3A2": {
+                            "nome": "vazio1a2",
+                            "posicao_inicio": 29,
+                            "posicao_fim": 29,
+                            "formato": "alfa"
+                        },
+                        "03.3A2": {
+                            "nome": "favorecido_conta",
+                            "posicao_inicio": 30,
+                            "posicao_fim": 41,
+                            "formato": "num"
+                        },
+                        "04.3A2": {
+                            "nome": "vazio2a2",
+                            "posicao_inicio": 42,
+                            "posicao_fim": 42,
+                            "formato": "alfa"
+                        },
+                        "05.3A1": {
+                            "nome": "dac",
+                            "posicao_inicio": 43,
+                            "posicao_fim": 43,
+                            "formato": "alfa"
+                        }
+                    }
+                }
+            ]
+        },
+        "10.3A": {
+            "nome": "favorecido_nome",
+            "posicao_inicio": 44,
+            "posicao_fim": 73,
+            "formato": "alfa",
+        },
+        "11.3A": {
+            "nome": "numero_documento_cliente",
+            "posicao_inicio": 74,
+            "posicao_fim": 93,
+            "formato": "alfa"
+        },
+        "12.3A": {
+            "nome": "data_pagamento",
+            "posicao_inicio": 94,
+            "posicao_fim": 101,
+            "formato": "num"
+        },
+        "13.3A": {
+            "nome": "tipo_moeda",
+            "posicao_inicio": 102,
+            "posicao_fim": 104,
+            "formato": "alfa",
+            "default": "REA"
+        },
+        "14.3A": {
+            "nome": "codigo_ispb",
+            "posicao_inicio": 105,
+            "posicao_fim": 112,
+            "formato": "num"
+        },
+        "15.3A": {
+            "nome": "vazio1",
+            "posicao_inicio": 113,
+            "posicao_fim": 119,
+            "formato": "num",
+            "default": 0
+        },
+        "16.3A": {
+            "nome": "valor_pagamento",
+            "posicao_inicio": 120,
+            "posicao_fim": 134,
+            "formato": "num",
+            "decimais": 2
+        },
+        "17.3A": {
+            "nome": "numero_documento_banco",
+            "posicao_inicio": 135,
+            "posicao_fim": 149,
+            "formato": "alfa"
+        },
+        "18.3A": {
+            "nome": "vazio2",
+            "posicao_inicio": 150,
+            "posicao_fim": 154,
+            "formato": "alfa",
+            "default": ""
+        },
+        "19.3A": {
+            "nome": "data_real_pagamento",
+            "posicao_inicio": 155,
+            "posicao_fim": 162,
+            "formato": "num"
+        },
+        "20.3A": {
+            "nome": "valor_real_pagamento",
+            "posicao_inicio": 163,
+            "posicao_fim": 177,
+            "formato": "num",
+            "decimais": 2
+        },
+        "21.3A": {
+            "nome": "finalidade_detalhe",
+            "posicao_inicio": 178,
+            "posicao_fim": 195,
+            "formato": "alfa"
+        },
+        "22.3A": {
+            "nome": "vazio3",
+            "posicao_inicio": 196,
+            "posicao_fim": 197,
+            "formato": "alfa",
+            "default": ""
+        },
+        "23.3A": {
+            "nome": "numero_documento",
+            "posicao_inicio": 198,
+            "posicao_fim": 203,
+            "formato": "num"
+        },
+        "24.3A": {
+            "nome": "numero_inscricao",
+            "posicao_inicio": 204,
+            "posicao_fim": 217,
+            "formato": "num",
+            "default": ""
+        },
+        "25.3A": {
+            "nome": "finalidade_doc_status",
+            "posicao_inicio": 218,
+            "posicao_fim": 219,
+            "formato": "alfa"
+        },
+        "26.3A": {
+            "nome": "finalidade_ted",
+            "posicao_inicio": 220,
+            "posicao_fim": 224,
+            "formato": "alfa"
+        },
+        "27.3A": {
+            "nome": "vazio4",
+            "posicao_inicio": 225,
+            "posicao_fim": 229,
+            "formato": "alfa",
+            "default": ""
+        },
+        "28.3A": {
+            "nome": "aviso",
+            "posicao_inicio": 230,
+            "posicao_fim": 230,
+            "formato": "alfa"
+        },
+        "29.3A": {
+            "nome": "ocorrencias_retorno",
+            "posicao_inicio": 231,
+            "posicao_fim": 240,
+            "formato": "alfa"
+        }
+    }
+}

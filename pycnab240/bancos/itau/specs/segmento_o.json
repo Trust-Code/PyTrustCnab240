@@ -1,0 +1,140 @@
+{
+    "nome": "SegmentoO",
+    "campos": {
+        "01.3O": {
+            "nome": "controle_banco",
+            "posicao_inicio": 1,
+            "posicao_fim": 3,
+            "formato": "num",
+            "default": 341
+        },
+        "02.3O": {
+            "nome": "controle_lote",
+            "posicao_inicio": 4,
+            "posicao_fim": 7,
+            "formato": "num",
+            "default": 0
+        },
+        "03.3O": {
+            "nome": "controle_registro",
+            "posicao_inicio": 8,
+            "posicao_fim": 8,
+            "formato": "num",
+            "default": 3
+        },
+        "04.3O": {
+            "nome": "sequencial_registro_lote",
+            "posicao_inicio": 9,
+            "posicao_fim": 13,
+            "formato": "num",
+            "default": 0
+        },
+        "05.3O": {
+            "nome": "servico_segmento",
+            "posicao_inicio": 14,
+            "posicao_fim": 14,
+            "formato": "alfa",
+            "default": "O"
+        },
+        "06.3O": {
+            "nome": "tipo_movimento",
+            "posicao_inicio": 15,
+            "posicao_fim": 17,
+            "formato": "num"
+        },
+        "07.3O": {
+            "nome": "codigo_de_barras",
+            "posicao_inicio": 18,
+            "posicao_fim": 65,
+            "formato": "alfa"
+        },
+        "08.3O": {
+            "nome": "nome_concessionaria",
+            "posicao_inicio": 66,
+            "posicao_fim": 95,
+            "formato": "alfa"
+        },
+        "09.3O": {
+            "nome": "data_vencimento",
+            "posicao_inicio": 96,
+            "posicao_fim": 103,
+            "formato": "num"
+        },
+        "10.3O": {
+            "nome": "tipo_moeda",
+            "posicao_inicio": 104,
+            "posicao_fim": 106,
+            "formato": "alfa",
+            "default": "REA"
+        },
+        "11.3O": {
+            "nome": "quantidade_moeda",
+            "posicao_inicio": 107,
+            "posicao_fim": 121,
+            "formato": "num",
+            "decimais": 8
+        },
+        "12.3O": {
+            "nome": "valor_documento",
+            "posicao_inicio": 122,
+            "posicao_fim": 136,
+            "formato": "num",
+            "decimais": 2
+        },
+        "13.3O": {
+            "nome": "data_pagamento",
+            "posicao_inicio": 137,
+            "posicao_fim": 144,
+            "formato": "num"
+        },
+        "14.3O": {
+            "nome": "valor_pagamento",
+            "posicao_inicio": 145,
+            "posicao_fim": 159,
+            "formato": "num",
+            "decimais": 2
+        },
+        "15.3O": {
+            "nome": "vazio1",
+            "posicao_inicio": 160,
+            "posicao_fim": 162,
+            "formato": "alfa"
+        },
+        "16.3O": {
+            "nome": "numero_nota_fiscal",
+            "posicao_inicio": 163,
+            "posicao_fim": 171,
+            "formato": "num"
+        },
+        "17.3O": {
+            "nome": "vazio2",
+            "posicao_inicio": 172,
+            "posicao_fim": 174,
+            "formato": "alfa"
+        },
+        "18.3O": {
+            "nome": "numero_empresa",
+            "posicao_inicio": 175,
+            "posicao_fim": 194,
+            "formato": "alfa"
+        },
+        "19.3O": {
+            "nome": "vazio3",
+            "posicao_inicio": 195,
+            "posicao_fim": 215,
+            "formato": "alfa"
+        },
+        "20.3O": {
+            "nome": "nosso_numero",
+            "posicao_inicio": 216,
+            "posicao_fim": 230,
+            "formato": "alfa"
+        },
+        "21.3O": {
+            "nome": "ocorrencias_retorno",
+            "posicao_inicio": 231,
+            "posicao_fim": 240,
+            "formato": "alfa"
+        },
+    }
+}

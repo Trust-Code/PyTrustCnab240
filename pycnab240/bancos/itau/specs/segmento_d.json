@@ -1,0 +1,172 @@
+{
+    "nome": "SegmentoD",
+    "campos": {
+        "01.3D": {
+            "nome": "controle_banco",
+            "posicao_inicio": 1,
+            "posicao_fim": 3,
+            "formato": "num",
+            "default": 341
+        },
+        "02.3D": {
+            "nome": "controle_lote",
+            "posicao_inicio": 4,
+            "posicao_fim": 7,
+            "formato": "num"
+        },
+        "03.3D": {
+            "nome": "controle_registro",
+            "posicao_inicio": 8,
+            "posicao_fim": 8,
+            "formato": "num",
+            "default": 3
+        },
+        "04.3D": {
+            "nome": "sequencial_registro_lote",
+            "posicao_inicio": 9,
+            "posicao_fim": 13,
+            "formato": "num"
+        },
+        "05.3D": {
+            "nome": "servico_segmento",
+            "posicao_inicio": 14,
+            "posicao_fim": 14,
+            "formato": "alfa",
+            "default": "D"
+        },
+        "06.3D": {
+            "nome": "vazio1",
+            "posicao_inicio": 15,
+            "posicao_fim": 17,
+            "formato": "alfa"
+        },
+        "07.3D": {
+            "nome": "periodo_pagamento",
+            "posicao_inicio": 18,
+            "posicao_fim": 23,
+            "formato": "num"
+        },
+        "08.3D": {
+            "nome": "centro_custo",
+            "posicao_inicio": 24,
+            "posicao_fim": 38,
+            "formato": "alfa"
+        },
+        "09.3D": {
+            "nome": "funcionario_codigo",
+            "posicao_inicio": 39,
+            "posicao_fim": 53,
+            "formato": "alfa"
+        },
+        "10.3D": {
+            "nome": "funcionario_cargo",
+            "posicao_inicio": 54,
+            "posicao_fim": 83,
+            "formato": "alfa"
+        },
+        "11.3D": {
+            "nome": "ferias_inicio",
+            "posicao_inicio": 84,
+            "posicao_fim": 91,
+            "formato": "num"
+        },
+        "12.3D": {
+            "nome": "ferias_fim",
+            "posicao_inicio": 92,
+            "posicao_fim": 99,
+            "formato": "num"
+        },
+        "13.3D": {
+            "nome": "dependentes_ir",
+            "posicao_inicio": 100,
+            "posicao_fim": 101,
+            "formato": "num"
+        },
+        "14.3D": {
+            "nome": "dependentes_sf",
+            "posicao_inicio": 102,
+            "posicao_fim": 103,
+            "formato": "num"
+        },
+        "15.3D": {
+            "nome": "horas_semanais",
+            "posicao_inicio": 104,
+            "posicao_fim": 105,
+            "formato": "num"
+        },
+        "16.3D": {
+            "nome": "valor_contribuicao",
+            "posicao_inicio": 106,
+            "posicao_fim": 120,
+            "formato": "num",
+            "decimal": 2
+        },
+        "17.3D": {
+            "nome": "valor_fgts",
+            "posicao_inicio": 121,
+            "posicao_fim": 135,
+            "formato": "num",
+            "decimal": 2
+        },
+        "18.3D": {
+            "nome": "valor_creditos",
+            "posicao_inicio": 136,
+            "posicao_fim": 150,
+            "formato": "num",
+            "decimal": 2
+        },
+        "19.3D": {
+            "nome": "valor_debitos",
+            "posicao_inicio": 151,
+            "posicao_fim": 165,
+            "formato": "num",
+            "decimal": 2
+        },
+        "20.3D": {
+            "nome": "valor_pagamento_liquido",
+            "posicao_inicio": 166,
+            "posicao_fim": 180,
+            "formato": "num",
+            "decimais": 2
+        },
+        "21.3D": {
+            "nome": "valor_salario_base",
+            "posicao_inicio": 181,
+            "posicao_fim": 195,
+            "formato": "num",
+            "decimal": 2
+        },
+        "22.3D": {
+            "nome": "valor_base_irrf",
+            "posicao_inicio": 196,
+            "posicao_fim": 210,
+            "formato": "num",
+            "decimal": 2
+        },
+        "23.3D": {
+            "nome": "valor_base_fgts",
+            "posicao_inicio": 211,
+            "posicao_fim": 225,
+            "formato": "num",
+            "decimal": 2
+        },
+        "24.3D": {
+            "nome": "data_holerite",
+            "posicao_inicio": 226,
+            "posicao_fim": 227,
+            "formato": "alfa"
+        },
+        "25.3D": {
+            "nome": "vazio2",
+            "posicao_inicio": 228,
+            "posicao_fim": 230,
+            "formato": "alfa"
+        },
+        "26.3D": {
+            "nome": "ocorrencias_retorno",
+            "posicao_inicio": 231,
+            "posicao_fim": 240,
+            "formato": "alfa"
+        }
+    }
+}

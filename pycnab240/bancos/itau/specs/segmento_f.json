@@ -1,0 +1,103 @@
+{
+    "nome": "SegmentoF",
+    "campos": {
+        "01.3F": {
+            "nome": "controle_banco",
+            "posicao_inicio": 1,
+            "posicao_fim": 3,
+            "formato": "num",
+            "default": 341
+        },
+        "02.3F": {
+            "nome": "controle_lote",
+            "posicao_inicio": 4,
+            "posicao_fim": 7,
+            "formato": "num"
+        },
+        "03.3F": {
+            "nome": "controle_registro",
+            "posicao_inicio": 8,
+            "posicao_fim": 8,
+            "formato": "num",
+            "default": 3
+        },
+        "04.3F": {
+            "nome": "sequencial_registro_lote",
+            "posicao_inicio": 9,
+            "posicao_fim": 13,
+            "formato": "num"
+        },
+        "05.3F": {
+            "nome": "servico_segmento",
+            "posicao_inicio": 14,
+            "posicao_fim": 14,
+            "formato": "alfa",
+            "default": "F"
+        },
+        "06.3F": {
+            "nome": "vazio1",
+            "posicao_inicio": 15,
+            "posicao_fim": 17,
+            "formato": "alfa"
+        },
+        "07.3F": {
+            "nome": "informacoes_complementares",
+            "posicao_inicio": 18,
+            "posicao_fim": 161,
+            "subsegmentos": [
+                {
+                    "nome": "demonstrativo_pagamento",
+                    "campos": {
+                        "01.3F1": {
+                            "nome": "mensagem1",
+                            "posicao_inicio": 18,
+                            "posicao_fim": 65,
+                            "formato": "alfa"
+                        },
+                        "02.3F1": {
+                            "nome": "mensagem2",
+                            "posicao_inicio": 66,
+                            "posicao_fim": 113,
+                            "formato": "alfa"
+                        },
+                        "03.3F1": {
+                            "nome": "mensagem3",
+                            "posicao_inicio": 114,
+                            "posicao_fim": 161,
+                            "formato": "alfa"
+                        }
+                    }
+                },
+                {
+                    "nome": "informe_rendimentos",
+                    "campos": {
+                        "01.3F2": {
+                            "nome": "mensagem",
+                            "posicao_inicio": 18,
+                            "posicao_fim": 99,
+                            "formato": "alfa"
+                        },
+                        "02.3F2": {
+                            "nome": "vazio1f2",
+                            "posicao_inicio": 100,
+                            "posicao_fim": 161,
+                            "formato": "alfa"
+                        }
+                    }
+                }
+            ]
+        },
+        "08.3F": {
+            "nome": "vazio2",
+            "posicao_inicio": 162,
+            "posicao_fim": 230,
+            "formato": "alfa"
+        },
+        "09.3F": {
+            "nome": "ocorrencias_retorno",
+            "posicao_inicio": 231,
+            "posicao_fim": 240,
+            "formato": "alfa"
+        }
+    }
+}
