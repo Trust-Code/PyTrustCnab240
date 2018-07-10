@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pycnab240',
-    version='0.0.6',
+    version='0.0.7',
     author='Trustcode',
     author_email='suporte@trustcode.com.br',
     url='https://github.com/Trust-Code/PyTrustCnab240',
@@ -14,6 +14,7 @@ setup(
         'pycnab240': [
             'bancos/santander/specs/*.json',
             'bancos/bradesco/specs/*.json',
+            'bancos/sicoob/specs/*.json',
         ],
     },
     install_requires=[
