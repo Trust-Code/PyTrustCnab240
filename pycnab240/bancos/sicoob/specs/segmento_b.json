@@ -1,0 +1,179 @@
+{
+    "nome": "SegmentoB",
+    "campos": {
+        "01.3B": {
+            "nome": "controle_banco",
+            "posicao_inicio": 1,
+            "posicao_fim": 3,
+            "formato": "num",
+            "default": 756
+        },
+        "02.3B": {
+            "nome": "controle_lote",
+            "posicao_inicio": 4,
+            "posicao_fim": 7,
+            "formato": "num"
+        },
+        "03.3B": {
+            "nome": "controle_registro",
+            "posicao_inicio": 8,
+            "posicao_fim": 8,
+            "formato": "num",
+            "default": 3
+        },
+        "04.3B": {
+            "nome": "sequencial_registro_lote",
+            "posicao_inicio": 9,
+            "posicao_fim": 13,
+            "formato": "num"
+        },
+        "05.3B": {
+            "nome": "servico_segmento",
+            "posicao_inicio": 14,
+            "posicao_fim": 14,
+            "formato": "alfa",
+            "default": "B"
+        },
+        "06.3B": {
+            "nome": "vazio1",
+            "posicao_inicio": 15,
+            "posicao_fim": 17,
+            "formato": "alfa",
+            "default": ""
+        },
+        "07.3B": {
+            "nome": "favorecido_inscricao_tipo",
+            "posicao_inicio": 18,
+            "posicao_fim": 18,
+            "formato": "num"
+        },
+        "08.3B": {
+            "nome": "favorecido_inscricao_numero",
+            "posicao_inicio": 19,
+            "posicao_fim": 32,
+            "formato": "num"
+        },
+        "09.3B": {
+            "nome": "favorecido_endereco_rua",
+            "posicao_inicio": 33,
+            "posicao_fim": 62,
+            "formato": "alfa",
+            "default": ""
+        },
+        "10.3B": {
+            "nome": "favorecido_endereco_numero",
+            "posicao_inicio": 63,
+            "posicao_fim": 67,
+            "formato": "num",
+            "default": 0
+        },
+        "11.3B": {
+            "nome": "favorecido_endereco_complemento",
+            "posicao_inicio": 68,
+            "posicao_fim": 82,
+            "formato": "alfa"
+        },
+        "12.3B": {
+            "nome": "favorecido_bairro",
+            "posicao_inicio": 83,
+            "posicao_fim": 97,
+            "formato": "alfa",
+            "default": ""
+        },
+        "13.3B": {
+            "nome": "favorecido_cidade",
+            "posicao_inicio": 98,
+            "posicao_fim": 117,
+            "formato": "alfa",
+            "default": ""
+        },
+        "14.3B": {
+            "nome": "favorecido_cep",
+            "posicao_inicio": 118,
+            "posicao_fim": 125,
+            "formato": "num",
+            "default": 0
+        },
+        "15.3B": {
+            "nome": "favorecido_uf",
+            "posicao_inicio": 126,
+            "posicao_fim": 127,
+            "formato": "alfa",
+            "default": ""
+        },
+        "16.3B": {
+            "nome": "data_vencimento",
+            "posicao_inicio": 128,
+            "posicao_fim": 135,
+            "formato": "num",
+            "default": 0
+        },
+        "17.3B": {
+            "nome": "valor_documento",
+            "posicao_inicio": 136,
+            "posicao_fim": 150,
+            "formato": "num",
+            "decimais": 2,
+            "default": 0
+        },
+        "18.3B": {
+            "nome": "valor_abatimento",
+            "posicao_inicio": 151,
+            "posicao_fim": 165,
+            "formato": "num",
+            "decimais": 2,
+            "default": 0
+        },
+        "19.3B": {
+            "nome": "valor_desconto",
+            "posicao_inicio": 166,
+            "posicao_fim": 180,
+            "formato": "num",
+            "decimais": 2,
+            "default": 0
+        },
+        "20.3B": {
+            "nome": "valor_mora",
+            "posicao_inicio": 181,
+            "posicao_fim": 195,
+            "formato": "num",
+            "decimais": 2,
+            "default": 0
+        },
+        "21.3B": {
+            "nome": "valor_multa",
+            "posicao_inicio": 196,
+            "posicao_fim": 210,
+            "formato": "num",
+            "decimais": 2,
+            "default": 0
+        },
+        "22.3B": {
+            "nome": "favorecido_doc_numero",
+            "posicao_inicio": 211,
+            "posicao_fim": 225,
+            "formato": "num",
+            "default": 0
+        },
+        "23.3B": {
+            "nome": "favorecido_emissao_aviso",
+            "posicao_inicio": 226,
+            "posicao_fim": 226,
+            "formato": "alfa"
+        },
+        "24.3B": {
+            "nome": "vazio2",
+            "posicao_inicio": 227,
+            "posicao_fim": 232,
+            "formato": "num",
+            "default": 0
+        },
+        "26.3B": {
+            "nome": "vazio3",
+            "posicao_inicio": 233,
+            "posicao_fim": 240,
+            "formato": "alfa",
+            "default": ""
+        }
+    }
+}
