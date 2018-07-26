@@ -32,7 +32,7 @@ class TestPyCnab240(unittest.TestCase):
         self.file.close_file()
         self.assertEqual(1, self.file.lots[0].trailer.quantidade_registros)
         self.assertEqual(3, self.file.trailer.totais_quantidade_lotes)
-        self.assertEqual(7, self.file.trailer.totais_quantidade_registros)
+        self.assertEqual(5, self.file.trailer.totais_quantidade_registros)
 
     def test_str(self):
         self.file.close_file()
