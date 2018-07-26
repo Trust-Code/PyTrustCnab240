@@ -159,7 +159,7 @@
             "nome": "favorecido_emissao_aviso",
             "posicao_inicio": 226,
             "posicao_fim": 226,
-            "formato": "alfa"
+            "formato": "num"
         },
         "24.3B": {
             "nome": "vazio2",
