@@ -224,7 +224,7 @@ class File(object):
             self.trailer.totais_quantidade_registros = self.get_total_records()
 
     def get_total_lots(self):
-        return len(self._lots)
+        return len(self._lots) + 2
 
     def get_total_records(self):
         total = sum(lot.get_records_lot() for lot in self._lots) + 2
