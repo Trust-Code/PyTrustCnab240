@@ -180,7 +180,7 @@ class BaseRecord(object):
                 try:
                     field.value = int(value)
                 except ValueError:
-                    raise errors.TipoError(field, value)
+                    raise errors.TypeError(field, value)
             else:
                 field.value = value
 
