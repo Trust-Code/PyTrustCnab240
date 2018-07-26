@@ -1,0 +1,118 @@
+{
+    "nome": "SegmentoJ52",
+    "campos": {
+        "01.4J52": {
+            "nome": "controle_banco",
+            "posicao_inicio": 1,
+            "posicao_fim": 3,
+            "formato": "num",
+            "default": 237
+        },
+        "02.4J52": {
+            "nome": "controle_lote",
+            "posicao_inicio": 4,
+            "posicao_fim": 7,
+            "formato": "num"
+        },
+        "03.4J52": {
+            "nome": "controle_registro",
+            "posicao_inicio": 8,
+            "posicao_fim": 8,
+            "formato": "num",
+            "default": 3
+        },
+        "04.4J52": {
+            "nome": "sequencial_registro_lote",
+            "posicao_inicio": 9,
+            "posicao_fim": 13,
+            "formato": "num"
+        },
+        "05.4J52": {
+            "nome": "servico_segmento",
+            "posicao_inicio": 14,
+            "posicao_fim": 14,
+            "formato": "alfa",
+            "default": "J"
+        },
+        "06.4J52": {
+            "nome": "vazio1",
+            "posicao_inicio": 15,
+            "posicao_fim": 15,
+            "formato": "alfa",
+            "default": ""
+        },
+        "07.4J52": {
+            "nome": "codigo_remessa_movimento",
+            "posicao_inicio": 16,
+            "posicao_fim": 17,
+            "formato": "num"
+        },
+        "08.4J52": {
+            "nome": "identificacao_registro",
+            "posicao_inicio": 18,
+            "posicao_fim": 19,
+            "formato": "num",
+            "default": 52
+        },
+        "09.4J52": {
+            "nome": "favorecido_inscricao_tipo",
+            "posicao_inicio": 20,
+            "posicao_fim": 20,
+            "formato": "num"
+        },
+        "10.4J52": {
+            "nome": "favorecido_inscricao_numero",
+            "posicao_inicio": 21,
+            "posicao_fim": 35,
+            "formato": "num"
+        },
+        "11.4J52": {
+            "nome": "favorecido_nome",
+            "posicao_inicio": 36,
+            "posicao_fim": 75,
+            "formato": "alfa"
+        },
+        "12.4J52": {
+            "nome": "cedente_inscricao_tipo",
+            "posicao_inicio": 76,
+            "posicao_fim": 76,
+            "formato": "num"
+        },
+        "13.4J52": {
+            "nome": "cedente_inscricao_numero",
+            "posicao_inicio": 77,
+            "posicao_fim": 91,
+            "formato": "num"
+        },
+        "14.4J52": {
+            "nome": "cedente_nome",
+            "posicao_inicio": 92,
+            "posicao_fim": 131,
+            "formato": "num"
+        },
+        "15.4J52": {
+            "nome": "sacador_inscricao_tipo",
+            "posicao_inicio": 132,
+            "posicao_fim": 132,
+            "formato": "num"
+        },
+        "16.4J52": {
+            "nome": "sacador_inscricao_numero",
+            "posicao_inicio": 133,
+            "posicao_fim": 147,
+            "formato": "num"
+        },
+        "17.4J52": {
+            "nome": "sacador_nome",
+            "posicao_inicio": 148,
+            "posicao_fim": 187,
+            "formato": "alfa"
+        },
+        "18.4J52": {
+            "nome": "vazio2",
+            "posicao_inicio": 188,
+            "posicao_fim": 240,
+            "formato": "alfa"
+        }
+    }
+}

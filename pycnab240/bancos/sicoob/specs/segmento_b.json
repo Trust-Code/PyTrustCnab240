@@ -6,7 +6,7 @@
             "posicao_inicio": 1,
             "posicao_fim": 3,
             "formato": "num",
-            "default": 33
+            "default": 756
         },
         "02.3B": {
             "nome": "controle_lote",
@@ -149,36 +149,31 @@
             "default": 0
         },
         "22.3B": {
-            "nome": "hora_envio_ted",
+            "nome": "favorecido_doc_numero",
             "posicao_inicio": 211,
-            "posicao_fim": 214,
+            "posicao_fim": 225,
             "formato": "num",
             "default": 0
         },
         "23.3B": {
-            "nome": "vazio2",
-            "posicao_inicio": 215,
-            "posicao_fim": 225,
-            "formato": "alfa",
-            "default": ""
-        },
-        "24.3B": {
-            "nome": "codigo_historico_credito",
+            "nome": "favorecido_emissao_aviso",
             "posicao_inicio": 226,
-            "posicao_fim": 229,
+            "posicao_fim": 226,
             "formato": "num"
         },
-        "25.3B": {
-            "nome": "favorecido_emissao_aviso",
-            "posicao_inicio": 230,
-            "posicao_fim": 230,
-            "formato": "alfa"
+        "24.3B": {
+            "nome": "vazio2",
+            "posicao_inicio": 227,
+            "posicao_fim": 232,
+            "formato": "num",
+            "default": 0
         },
         "26.3B": {
-            "nome": "ocorrencias_retorno",
-            "posicao_inicio": 231,
+            "nome": "vazio3",
+            "posicao_inicio": 233,
             "posicao_fim": 240,
-            "formato": "alfa"
+            "formato": "alfa",
+            "default": ""
         }
     }
 }

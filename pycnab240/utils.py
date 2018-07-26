@@ -1,24 +1,32 @@
+from pycnab240 import bancos
 FORMA_DE_LANCAMENTO = {
     'santander': {
-        0: '01',  # Credito em conta corrente
-        1: '03',  # Transferencias para outros bancos
-        2: '05',  # Credito em conta poupanca
-        3: '10',  # Ordem de pagamento / recibo
-        4: '11',  # Pagamento de contas com codigo de barras
-        5: '16',  # DARF Normal
-        6: '17',  # GPS - Guia de previdencia social
-        7: '18',  # DARF Simples
-        8: '20',  # Caixa "Autenticacao"
-        9: '22',  # GARE SP ICMS
-        10: '23',  # GARE SP DR
-        11: '24',  # GARE SP ITCMD
-        12: '25',  # IPVA SP
-        13: '26',  # LICENCIAMENTO SP
-        14: '27',  # DPVAT SP
-        15: '30',  # Liquidacao de titulos em carteira de cobranca proprio
-                   # Santander Banespa
-        16: '31',  # Liquidacao de titulos outros Bancos
+        '01': '03',  # Transferências para outros bancos (DOC, TED)
+        '02': '03',  # Transferências para outros bancos (DOC, TED)
+        '03': '11',  # Pagamento de Títulos
+        '04': '11',  # Tributos com código de barras
+        '05': '17',  # GPS - Guia de previdencia Social
+        '06': '16',  # DARF Normal
+        '07': '18',  # DARF Simples
+        '08': '11',  # FGTS
     },
+    'sicoob': {  # TODO: add esquema para quando doc e ted são
+                # para a mesma titularidade e tributos são do mesmo banco
+                '01': '41',  # Transferências para outros bancos (TED)
+                '02': '03',  # Transferências para outros bancos (DOC)
+                '03': '31',  # Pagamento de Títulos
+                '04': '11',  # Tributos com código de barras
+                '05': '17',  # GPS - Guia de previdencia Social
+                '06': '16',  # DARF Normal
+                '07': '18',  # DARF Simples
+                '08': '11',  # FGTS
+    },
+}
+BANK = {
+    '756': bancos.sicoob,
+    '033': bancos.santander,
+    # '641': bancos.itau,
+    '237': bancos.bradesco
 }
 TIPO_DE_SERVICO = {
     'santander': {
@@ -52,6 +60,14 @@ def get_tipo_de_servico(bank_name, code):
         value = TIPO_DE_SERVICO[bank_name][code]
     except KeyError:
         parse_keyerror(TIPO_DE_SERVICO, bank_name, code)
+    return value
+
+
+def get_bank(bank_code):
+    try:
+        value = BANK[bank_code]
+    except KeyError:
+        parse_keyerror(BANK, bank_code)
     return value
 
 

@@ -6,7 +6,7 @@
             "posicao_inicio": 1,
             "posicao_fim": 3,
             "formato": "num",
-            "default": 33
+            "default": 237
         },
         "02.3N": {
             "nome": "controle_lote",
@@ -56,7 +56,7 @@
             "nome": "numero_documento_banco",
             "posicao_inicio": 38,
             "posicao_fim": 57,
-            "formato": "num"
+            "formato": "alfa"
         },
         "10.3N": {
             "nome": "contribuinte_nome",
@@ -103,7 +103,7 @@
         },
         "17.3N": {
             "nome": "informacoes_complementares",
-            "posicao_inicio": 133,
+            "posicao_inicio": 111,
             "posicao_fim": 230,
             "subsegmentos": [
                 {
@@ -305,157 +305,6 @@
                         "09.3N4": {
                             "nome": "vazio1n4",
                             "posicao_inicio": 230,
-                            "posicao_fim": 230,
-                            "formato": "alfa",
-                            "default": ""
-                        }
-                    }
-                },
-                {
-                    "nome": "IPVA",
-                    "campos": {
-                        "01.3N5": {
-                            "nome": "ano_base_exercicio",
-                            "posicao_inicio": 135,
-                            "posicao_fim": 138,
-                            "formato": "num"
-                        },
-                        "02.3N5": {
-                            "nome": "codigo_renavam",
-                            "posicao_inicio": 139,
-                            "posicao_fim": 147,
-                            "formato": "num"
-                        },
-                        "03.3N5": {
-                            "nome": "unidade_federacao",
-                            "posicao_inicio": 148,
-                            "posicao_fim": 149,
-                            "formato": "num"
-                        },
-                        "04.3N5": {
-                            "nome": "codigo_municipio",
-                            "posicao_inicio": 150,
-                            "posicao_fim": 154,
-                            "formato": "num"
-                        },
-                        "05.3N5": {
-                            "nome": "placa_veiculo",
-                            "posicao_inicio": 155,
-                            "posicao_fim": 161,
-                            "formato": "alfa"
-                        },
-                        "06.3N5": {
-                            "nome": "opcao_pagamento",
-                            "posicao_inicio": 162,
-                            "posicao_fim": 162,
-                            "formato": "alfa"
-                        },
-                        "07.3N5": {
-                            "nome": "vazio1n5",
-                            "posicao_inicio": 163,
-                            "posicao_fim": 230,
-                            "formato": "alfa",
-                            "default": ""
-                        }
-                    }
-                },
-                {
-                    "nome": "DPVAT",
-                    "campos": {
-                        "01.3N6": {
-                            "nome": "ano_base_exercicio",
-                            "posicao_inicio": 135,
-                            "posicao_fim": 138,
-                            "formato": "num"
-                        },
-                        "02.3N6": {
-                            "nome": "codigo_renavam",
-                            "posicao_inicio": 139,
-                            "posicao_fim": 147,
-                            "formato": "num"
-                        },
-                        "03.3N6": {
-                            "nome": "unidade_federacao",
-                            "posicao_inicio": 148,
-                            "posicao_fim": 149,
-                            "formato": "num"
-                        },
-                        "04.3N6": {
-                            "nome": "codigo_municipio",
-                            "posicao_inicio": 150,
-                            "posicao_fim": 154,
-                            "formato": "num"
-                        },
-                        "05.3N6": {
-                            "nome": "placa_veiculo",
-                            "posicao_inicio": 155,
-                            "posicao_fim": 161,
-                            "formato": "alfa"
-                        },
-                        "06.3N6": {
-                            "nome": "opcao_pagamento",
-                            "posicao_inicio": 162,
-                            "posicao_fim": 162,
-                            "formato": "alfa",
-                            "default": ""
-                        },
-                        "07.3N6": {
-                            "nome": "vazio1n6",
-                            "posicao_inicio": 163,
-                            "posicao_fim": 230,
-                            "formato": "alfa",
-                            "default": ""
-                        }
-                    }
-                },
-                {
-                    "nome": "Licenciamento",
-                    "campos": {
-                        "01.3N7": {
-                            "nome": "ano_base_exercicio",
-                            "posicao_inicio": 135,
-                            "posicao_fim": 138,
-                            "formato": "num"
-                        },
-                        "02.3N7": {
-                            "nome": "codigo_renavam",
-                            "posicao_inicio": 139,
-                            "posicao_fim": 147,
-                            "formato": "num"
-                        },
-                        "03.3N7": {
-                            "nome": "unidade_federacao",
-                            "posicao_inicio": 148,
-                            "posicao_fim": 149,
-                            "formato": "num"
-                        },
-                        "04.3N7": {
-                            "nome": "codigo_municipio",
-                            "posicao_inicio": 150,
-                            "posicao_fim": 154,
-                            "formato": "num"
-                        },
-                        "05.3N7": {
-                            "nome": "placa_veiculo",
-                            "posicao_inicio": 155,
-                            "posicao_fim": 161,
-                            "formato": "alfa"
-                        },
-                        "06.3N7": {
-                            "nome": "opcao_pagamento",
-                            "posicao_inicio": 162,
-                            "posicao_fim": 162,
-                            "formato": "alfa"
-                        },
-                        "07.3N7": {
-                            "nome": "opcao_retirada_crlv",
-                            "posicao_inicio": 163,
-                            "posicao_fim": 163,
-                            "formato": "alfa"
-                        },
-                        "08.3N7": {
-                            "nome": "vazio1n7",
-                            "posicao_inicio": 164,
                             "posicao_fim": 230,
                             "formato": "alfa",
                             "default": ""

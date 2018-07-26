@@ -1,0 +1,197 @@
+{
+    "nome": "SegmentoA",
+    "campos": {
+        "01.3A": {
+            "nome": "controle_banco",
+            "posicao_inicio": 1,
+            "posicao_fim": 3,
+            "formato": "num",
+            "default": 237
+        },
+        "02.3A": {
+            "nome": "controle_lote",
+            "posicao_inicio": 4,
+            "posicao_fim": 7,
+            "formato": "num"
+        },
+        "03.3A": {
+            "nome": "controle_registro",
+            "posicao_inicio": 8,
+            "posicao_fim": 8,
+            "formato": "num",
+            "default": 3
+        },
+        "04.3A": {
+            "nome": "sequencial_registro_lote",
+            "posicao_inicio": 9,
+            "posicao_fim": 13,
+            "formato": "num"
+        },
+        "05.3A": {
+            "nome": "servico_segmento",
+            "posicao_inicio": 14,
+            "posicao_fim": 14,
+            "formato": "alfa",
+            "default": "A"
+        },
+        "06.3A": {
+            "nome": "tipo_movimento",
+            "posicao_inicio": 15,
+            "posicao_fim": 15,
+            "formato": "num"
+        },
+        "07.3A": {
+            "nome": "codigo_instrucao_movimento",
+            "posicao_inicio": 16,
+            "posicao_fim": 17,
+            "formato": "num"
+        },
+        "08.3A": {
+            "nome": "codigo_camara_compensacao",
+            "posicao_inicio": 18,
+            "posicao_fim": 20,
+            "formato": "num"
+        },
+        "09.3A": {
+            "nome": "favorecido_banco",
+            "posicao_inicio": 21,
+            "posicao_fim": 23,
+            "formato": "num",
+            "obrigatorio": 1
+        },
+        "10.3A": {
+            "nome": "favorecido_agencia",
+            "posicao_inicio": 24,
+            "posicao_fim": 28,
+            "formato": "num"
+        },
+        "11.3A": {
+            "nome": "favorecido_agencia_dv",
+            "posicao_inicio": 29,
+            "posicao_fim": 29,
+            "formato": "alfa",
+            "default": ""
+        },
+        "12.3A": {
+            "nome": "favorecido_conta",
+            "posicao_inicio": 30,
+            "posicao_fim": 41,
+            "formato": "num"
+        },
+        "13.3A": {
+            "nome": "favorecido_conta_dv",
+            "posicao_inicio": 42,
+            "posicao_fim": 42,
+            "formato": "num"
+        },
+        "14.3A": {
+            "nome": "favorecido_agencia_conta_dv",
+            "posicao_inicio": 43,
+            "posicao_fim": 43,
+            "formato": "alfa"
+        },
+        "15.3A": {
+            "nome": "favorecido_nome",
+            "posicao_inicio": 44,
+            "posicao_fim": 73,
+            "formato": "alfa",
+            "obrigatorio": 1
+        },
+        "16.3A": {
+            "nome": "numero_documento_cliente",
+            "posicao_inicio": 74,
+            "posicao_fim": 93,
+            "formato": "alfa"
+        },
+        "17.3A": {
+            "nome": "data_pagamento",
+            "posicao_inicio": 94,
+            "posicao_fim": 101,
+            "formato": "num"
+        },
+        "18.3A": {
+            "nome": "tipo_moeda",
+            "posicao_inicio": 102,
+            "posicao_fim": 104,
+            "formato": "alfa",
+            "default": "BRL"
+        },
+        "19.3A": {
+            "nome": "vazio1",
+            "posicao_inicio": 105,
+            "posicao_fim": 119,
+            "formato": "num",
+            "decimais": 5,
+            "default": 0
+        },
+        "20.3A": {
+            "nome": "valor_pagamento",
+            "posicao_inicio": 120,
+            "posicao_fim": 134,
+            "formato": "num",
+            "decimais": 2
+        },
+        "21.3A": {
+            "nome": "numero_documento_banco",
+            "posicao_inicio": 135,
+            "posicao_fim": 154,
+            "formato": "alfa"
+        },
+        "22.3A": {
+            "nome": "data_real_pagamento",
+            "posicao_inicio": 155,
+            "posicao_fim": 162,
+            "formato": "num"
+        },
+        "23.3A": {
+            "nome": "valor_real_pagamento",
+            "posicao_inicio": 163,
+            "posicao_fim": 177,
+            "formato": "num",
+            "decimais": 2
+        },
+        "24.3A": {
+            "nome": "mensagem2",
+            "posicao_inicio": 178,
+            "posicao_fim": 217,
+            "formato": "alfa"
+        },
+        "25.3A": {
+            "nome": "complemento_servico",
+            "posicao_inicio": 218,
+            "posicao_fim": 219,
+            "formato": "alfa"
+        },
+        "26.3A": {
+            "nome": "finalidade_ted",
+            "posicao_inicio": 220,
+            "posicao_fim": 224,
+            "formato": "alfa"
+        },
+        "27.3A": {
+            "nome": "finalidade_pagamento",
+            "posicao_inicio": 225,
+            "posicao_fim": 226,
+            "formato": "alfa"
+        },
+        "28.3A": {
+            "nome": "vazio2",
+            "posicao_inicio": 227,
+            "posicao_fim": 229,
+            "formato": "alfa",
+            "default": ""
+        },
+        "29.3A":{
+            "nome": "favorecido_emissao_aviso",
+            "posicao_inicio": 230,
+            "posicao_fim": 230,
+            "formato": "num"
+        },
+        "30.3A": {
+            "nome": "ocorrencias_retorno",
+            "posicao_inicio": 231,
+            "posicao_fim": 240,
+            "formato": "alfa"
+        }
+    }
+}

@@ -1,0 +1,125 @@
+{
+    "nome": "SegmentoW",
+    "campos": {
+        "01.3W": {
+            "nome": "controle_banco",
+            "posicao_inicio": 1,
+            "posicao_fim": 3,
+            "formato": "num",
+            "default": 237
+        },
+        "02.3W": {
+            "nome": "controle_lote",
+            "posicao_inicio": 4,
+            "posicao_fim": 7,
+            "formato": "num",
+            "default": 0
+        },
+        "03.3W": {
+            "nome": "controle_registro",
+            "posicao_inicio": 8,
+            "posicao_fim": 8,
+            "formato": "num",
+            "default": 3
+        },
+        "04.3W": {
+            "nome": "sequencial_registro_lote",
+            "posicao_inicio": 9,
+            "posicao_fim": 13,
+            "formato": "num",
+            "default": 0
+        },
+        "05.3W": {
+            "nome": "servico_segmento",
+            "posicao_inicio": 14,
+            "posicao_fim": 14,
+            "formato": "alfa",
+            "default": "W"
+        },
+        "06.3W": {
+            "nome": "numero_seq_registro_complementar",
+            "posicao_inicio": 15,
+            "posicao_fim": 15,
+            "formato": "num"
+        },
+        "07.3W": {
+            "nome": "identifica_info_1_2",
+            "posicao_inicio": 16,
+            "posicao_fim": 16,
+            "formato": "alfa"
+        },
+        "08.3W": {
+            "nome": "info_1",
+            "posicao_inicio": 17,
+            "posicao_fim": 96,
+            "formato": "alfa"
+        },
+        "09.3W": {
+            "nome": "info_2",
+            "posicao_inicio": 97,
+            "posicao_fim": 176,
+            "formato": "alfa"
+        },
+        "10.3W": {
+            "nome": "identificador_tributo",
+            "posicao_inicio": 177,
+            "posicao_fim": 178,
+            "formato": "alfa"
+        },
+        "11.3W": {
+            "nome": "codigo_receita_tributo",
+            "posicao_inicio": 179,
+            "posicao_fim": 184,
+            "formato": "alfa"
+        },
+        "12.3W": {
+            "nome": "tipo_identificacao_contribuinte",
+            "posicao_inicio": 185,
+            "posicao_fim": 186,
+            "formato": "alfa"
+        },
+        "13.3W": {
+            "nome": "identificacao_contribuinte",
+            "posicao_inicio": 187,
+            "posicao_fim": 200,
+            "formato": "alfa"
+        },
+        "14.3W": {
+            "nome": "identificador_fgts",
+            "posicao_inicio": 201,
+            "posicao_fim": 216,
+            "formato": "alfa"
+        },
+        "15.3W": {
+            "nome": "lacre_conectividade_social",
+            "posicao_inicio": 217,
+            "posicao_fim": 225,
+            "formato": "alfa"
+        },
+        "16.3W": {
+            "nome": "lacre_conectividade_social_dv",
+            "posicao_inicio": 226,
+            "posicao_fim": 227,
+            "formato": "alfa"
+        },
+        "17.3W": {
+            "nome": "vazio1",
+            "posicao_inicio": 228,
+            "posicao_fim": 228,
+            "formato": "alfa"
+        },
+        "18.3W": {
+            "nome": "vazio2",
+            "posicao_inicio": 229,
+            "posicao_fim": 230,
+            "formato": "alfa",
+            "default": ""
+        },
+        "19.3W": {
+            "nome": "ocorrencias_retorno",
+            "posicao_inicio": 231,
+            "posicao_fim": 240,
+            "formato": "alfa"
+        }
+    }
+}

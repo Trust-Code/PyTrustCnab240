@@ -6,7 +6,7 @@
             "posicao_inicio": 1,
             "posicao_fim": 3,
             "formato": "num",
-            "default": 33
+            "default": 237
         },
         "02.3B": {
             "nome": "controle_lote",
@@ -90,25 +90,31 @@
         "14.3B": {
             "nome": "favorecido_cep",
             "posicao_inicio": 118,
-            "posicao_fim": 125,
+            "posicao_fim": 122,
             "formato": "num",
             "default": 0
         },
         "15.3B": {
+            "nome": "complemento_cep",
+            "posicao_inicio": 123,
+            "posicao_fim": 125,
+            "formato": "alfa"
+        },
+        "16.3B": {
             "nome": "favorecido_uf",
             "posicao_inicio": 126,
             "posicao_fim": 127,
             "formato": "alfa",
             "default": ""
         },
-        "16.3B": {
+        "17.3B": {
             "nome": "data_vencimento",
             "posicao_inicio": 128,
             "posicao_fim": 135,
             "formato": "num",
             "default": 0
         },
-        "17.3B": {
+        "18.3B": {
             "nome": "valor_documento",
             "posicao_inicio": 136,
             "posicao_fim": 150,
@@ -116,7 +122,7 @@
             "decimais": 2,
             "default": 0
         },
-        "18.3B": {
+        "19.3B": {
             "nome": "valor_abatimento",
             "posicao_inicio": 151,
             "posicao_fim": 165,
@@ -124,7 +130,7 @@
             "decimais": 2,
             "default": 0
         },
-        "19.3B": {
+        "20.3B": {
             "nome": "valor_desconto",
             "posicao_inicio": 166,
             "posicao_fim": 180,
@@ -132,7 +138,7 @@
             "decimais": 2,
             "default": 0
         },
-        "20.3B": {
+        "21.3B": {
             "nome": "valor_mora",
             "posicao_inicio": 181,
             "posicao_fim": 195,
@@ -140,7 +146,7 @@
             "decimais": 2,
             "default": 0
         },
-        "21.3B": {
+        "22.3B": {
             "nome": "valor_multa",
             "posicao_inicio": 196,
             "posicao_fim": 210,
@@ -148,37 +154,29 @@
             "decimais": 2,
             "default": 0
         },
-        "22.3B": {
-            "nome": "hora_envio_ted",
-            "posicao_inicio": 211,
-            "posicao_fim": 214,
-            "formato": "num",
-            "default": 0
-        },
         "23.3B": {
-            "nome": "vazio2",
-            "posicao_inicio": 215,
+            "nome": "codigo_doc_favorecido",
+            "posicao_inicio": 211,
             "posicao_fim": 225,
-            "formato": "alfa",
-            "default": ""
+            "formato": "alfa"
         },
         "24.3B": {
-            "nome": "codigo_historico_credito",
+            "nome": "aviso_favorecido",
             "posicao_inicio": 226,
-            "posicao_fim": 229,
+            "posicao_fim": 226,
             "formato": "num"
         },
         "25.3B": {
-            "nome": "favorecido_emissao_aviso",
-            "posicao_inicio": 230,
-            "posicao_fim": 230,
-            "formato": "alfa"
+            "nome": "codigo_camara_compensacao",
+            "posicao_inicio": 227,
+            "posicao_fim": 232,
+            "formato": "num"
         },
         "26.3B": {
-            "nome": "ocorrencias_retorno",
-            "posicao_inicio": 231,
+            "nome": "identificacao_banco",
+            "posicao_inicio": 233,
             "posicao_fim": 240,
-            "formato": "alfa"
+            "formato": "num"
         }
     }
 }

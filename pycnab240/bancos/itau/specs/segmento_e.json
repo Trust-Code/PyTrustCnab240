@@ -1,0 +1,206 @@
+{
+    "nome": "SegmentoE",
+    "campos": {
+        "01.3E": {
+            "nome": "controle_banco",
+            "posicao_inicio": 1,
+            "posicao_fim": 3,
+            "formato": "num",
+            "default": 341
+        },
+        "02.3E": {
+            "nome": "controle_lote",
+            "posicao_inicio": 4,
+            "posicao_fim": 7,
+            "formato": "num"
+        },
+        "03.3E": {
+            "nome": "controle_registro",
+            "posicao_inicio": 8,
+            "posicao_fim": 8,
+            "formato": "num",
+            "default": 3
+        },
+        "04.3E": {
+            "nome": "sequencial_registro_lote",
+            "posicao_inicio": 9,
+            "posicao_fim": 13,
+            "formato": "num"
+        },
+        "05.3E": {
+            "nome": "servico_segmento",
+            "posicao_inicio": 14,
+            "posicao_fim": 14,
+            "formato": "alfa",
+            "default": "E"
+        },
+        "06.3E": {
+            "nome": "vazio1",
+            "posicao_inicio": 15,
+            "posicao_fim": 17,
+            "formato": "alfa"
+        },
+        "07.3E": {
+            "nome": "tipo_movimento",
+            "posicao_inicio": 18,
+            "posicao_fim": 18,
+            "formato": "alfa"
+        },
+        "08.3E": {
+            "nome": "informacoes_complementares",
+            "posicao_inicio": 19,
+            "posicao_fim": 218,
+            "subsegmentos": [
+                {
+                    "nome": "pagamento_salarios",
+                    "campos": {
+                        "01.3E1": {
+                            "nome": "descricao_credito1",
+                            "posicao_inicio": 19,
+                            "posicao_fim": 48,
+                            "formato": "alfa"
+                        },
+                        "02.3E1": {
+                            "nome": "vazio1e1",
+                            "posicao_inicio": 49,
+                            "posicao_fim": 53,
+                            "formato": "alfa"
+                        },
+                        "03.3E1": {
+                            "nome": "valor_credito1",
+                            "posicao_inicio": 54,
+                            "posicao_fim": 68,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "04.3E1": {
+                            "nome": "descricao_credito2",
+                            "posicao_inicio": 69,
+                            "posicao_fim": 98,
+                            "formato": "alfa"
+                        },
+                        "05.3E1": {
+                            "nome": "vazio2e1",
+                            "posicao_inicio": 99,
+                            "posicao_fim": 103,
+                            "formato": "alfa"
+                        },
+                        "06.3E1": {
+                            "nome": "valor_credito2",
+                            "posicao_inicio": 104,
+                            "posicao_fim": 118,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "07.3E1": {
+                            "nome": "descricao_credito3",
+                            "posicao_inicio": 119,
+                            "posicao_fim": 148,
+                            "formato": "alfa"
+                        },
+                        "08.3E1": {
+                            "nome": "vazio3e1",
+                            "posicao_inicio": 149,
+                            "posicao_fim": 153,
+                            "formato": "alfa"
+                        },
+                        "09.3E1": {
+                            "nome": "valor_credito3",
+                            "posicao_inicio": 154,
+                            "posicao_fim": 168,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "10.3E1": {
+                            "nome": "descricao_credito4",
+                            "posicao_inicio": 169,
+                            "posicao_fim": 198,
+                            "formato": "alfa"
+                        },
+                        "11.3E1": {
+                            "nome": "vazio4e1",
+                            "posicao_inicio": 199,
+                            "posicao_fim": 203,
+                            "formato": "alfa"
+                        },
+                        "12.3E1": {
+                            "nome": "valor_credito4",
+                            "posicao_inicio": 204,
+                            "posicao_fim": 218,
+                            "formato": "num",
+                            "decimais": 2
+                        }
+                    }
+                },
+                {
+                    "nome": "informe_rendimentos",
+                    "campos": {
+                        "01.3E2": {
+                            "nome": "descricao_ir",
+                            "posicao_inicio": 19,
+                            "posicao_fim": 68,
+                            "formato": "alfa"
+                        },
+                        "02.3E2": {
+                            "nome": "valor_ir1",
+                            "posicao_inicio": 69,
+                            "posicao_fim": 83,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "03.3E2": {
+                            "nome": "descricao_ir2",
+                            "posicao_inicio": 84,
+                            "posicao_fim": 133,
+                            "formato": "alfa"
+                        },
+                        "04.3E2": {
+                            "nome": "valor_ir2",
+                            "posicao_inicio": 134,
+                            "posicao_fim": 148,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "05.3E2": {
+                            "nome": "descricao_ir3",
+                            "posicao_inicio": 149,
+                            "posicao_fim": 198,
+                            "formato": "alfa"
+                        },
+                        "06.3E2": {
+                            "nome": "valor_ir3",
+                            "posicao_inicio": 199,
+                            "posicao_fim": 213,
+                            "formato": "num",
+                            "decimais": 2
+                        },
+                        "07.3E2": {
+                            "nome": "ano_base",
+                            "posicao_inicio": 214,
+                            "posicao_fim": 217,
+                            "formato": "num"
+                        },
+                        "08.3E2": {
+                            "nome": "vazio1e2",
+                            "posicao_inicio": 218,
+                            "posicao_fim": 218,
+                            "formato": "alfa"
+                        }
+                    }
+                }
+            ]
+        },
+        "09.3E": {
+            "nome": "vazio2",
+            "posicao_inicio": 219,
+            "posicao_fim": 230,
+            "formato": "alfa"
+        },
+        "10.3E": {
+            "nome": "ocorrencias_retorno",
+            "posicao_inicio": 231,
+            "posicao_fim": 240,
+            "formato": "alfa"
+        }
+    }
+}
