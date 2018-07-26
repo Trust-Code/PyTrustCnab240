@@ -30,7 +30,7 @@ class TestPyCnab240(unittest.TestCase):
 
     def test_close_file(self):
         self.file.close_file()
-        self.assertEqual(1, self.file.lots[0].trailer.quantidade_registros)
+        self.assertEqual(3, self.file.lots[0].trailer.quantidade_registros)
         self.assertEqual(1, self.file.trailer.totais_quantidade_lotes)
         self.assertEqual(5, self.file.trailer.totais_quantidade_registros)
 

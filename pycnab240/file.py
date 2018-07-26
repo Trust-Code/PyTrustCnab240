@@ -147,7 +147,7 @@ class Lot(object):
             event.close_event()
 
     def get_records_lot(self):
-        return sum(len(event) for event in self._events)
+        return sum(len(event) for event in self._events) + 2
 
     def __str__(self):
         if not self._events:
@@ -227,9 +227,7 @@ class File(object):
         return len(self._lots)
 
     def get_total_records(self):
-        total = 2
-        for lot in self._lots:
-            total += 2 + len(lot.events)
+        total = sum(lot.get_records_lot() for lot in self._lots) + 2
         return total
 
     def __str__(self):
