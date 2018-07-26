@@ -38,8 +38,7 @@
             "nome": "forma_lancamento",
             "posicao_inicio": 12,
             "posicao_fim": 13,
-            "formato": "num",
-            "default": ""
+            "formato": "num"
         },
         "07.1": {
             "nome": "numero_versao_lote",
