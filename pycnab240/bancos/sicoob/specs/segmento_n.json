@@ -230,7 +230,8 @@
                             "nome": "valor_multa",
                             "posicao_inicio": 180,
                             "posicao_fim": 194,
-                            "formato": "num"
+                            "formato": "num",
+                            "decimais": 2
                         },
                         "06.3N3": {
                             "nome": "valor_juros_encargos",
