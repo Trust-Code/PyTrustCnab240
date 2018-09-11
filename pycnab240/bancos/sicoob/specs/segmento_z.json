@@ -1,84 +1,61 @@
 {
-    "nome": "SegmentoW",
+    "nome": "SegmentoZ",
     "campos": {
-        "01.3W": {
+        "01.3Z": {
             "nome": "controle_banco",
             "posicao_inicio": 1,
             "posicao_fim": 3,
             "formato": "num",
             "default": 756
         },
-        "02.3W": {
+        "02.3Z": {
             "nome": "controle_lote",
             "posicao_inicio": 4,
             "posicao_fim": 7,
             "formato": "num",
             "default": 0
         },
-        "03.3W": {
+        "03.3Z": {
             "nome": "controle_registro",
             "posicao_inicio": 8,
             "posicao_fim": 8,
             "formato": "num",
             "default": 3
         },
-        "04.3W": {
+        "04.3Z": {
             "nome": "sequencial_registro_lote",
             "posicao_inicio": 9,
             "posicao_fim": 13,
             "formato": "num",
             "default": 0
         },
-        "05.3W": {
+        "05.3Z": {
             "nome": "servico_segmento",
             "posicao_inicio": 14,
             "posicao_fim": 14,
             "formato": "alfa",
-            "default": "W"
+            "default": "Z"
         },
-        "06.3W": {
-            "nome": "numero_seq_registro_complementar",
+        "06.3Z": {
+            "nome": "autenticacao_pagamento",
             "posicao_inicio": 15,
-            "posicao_fim": 15,
-            "formato": "num"
-        },
-        "07.3W": {
-            "nome": "identifica_info_1_2",
-            "posicao_inicio": 16,
-            "posicao_fim": 16,
-            "formato": "num"
-        },
-        "08.3W": {
-            "nome": "info_1",
-            "posicao_inicio": 17,
-            "posicao_fim": 96,
+            "posicao_fim": 78,
             "formato": "alfa"
         },
-        "09.3W": {
-            "nome": "info_2",
-            "posicao_inicio": 97,
-            "posicao_fim": 176,
+        "07.3Z": {
+            "nome": "protocolo_pagamento",
+            "posicao_inicio": 79,
+            "posicao_fim": 103,
             "formato": "alfa"
         },
-        "10.3W": {
-            "nome": "identificador_tributo",
-            "posicao_inicio": 177,
-            "posicao_fim": 178,
-            "formato": "alfa"
-        },
-        "11.3W": {
-            "nome": "info_complementar_tributo",
-            "posicao_inicio": 179,
-            "posicao_fim": 228,
-            "formato": "alfa"
-        },
-        "12.3W": {
+        "08.3Z": {
             "nome": "vazio1",
-            "posicao_inicio": 229,
+            "posicao_inicio": 104,
             "posicao_fim": 230,
-            "formato": "alfa"
+            "formato": "alfa",
+            "default": ""
         },
-        "13.3W": {
+        "09.3Z": {
             "nome": "ocorrencias_retorno",
             "posicao_inicio": 231,
             "posicao_fim": 240,

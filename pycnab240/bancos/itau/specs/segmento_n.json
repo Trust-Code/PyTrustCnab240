@@ -693,7 +693,7 @@
                             "formato": "num"
                         },
                         "05.3N7": {
-                            "nome": "codigo_de_barras",
+                            "nome": "codigo_de_barras_alfa",
                             "posicao_inicio": 39,
                             "posicao_fim": 86,
                             "formato": "alfa"

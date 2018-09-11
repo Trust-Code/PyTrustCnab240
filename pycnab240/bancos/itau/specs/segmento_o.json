@@ -43,7 +43,7 @@
             "formato": "num"
         },
         "07.3O": {
-            "nome": "codigo_de_barras",
+            "nome": "codigo_de_barras_alfa",
             "posicao_inicio": 18,
             "posicao_fim": 65,
             "formato": "alfa"
