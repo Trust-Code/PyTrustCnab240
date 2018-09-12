@@ -9,6 +9,7 @@ FORMA_DE_LANCAMENTO = {
         '06': '16',  # DARF Normal
         '07': '18',  # DARF Simples
         '08': '11',  # FGTS
+        '09': '22',  # ICMS
     },
     'sicoob': {  # TODO: add esquema para quando doc e ted são
                 # para a mesma titularidade e tributos são do mesmo banco
