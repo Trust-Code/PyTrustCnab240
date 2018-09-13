@@ -45,6 +45,25 @@ TIPO_DE_SERVICO = {
         12: '98',  # Pagamentos Diversos
     }
 }
+SUBSEGMENTS = {
+    '033': {
+        'SegmentoN': {
+            '16': 'SegmentoN_DarfNormal',
+            '17': 'SegmentoN_GPS',
+            '18': 'SegmentoN_DarfSimples',
+            '22': 'SegmentoN_GareSP',
+            '23': 'SegmentoN_GareSP',
+            '24': 'SegmentoN_GareSP',
+        }
+    },
+    '756': {
+        'SegmentoN': {
+            '16': 'SegmentoN_DarfNormal',
+            '17': 'SegmentoN_GPS',
+            '18': 'SegmentoN_DarfSimples',
+        }
+    }
+}
 
 
 def get_forma_de_lancamento(bank_name, code):
@@ -76,3 +95,12 @@ def parse_keyerror(dic, bank_name, code):
     if not dic.get(bank_name):
         message, value = 'Bank', bank_name
     raise KeyError("{} {} not found!".format(message, value))
+
+
+def get_subsegments_from_line(segment_name, line):
+    if segment_name == 'SegmentoN':
+        return get_subsegments(line[0:3], segment_name, line[132:134])
+
+
+def get_subsegments(bank_code, segment_name, code):
+    return SUBSEGMENTS.get(bank_code, {}).get(segment_name, {}).get(code)

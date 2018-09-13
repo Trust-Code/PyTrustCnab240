@@ -3,6 +3,7 @@
 import codecs
 from pycnab240 import errors
 from io import IOBase
+from . import utils
 
 
 RECORD_NAMES = {
@@ -249,7 +250,7 @@ class File(object):
             return TypeError("Wrong file type")
         for line in file_:
             record_name = self.get_record_name(line)
-            segment = self.bank.records[record_name]()
+            segment = self.get_record(record_name, line)()
             segment.load_line(string=line)
             if record_name == 'HeaderArquivo':
                 self.header = segment
@@ -266,3 +267,21 @@ class File(object):
             return RECORD_NAMES[record_code][line[13]]
         else:
             return RECORD_NAMES[record_code]
+
+    def get_record(self, record_name, line):
+        if record_name in dir(self.bank.records):
+            return self.bank.records[record_name]
+
+        segments = list(filter(lambda x: x.startswith(record_name),
+                        dir(self.bank.records)))
+
+        if len(segments) == 1:
+            return self.bank.records[segments[0]]
+
+        elif len(segments) > 1:
+            return self.bank.records[
+                utils.get_subsegments_from_line(
+                    segment_name=record_name,
+                    line=line)]
+        raise KeyError("Can't find segment %s for bank %s" % (
+            record_name, line[0:3]))
