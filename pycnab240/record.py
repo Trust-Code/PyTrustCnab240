@@ -199,6 +199,8 @@ class Records(object):
                 setattr(self, spec.get('nome'), self.create_record_class(spec))
 
     def __getitem__(self, key):
+        if not key:
+            raise Exception('Key should not be false')
         return getattr(self, key)
 
     def create_specs_from_subsegments(self, spec):
