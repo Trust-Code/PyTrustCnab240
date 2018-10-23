@@ -25,7 +25,7 @@ FORMA_DE_LANCAMENTO = {
 BANK = {
     '756': bancos.sicoob,
     '033': bancos.santander,
-    # '641': bancos.itau,
+    '341': bancos.itau,
     '237': bancos.bradesco
 }
 TIPO_DE_SERVICO = {
@@ -98,9 +98,14 @@ def parse_keyerror(dic, bank_name, code):
 
 
 def get_subsegments_from_line(segment_name, line):
-    if segment_name == 'SegmentoN':
-        return get_subsegments(line[0:3], segment_name, line[132:134])
+    return get_subsegments(line[0:3], segment_name, line[132:134])
 
 
 def get_subsegments(bank_code, segment_name, code):
-    return SUBSEGMENTS.get(bank_code, {}).get(segment_name, {}).get(code)
+    if not SUBSEGMENTS.get(bank_code):
+        raise KeyError("{}: bank code not found!".format(bank_code))
+    if not SUBSEGMENTS[bank_code].get(segment_name):
+        raise KeyError("{}: segment not found!".format(segment_name))
+    if not SUBSEGMENTS[bank_code][segment_name].get(code):
+        raise KeyError("{}: segment code not found!".format(code))
+    return SUBSEGMENTS[bank_code][segment_name][code]

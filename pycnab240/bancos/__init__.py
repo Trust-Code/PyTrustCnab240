@@ -2,6 +2,7 @@ import os
 import importlib
 
 from pycnab240.record import Records
+from pycnab240.errors import Cnab240Error
 
 
 cwd = os.path.abspath(os.path.dirname(__file__))
