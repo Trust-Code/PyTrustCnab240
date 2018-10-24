@@ -21,11 +21,18 @@ FORMA_DE_LANCAMENTO = {
                 '07': '18',  # DARF Simples
                 '08': '11',  # FGTS
     },
+    'itau': {
+        '01': '41',  # 'Transferência (TED - outro titular)'
+        '02': '03',  # 'Transferência (DOC "C")'
+        '09': '01',  # 'Credito em CC do itau')'
+        '98': '17',  # 'Transferência (TED - mesmo titular)'
+        '99': '07',  # 'Transferência (DOC "D")'
+    },  # os dois ultimos sao numeros ficticios para lidar depois
 }
 BANK = {
     '756': bancos.sicoob,
     '033': bancos.santander,
-    # '641': bancos.itau,
+    '341': bancos.itau,
     '237': bancos.bradesco
 }
 TIPO_DE_SERVICO = {
