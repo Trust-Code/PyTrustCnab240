@@ -53,7 +53,7 @@
             "formato": "num"
         },
         "09.3J": {
-            "nome": "cedente_nome",
+            "nome": "favorecido_nome",
             "posicao_inicio": 62,
             "posicao_fim": 91,
             "formato": "alfa"

@@ -73,13 +73,13 @@
             "formato": "alfa"
         },
         "12.3W": {
-            "nome": "tipo_identificacao_contribuinte",
+            "nome": "tipo_identificacao_contribuinte_alfa",
             "posicao_inicio": 185,
             "posicao_fim": 186,
             "formato": "alfa"
         },
         "13.3W": {
-            "nome": "identificacao_contribuinte",
+            "nome": "identificacao_contribuinte_alfa",
             "posicao_inicio": 187,
             "posicao_fim": 200,
             "formato": "alfa"
