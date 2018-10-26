@@ -1,4 +1,5 @@
 
+import re
 import os
 import json
 import unicodedata
@@ -118,6 +119,7 @@ def create_field_class(spec):
         'format': spec.get('formato', 'alfa'),
         'decimals': spec.get('decimais', 0),
         'default': spec.get('default'),
+        'ignore': spec.get('ignore', False),
     }
 
     return type(str(name), (BaseField,), attrs)
@@ -173,6 +175,8 @@ class BaseRecord(object):
         for field in self._fields.values():
             value = string[field.start:field.end].strip()
             if field.decimals:
+                if field.name == 'valor_pagamento':
+                    value = re.sub('[^0-9]', '', value)
                 exponente = field.decimals * -1
                 dec = value[:exponente] + '.' + value[exponente:]
                 field.value = Decimal(dec)
@@ -180,6 +184,9 @@ class BaseRecord(object):
                 try:
                     field.value = int(value)
                 except ValueError:
+                    if field.ignore:
+                        field.value = 0
+                        continue
                     raise errors.TypeError(field, value)
             else:
                 field.value = value

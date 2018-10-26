@@ -1,9 +1,11 @@
+# -*- encoding: utf8 -*-
+
 from pycnab240 import bancos
 FORMA_DE_LANCAMENTO = {
     'santander': {
         '01': '03',  # Transferências para outros bancos (DOC, TED)
         '02': '03',  # Transferências para outros bancos (DOC, TED)
-        '03': '11',  # Pagamento de Títulos
+        '03': '31',  # Pagamento de Títulos
         '04': '11',  # Tributos com código de barras
         '05': '17',  # GPS - Guia de previdencia Social
         '06': '16',  # DARF Normal
