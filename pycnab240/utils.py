@@ -23,11 +23,11 @@ FORMA_DE_LANCAMENTO = {
     },
     'itau': {
         '01': '41',  # 'Transferência (TED - outro titular)'
-        '02': '03',  # 'Transferência (DOC "C")'
-        '09': '01',  # 'Credito em CC do itau')'
+        '02': '07',  # 'Transferência (DOC "D" - outro titular)'
+        '97': '03',  # 'Transferência (DOC "C" - mesmo titular)'
         '98': '17',  # 'Transferência (TED - mesmo titular)'
-        '99': '07',  # 'Transferência (DOC "D")'
-    },  # os dois ultimos sao numeros ficticios para lidar depois
+        '99': '01',  # 'Credito em CC do itau')'
+    },
 }
 BANK = {
     '756': bancos.sicoob,
@@ -50,6 +50,18 @@ TIPO_DE_SERVICO = {
         10: '80',  # Pagamento Representantes / Vendedores Autorizados
         11: '90',  # Pagamento Beneficios
         12: '98',  # Pagamentos Diversos
+    },
+    'itau': {
+        '10': '10',  # Pagamento Dividendos
+        '14': '14',  # Consulta de Tributos a Pagar DETRAN com RENAVAM
+        '20': '20',  # Pagamento Fornecedor
+        '22': '22',  # Pagamento de Contas, Tributos e Impostos
+        '29': '29',  # Alegacao do Sacado
+        '50': '50',  # Pagamento Sinistros Segurados
+        '60': '60',  # Pagamento Despesas Viajante em Transito
+        '80': '80',  # Pagamento Representantes / Vendedores Autorizados
+        '90': '90',  # Pagamento Beneficios
+        '98': '98',  # Pagamentos Diversos
     }
 }
 SUBSEGMENTS = {
@@ -69,6 +81,15 @@ SUBSEGMENTS = {
             '17': 'SegmentoN_GPS',
             '18': 'SegmentoN_DarfSimples',
         }
+    },
+    '341': {
+        'SegmentoA': {
+            '01': 'Itau_Unibanco',
+            '03': 'outros_bancos',
+            '07': 'outros_bancos',
+            '17': 'outros_bancos',
+            '41': 'outros_bancos'
+        }
     }
 }
 
@@ -85,7 +106,7 @@ def get_tipo_de_servico(bank_name, code):
     try:
         value = TIPO_DE_SERVICO[bank_name][code]
     except KeyError:
-        parse_keyerror(TIPO_DE_SERVICO, bank_name, code)
+        parse_keyerror_servico(TIPO_DE_SERVICO, bank_name, code)
     return value
 
 
@@ -102,6 +123,11 @@ def parse_keyerror(dic, bank_name, code):
     if not dic.get(bank_name):
         message, value = 'Bank', bank_name
     raise KeyError("{} {} not found!".format(message, value))
+
+
+def parse_keyerror_servico(dic, bank_name, code):
+    message, value = 'Code', code
+    raise KeyError("{} {} not found to {}!".format(message, value, bank_name))
 
 
 def get_subsegments_from_line(segment_name, line):
