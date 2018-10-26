@@ -30,7 +30,7 @@
         "tipo_movimento": 1,
         "codigo_instrucao_movimento": 2,
         "codigo_de_barras": 999999999999999999999999999,
-        "cedente_nome": "Trustcode",
+        "favorecido_nome": "Trustcode",
         "data_vencimento": 10062018,
         "valor_nominal_titulo": "50.10",
         "valor_desconto_abatimento": "10.10",
