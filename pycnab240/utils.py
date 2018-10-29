@@ -54,16 +54,16 @@ TIPO_DE_SERVICO = {
         12: '98',  # Pagamentos Diversos
     },
     'itau': {
-        '10': '10',  # Pagamento Dividendos
-        '14': '14',  # Consulta de Tributos a Pagar DETRAN com RENAVAM
-        '20': '20',  # Pagamento Fornecedor
-        '22': '22',  # Pagamento de Contas, Tributos e Impostos
-        '29': '29',  # Alegacao do Sacado
-        '50': '50',  # Pagamento Sinistros Segurados
-        '60': '60',  # Pagamento Despesas Viajante em Transito
-        '80': '80',  # Pagamento Representantes / Vendedores Autorizados
-        '90': '90',  # Pagamento Beneficios
-        '98': '98',  # Pagamentos Diversos
+        1: '10',  # Pagamento Dividendos
+        2: '14',  # Consulta de Tributos a Pagar DETRAN com RENAVAM
+        3: '20',  # Pagamento Fornecedor
+        4: '22',  # Pagamento de Contas, Tributos e Impostos
+        5: '29',  # Alegacao do Sacado
+        6: '50',  # Pagamento Sinistros Segurados
+        7: '60',  # Pagamento Despesas Viajante em Transito
+        10: '80',  # Pagamento Representantes / Vendedores Autorizados
+        11: '90',  # Pagamento Beneficios
+        12: '98',  # Pagamentos Diversos
     }
 }
 SUBSEGMENTS = {
@@ -211,8 +211,124 @@ CODIGOS_RETORNO = {
         'C4': 'COMPROR – Rejeitado por horário**',
         'C6': 'COMPROR – Aprovado**',
         'C7': 'COMPROR – Compromisso Inválido**',
+    },
+     '341': {
+        '00': 'Pagamento Efetuado',
+        'AE': 'Data de Pagamento Alterada',
+        'AG': 'Número do Lote Inválido',
+        'AH': 'Número Seqüencial do Registro no Lote Inválido',
+        'AI': 'Produto Demonstrativo de Pagamento não contratado',
+        'AJ': 'Tipo de Movimento Inválido',
+        'AL': 'Código do Banco do Favorecido Inválido',
+        'AM': 'Agência do Favorecido Inválida',
+        'AN': 'Conta Corrente do Favorecido Inválida/Conta de Investimento extinta em 30/04/2011',
+        'AO': 'Nome do Favorecido Inválido',
+        'AP': 'Data de Pagamento/Validade/Arrecadação/Apuração/Hora de Lançamento Inválida',
+        'AQ': 'Quantidade de registros maior que 999999',
+        'AR': 'Valor Arrecadado / Lançamento Inválido',
+        'BC': 'Nosso Número Invalido',
+        'BD': 'Pagamento Agendado',
+        'BE': 'Pagamento Agendado com forma alterada para OP',
+        'BI': 'CNPJ/CPF do favorecido no segmentoJ-52 ou B inválido',
+        'BL': 'Valor da Parcela Inválido',
+        'CD': 'CNPJ/CPF Informado Divergente do Cadastrado',
+        'CE': 'Pagamento Cancelado',
+        'CF': 'Valor do Documento Inválido',
+        'CG': 'Valor do Abatimento Inválido',
+        'CH': 'Valor do Desconto Inválido',
+        'CI': 'CNPJ/CPF/Identificador/IE/Inscrição no CAD/ICMS Inválido',
+        'CJ': 'Valor da multa Inválido',
+        'CK': 'Tipo de Inscrição Inválida',
+        'CL': 'Valor do INSS Inválido',
+        'CM': 'Valor do COFINS Inválido',
+        'CN': 'Conta não Cadastrada',
+        'CO': 'Valor de Outras Entidades Inválido',
+        'CP': 'Confirmação de OP Cumprida',
+        'CQ': 'Soma das Faturas Difere do Pagamento',
+        'CR': 'Valor do CSLL Inválido',
+        'CS': 'Data de Vencimento da Fatura Inválida',
+        'DA': 'Número de Depend. Salário Familia Inválido',
+        'DB': 'Número de Horas Semanais Inválido',
+        'DC': 'Salário de Contribuição INSS Inválido',
+        'DD': 'Salário de Contribuição FGTS Inválido',
+        'DE': 'Valor Total dos Proventos Inválido',
+        'DF': 'Valor Total dos Descontos Inválido',
+        'DG': 'Valor Líquido não Numérico',
+        'DH': 'Valor Líquido Informado difere do Calculado',
+        'DI': 'Valor do salário-base inválido',
+        'DJ': 'Base de cálculo IRRF inválida',
+        'DK': 'Base de cálculo FGTS inválida',
+        'DL': 'Forma de pagamento Incompatível com Holerite',
+        'DM': 'E-mail do Favorecido Inválido',
+        'DV': 'DOC/TED Devolvido pelo banco favorecido',
+        'D0': 'Finalidade do Holerite Inválida',
+        'D1': 'Mês de Competência do Holerite Inválido',
+        'D2': 'Dia da Competência do Holerite Inválido',
+        'D3': 'Centro de Custo Inválido',
+        'D4': 'Campo Numérico da Funcional Inválido',
+        'D5': 'Data Início de Férias não numérica',
+        'D6': 'Data Início de Férias Inconsistente',
+        'D7': 'Data Fim de Férias não numérica',
+        'D8': 'Data Fim de Férias Inconsistente',
+        'D9': 'Número de dependentes IR inválido',
+        'EM': 'Confirmação de OP emitida',
+        'EX': 'Devolução de OP não sacada pelo Favorecido',
+        'E0': 'Tipo de Movimento Holerite Inválido',
+        'E1': 'Valor 01 do Holerite / Informe inválido',
+        'E2': 'Valor 02 do Holerite / Informe inválido',
+        'E3': 'Valor 03 do Holerite / Informe inválido',
+        'E4': 'Valor 04 do Holerite / Informe inválido',
+        'FC': 'Pagamento efetuado através de financiamento Compror',
+        'FD': 'Pagamento efetuado através de financiamento Descompror',
+        'HA': 'Erro no Header de Arquivo',
+        'HM': 'Erro no Header de Lote',
+        'IB': 'Valor e/ou Data do documento Inválido',
+        'IC': 'Valor do Abatimento Inválido',
+        'ID': 'Valor do Desconto Inválido',
+        'IE': 'Valor da Mora Inválido',
+        'IF': 'Valor da Dulta inválido',
+        'IG': 'Valor da Dedução inválido',
+        'IH': 'Valor do Acréscimo inválido',
+        'II': 'Data de vencimento inválida',
+        'IJ': 'Competência/Período referência/Parcela inválida',
+        'IK': 'Tributo não liquidável via sispag ou não conveniado com Itaú',
+        'IL': 'Código de pagamento/Empresa/Receita inválido',
+        'IM': 'Tipo X Forma não compatível',
+        'IN': 'Banco/Agência não cadastrados',
+        'IO': 'DAC/Valor/Competência/Identificador do Lacre inválido',
+        'IP': 'DAC do código de barras inválido',
+        'IQ': 'Dívida ativa ou número de etiqueta inválido',
+        'IR': 'Pagamento Alterado',
+        'IS': 'Concessionária não conveniada com Itaú',
+        'IT': 'Valor do tributo inválido',
+        'IU': 'Valor da Receita Bruta Acumulada inválido',
+        'IV': 'Número do documento origem/referência inválido',
+        'IX': 'Código do produto inválido',
+        'LA': 'Data de pagamentos de um Lote alterada',
+        'LC': 'Lote de pagamentos cancelado',
+        'NA': 'Pagamento Cancelado por falta de Autorização',
+        'NB': 'Identificação do Tributo inválida',
+        'NC': 'Execício (ano base) inválido',
+        'ND': 'Código RENAVAM não encontrado/inválido',
+        'NE': 'UF inválida',
+        'NF': 'Código do município inválido',
+        'NG': 'Placa Inválida',
+        'NH': 'Opção/parcela de pagamento inválida',
+        'NI': 'Tributo já foi pago ou está vencido',
+        'NR': 'Operação não Realizada',
+        'PD': 'Aquisição Confirmada (Equivale à ocorrência 02 no Layout de Risco Sacado',
+        'RJ': 'Registro Rejeitado',
+        'RS': 'Pagamento disponível para antecipação no risco sacado - modalidade Risco Sacado pós Autorizado',
+        'SS': 'Pagto Cancelado por insuficiência de saldo/Limite diário de pagto',
+        'TA': 'Lote não aceito - Totais do Lote com Diferença',
+        'TI': 'Titularidade Inválida',
+        'X1': 'Forma incompatível com Layout 010',
+        'X2': 'Número da Nota Fiscal Inválido',
+        'X3': 'Identificador de NF/CNPJ Inválido',
+        'X4': 'Forma 32 Inválida'
     }
 }
+
 
 def get_return_message(bank_code, return_code):
     try:
