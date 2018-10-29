@@ -39,31 +39,31 @@ BANK = {
 }
 TIPO_DE_SERVICO = {
     'santander': {
-        0: '03',  # Bloqueto Eletronico
-        1: '10',  # Pagamento Dividendos
-        2: '14',  # Consulta de Tributos a Pagar DETRAN com RENAVAM
-        3: '20',  # Pagamento Fornecedor
-        4: '22',  # Pagamento de Contas, Tributos e Impostos
-        5: '29',  # Alegacao do Sacado
-        6: '50',  # Pagamento Sinistros Segurados
-        7: '60',  # Pagamento Despesas Viajante em Transito
-        8: '70',  # Pagamento Autorizado
-        9: '75',  # Pagamento Credenciados
-        10: '80',  # Pagamento Representantes / Vendedores Autorizados
-        11: '90',  # Pagamento Beneficios
-        12: '98',  # Pagamentos Diversos
+        '03': '03',  # Bloqueto Eletronico
+        '10': '10',  # Pagamento Dividendos
+        '14': '14',  # Consulta de Tributos a Pagar DETRAN com RENAVAM
+        '20': '20',  # Pagamento Fornecedor
+        '22': '22',  # Pagamento de Contas, Tributos e Impostos
+        '29': '29',  # Alegacao do Sacado
+        '50': '50',  # Pagamento Sinistros Segurados
+        '60': '60',  # Pagamento Despesas Viajante em Transito
+        '70': '70',  # Pagamento Autorizado
+        '75': '75',  # Pagamento Credenciados
+        '80': '80',  # Pagamento Representantes / Vendedores Autorizados
+        '90': '90',  # Pagamento Beneficios
+        '98': '98',  # Pagamentos Diversos
     },
     'itau': {
-        1: '10',  # Pagamento Dividendos
-        2: '14',  # Consulta de Tributos a Pagar DETRAN com RENAVAM
-        3: '20',  # Pagamento Fornecedor
-        4: '22',  # Pagamento de Contas, Tributos e Impostos
-        5: '29',  # Alegacao do Sacado
-        6: '50',  # Pagamento Sinistros Segurados
-        7: '60',  # Pagamento Despesas Viajante em Transito
-        10: '80',  # Pagamento Representantes / Vendedores Autorizados
-        11: '90',  # Pagamento Beneficios
-        12: '98',  # Pagamentos Diversos
+        '10': '10',  # Pagamento Dividendos
+        '14': '14',  # Consulta de Tributos a Pagar DETRAN com RENAVAM
+        '20': '20',  # Pagamento Fornecedor
+        '22': '22',  # Pagamento de Contas, Tributos e Impostos
+        '29': '29',  # Alegacao do Sacado
+        '50': '50',  # Pagamento Sinistros Segurados
+        '60': '60',  # Pagamento Despesas Viajante em Transito
+        '80': '80',  # Pagamento Representantes / Vendedores Autorizados
+        '90': '90',  # Pagamento Beneficios
+        '98': '98',  # Pagamentos Diversos
     }
 }
 SUBSEGMENTS = {
@@ -324,7 +324,7 @@ no Layout de Risco Sacado)',
         'RS': 'Pagamento disponível para antecipação no risco sacado - \
 modalidade Risco Sacado pós Autorizado',
         'SS': 'Pagamento Cancelado por insuficiência de saldo/\
-Limite diário de pagamento',
+        Limite diário de pagamento',
         'TA': 'Lote não aceito - Totais do Lote com Diferença',
         'TI': 'Titularidade Inválida',
         'X1': 'Forma incompatível com Layout 010',
