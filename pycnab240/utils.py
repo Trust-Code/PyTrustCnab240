@@ -111,7 +111,7 @@ CODIGOS_RETORNO = {
         'AH': 'Número Seqüencial do Registro no Lote Inválido',
         'AI': 'Código de Segmento de Detalhe Inválido',
         'AJ': 'Tipo de Movimento Inválido',
-        'AK': 'Código da Câmara de Compensação do Banco do Favorecido/Depositário Inválido',  #noqa
+        'AK': 'Código da Câmara de Compensação do Banco do Favorecido/Depositário Inválido',  # noqa
         'AL': 'Código do Banco do Favorecido ou Depositário Inválido',
         'AM': 'Agência Mantenedora da Conta Corrente do Favorecido Inválida',
         'AN': 'Conta Corrente/DV do Favorecido Inválido',
@@ -221,9 +221,11 @@ CODIGOS_RETORNO = {
         'AJ': 'Tipo de Movimento Inválido',
         'AL': 'Código do Banco do Favorecido Inválido',
         'AM': 'Agência do Favorecido Inválida',
-        'AN': 'Conta Corrente do Favorecido Inválida/Conta de Investimento extinta em 30/04/2011',
+        'AN': 'Conta Corrente do Favorecido Inválida/Conta de \
+Investimento extinta em 30/04/2011',
         'AO': 'Nome do Favorecido Inválido',
-        'AP': 'Data de Pagamento/Validade/Arrecadação/Apuração/Hora de Lançamento Inválida',
+        'AP': 'Data de Pagamento/Validade/Arrecadação/Apuração/Hora de \
+Lançamento Inválida',
         'AQ': 'Quantidade de registros maior que 999999',
         'AR': 'Valor Arrecadado / Lançamento Inválido',
         'BC': 'Nosso Número Invalido',
@@ -316,10 +318,13 @@ CODIGOS_RETORNO = {
         'NH': 'Opção/parcela de pagamento inválida',
         'NI': 'Tributo já foi pago ou está vencido',
         'NR': 'Operação não Realizada',
-        'PD': 'Aquisição Confirmada (Equivale à ocorrência 02 no Layout de Risco Sacado',
+        'PD': 'Aquisição Confirmada (Equivale à ocorrência 02 \
+no Layout de Risco Sacado)',
         'RJ': 'Registro Rejeitado',
-        'RS': 'Pagamento disponível para antecipação no risco sacado - modalidade Risco Sacado pós Autorizado',
-        'SS': 'Pagto Cancelado por insuficiência de saldo/Limite diário de pagto',
+        'RS': 'Pagamento disponível para antecipação no risco sacado - \
+modalidade Risco Sacado pós Autorizado',
+        'SS': 'Pagamento Cancelado por insuficiência de saldo/\
+Limite diário de pagamento',
         'TA': 'Lote não aceito - Totais do Lote com Diferença',
         'TI': 'Titularidade Inválida',
         'X1': 'Forma incompatível com Layout 010',
@@ -335,6 +340,7 @@ def get_return_message(bank_code, return_code):
         return CODIGOS_RETORNO[bank_code][return_code]
     except KeyError:
         parse_keyerror(CODIGOS_RETORNO, bank_code, return_code)
+
 
 def get_forma_de_lancamento(bank_name, code):
     try:
