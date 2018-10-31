@@ -54,7 +54,8 @@
             "nome": "numero_aviso_debito",
             "posicao_inicio": 60,
             "posicao_fim": 65,
-            "formato": "num"
+            "formato": "num",
+            "ignore": true
         },
         "09.5": {
             "nome": "vazio2",
