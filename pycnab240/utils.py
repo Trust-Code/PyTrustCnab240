@@ -1,6 +1,14 @@
 # -*- encoding: utf8 -*-
 
 from pycnab240 import bancos
+
+BANK = {
+    '756': bancos.sicoob,
+    '033': bancos.santander,
+    '341': bancos.itau,
+    '237': bancos.bradesco
+}
+
 FORMA_DE_LANCAMENTO = {
     'santander': {
         '01': '03',  # Transferências para outros bancos (DOC, TED)
@@ -25,18 +33,13 @@ FORMA_DE_LANCAMENTO = {
     },
     'itau': {
         '01': '41',  # 'Transferência (TED - outro titular)'
-        '02': '07',  # 'Transferência (DOC "D" - outro titular)'
-        '97': '03',  # 'Transferência (DOC "C" - mesmo titular)'
-        '98': '17',  # 'Transferência (TED - mesmo titular)'
+        '02': '03',  # 'Transferência (DOC "D" - outro titular)'
+        '97': '07',  # 'Transferência (DOC "C" - mesmo titular)'
+        '98': '43',  # 'Transferência (TED - mesmo titular)'
         '99': '01',  # 'Credito em CC do itau')'
     },
 }
-BANK = {
-    '756': bancos.sicoob,
-    '033': bancos.santander,
-    '341': bancos.itau,
-    '237': bancos.bradesco
-}
+
 TIPO_DE_SERVICO = {
     'santander': {
         '03': '03',  # Bloqueto Eletronico
@@ -64,6 +67,37 @@ TIPO_DE_SERVICO = {
         '80': '80',  # Pagamento Representantes / Vendedores Autorizados
         '90': '90',  # Pagamento Beneficios
         '98': '98',  # Pagamentos Diversos
+    }
+}
+DOC_TED_FINALITY = {
+    'itau': {
+        '02': {  # DOC
+            '01': '01',  # Crédito em Conta Corrente
+            '02': '02',  # Pagamento de Aluguel / Condomínio
+            '03': '03',  # Pagamento de Duplicatas e Títulos
+            '04': '04',  # Pagamento de Dividendos
+            '05': '05',  # Pagamento de Mensalidades Escolares
+            '06': '06',  # Pagamento de Salários
+            '07': '07',  # Pagamento a Fornecedor / Honorários
+            '08': '08',  # Pagamento de Câmbio/Fundos/Bolsas
+            '09': '09',  # Repasse de Arrecadação / Pagamento de Tributos
+            '11': '11',  # DOC para Poupança'
+            '12': '12',  # DOC para Depósito Judicial
+            '13': '13',  # Pensão Alimentícia
+            '99': '99',  # Outros
+        },
+        '01': {  # TED
+            '01': '010',  # Crédito em Conta Corrente
+            '02': '007',  # Pagamento de Aluguel / Condomínio
+            '03': '008',  # Pagamento de Duplicatas e Títulos
+            '04': '003',  # Pagamento de Dividendos
+            '06': '004',  # Pagamento de Salários
+            '07': '005',  # Pagamento a Fornecedor / Honorários
+            '08': '204',  # Pagamento de Câmbio/Fundos/Bolsas
+            '09': '001',  # Repasse de Arrecadação / Pagamento de Tributos
+            '12': '100',  # DOC para Depósito Judicial
+            '13': '101',  # Pensão Alimentícia
+        }
     }
 }
 SUBSEGMENTS = {
@@ -350,6 +384,14 @@ def get_forma_de_lancamento(bank_name, code):
     return value
 
 
+def get_ted_doc_finality(bank, mov_type, code):
+    try:
+        value = DOC_TED_FINALITY[bank][mov_type][code]
+    except KeyError:
+        parse_keyerror_finality(mov_type, bank, code)
+    return value
+
+
 def get_tipo_de_servico(bank_name, code):
     try:
         value = TIPO_DE_SERVICO[bank_name][code]
@@ -373,9 +415,13 @@ def parse_keyerror(dic, bank_name, code):
     raise KeyError("{} {} not found!".format(message, value))
 
 
-def parse_keyerror_servico(dic, bank_name, code):
-    message, value = 'Code', code
-    raise KeyError("{} {} not found to {}!".format(message, value, bank_name))
+def parse_keyerror_servico(bank_name, code):
+    raise KeyError("Code {} not found to {}!".format(code, bank_name))
+
+
+def parse_keyerror_finality(finality, bank_name, code):
+    raise KeyError("Code {} not found to operation {} in {}!".format(
+        code, finality, bank_name))
 
 
 def get_subsegments_from_line(segment_name, line):
