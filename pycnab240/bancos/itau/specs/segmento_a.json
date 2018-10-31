@@ -45,7 +45,7 @@
             "posicao_inicio": 18,
             "posicao_fim": 20,
             "formato": "num",
-            "default": 888
+            "default": 0
         },
         "08.3A": {
             "nome": "favorecido_banco",
@@ -172,7 +172,8 @@
             "nome": "codigo_ispb",
             "posicao_inicio": 105,
             "posicao_fim": 112,
-            "formato": "num"
+            "formato": "num",
+            "default": 0
         },
         "15.3A": {
             "nome": "vazio1",
