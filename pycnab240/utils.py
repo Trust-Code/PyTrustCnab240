@@ -123,11 +123,18 @@ SUBSEGMENTS = {
     },
     '341': {
         'SegmentoA': {
-            '01': 'Itau_Unibanco',
-            '03': 'outros_bancos',
-            '07': 'outros_bancos',
-            '17': 'outros_bancos',
-            '41': 'outros_bancos'
+            '341': 'SegmentoA_Itau_Unibanco',
+            '409': 'SegmentoA_Itau_Unibanco',
+        },
+        'SegmentoN': {
+            '01': 'SegmentoN_GPS',
+            '02': 'SegmentoN_DarfNormal',
+            '03': 'SegmentoN_DarfSimples',
+            '04': 'SegmentoN_DARJ',
+            '05': 'SegmentoN_GareSP',
+            '07': 'SegmentoN_IPVA_DPVAT',
+            '08': 'SegmentoN_IPVA_DPVAT',
+            '11': 'SegmentoN_FGTS',
         }
     }
 }
@@ -428,7 +435,19 @@ def parse_keyerror_finality(finality, bank_name, code):
 
 
 def get_subsegments_from_line(segment_name, line):
-    return get_subsegments(line[0:3], segment_name, line[132:134])
+    if line[0:3] != '341':
+        return get_subsegments(line[0:3], segment_name, line[132:134])
+    else:
+        if segment_name == 'SegmentoN':
+            return get_subsegments('341', segment_name, line[17:19])
+        else:
+            try:
+                return get_subsegments('341', segment_name, line[20:23])
+            except KeyError as e:
+                if 'segment code' in e.args[0]:
+                    return 'SegmentoA_outros_bancos'
+                else:
+                    raise
 
 
 def get_subsegments(bank_code, segment_name, code):
@@ -493,7 +512,7 @@ def decode_digitable_line(digitable_line):
             'barcode': barcode,
             'banco': barcode[:3],
             'vencimento': DATA_BASE + timedelta(days=int(barcode[5:9])),
-            'valor': Decimal("{:.2f}".format(int(barcode[9:19]) / 100)),
+            'valor': Decimal("{:.2f}".format(int(barcode[9:19]) / 100.0)),
         }
     elif len(digitable_line) == 48:
         barcode = "{}{}{}{}".format(
@@ -505,7 +524,7 @@ def decode_digitable_line(digitable_line):
         return {
             'barcode': barcode,
             'banco': barcode[:3],
-            'valor': Decimal("{:.2f}".format(int(barcode[4:15]) / 100)),
+            'valor': Decimal("{:.2f}".format(int(barcode[4:15]) / 100.0)),
         }
     else:
         raise Exception('Código de barras com tamanho inválido!')
