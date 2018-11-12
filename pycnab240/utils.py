@@ -1,5 +1,8 @@
 # -*- encoding: utf8 -*-
-import sys
+
+import re
+from datetime import date, timedelta
+from decimal import Decimal
 from pycnab240 import bancos
 
 BANK = {
@@ -432,9 +435,9 @@ def parse_keyerror_finality(finality, bank_name, code):
 
 
 def get_subsegments_from_line(segment_name, line):
-    if line[0:3] == '033' or line[0:3] == '756':
+    if line[0:3] != '341':
         return get_subsegments(line[0:3], segment_name, line[132:134])
-    if line[0:3] == '341':
+    else:
         if segment_name == 'SegmentoN':
             return get_subsegments('341', segment_name, line[17:19])
         else:
@@ -455,3 +458,73 @@ def get_subsegments(bank_code, segment_name, code):
     if not SUBSEGMENTS[bank_code][segment_name].get(code):
         raise KeyError("{}: segment code not found!".format(code))
     return SUBSEGMENTS[bank_code][segment_name][code]
+
+
+def pretty_format_line(digitable_line):
+    line = re.sub('[^0-9]', '', digitable_line or '')
+    if len(line) == 47:
+        return "{}.{} {}.{} {}.{} {} {}".format(
+            line[0:5], line[5:10], line[10:15], line[15:21],
+            line[21:26], line[26:32], line[32:33], line[33:47])
+    elif len(line) == 48:
+        return "{} {} {} {}".format(
+            line[0:12],
+            line[12:24],
+            line[24:36],
+            line[36:48])
+    else:
+        raise Exception('Linha digitável com tamanho inválido!')
+
+
+def decode_digitable_line(digitable_line):
+    """
+        Posição  #   Conteúdo para 47 digitos
+        01 a 03  03  Número do banco
+        04       01  Código da Moeda - 9 para Real
+        05       01  Digito verificador do Código de Barras
+        06 a 09  04  Data de vencimento em dias partis de 07/10/1997
+        10 a 19  10  Valor do boleto (8 inteiros e 2 decimais)
+        20 a 44  25  Campo Livre definido por cada banco
+        Total    44
+        ====================================================
+        Posição  #   Conteúdo para 48 digitos
+        01       01  Número do banco
+        02       01  Identificação do Segmento
+        03       01  Identificação do valor real ou referência
+        04       01  Dígito verificador geral
+        05 a 15  10  Valor do boleto (8 inteiros e 2 decimais)
+        16 a 19  05  Identificação da Empresa/Órgão
+        20 a 44  25  Campo Livre definido por cada orgão
+        Total    44
+    """
+    digitable_line = digitable_line or ''
+    barcode = ''
+    DATA_BASE = date(1997, 10, 7)
+    if len(digitable_line) == 47:
+        barcode = "{}{}{}{}{}{}".format(
+            digitable_line[0:4],
+            digitable_line[32],
+            digitable_line[-14:],
+            digitable_line[4:9],
+            digitable_line[10:20],
+            digitable_line[21:31])
+        return {
+            'barcode': barcode,
+            'banco': barcode[:3],
+            'vencimento': DATA_BASE + timedelta(days=int(barcode[5:9])),
+            'valor': Decimal("{:.2f}".format(int(barcode[9:19]) / 100.0)),
+        }
+    elif len(digitable_line) == 48:
+        barcode = "{}{}{}{}".format(
+            digitable_line[0:11],
+            digitable_line[12:23],
+            digitable_line[24:35],
+            digitable_line[36:47],
+        )
+        return {
+            'barcode': barcode,
+            'banco': barcode[:3],
+            'valor': Decimal("{:.2f}".format(int(barcode[4:15]) / 100.0)),
+        }
+    else:
+        raise Exception('Código de barras com tamanho inválido!')
