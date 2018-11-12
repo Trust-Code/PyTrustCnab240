@@ -3,7 +3,7 @@ import unittest
 from datetime import date
 from decimal import Decimal
 
-from pycnab240.utils import decode_digitable_line
+from pycnab240.utils import decode_digitable_line, pretty_format_line
 
 
 class TestUtils(unittest.TestCase):
@@ -27,3 +27,15 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(
             vals['barcode'], '85870000004800001791811076220508241582330001')
         self.assertEqual(vals['valor'], Decimal('480.00'))
+
+    def test_pretty_format_47(self):
+        dig_line = '75691306980124564000600371460015177050000035280'
+        dig_line = pretty_format_line(dig_line)
+        self.assertEqual(
+            dig_line, '75691.30698 01245.640006 00371.460015 1 77050000035280')
+
+    def test_pretty_format_48(self):
+        dig_line = '858700000049800001791819107622050820415823300017'
+        dig_line = pretty_format_line(dig_line)
+        self.assertEqual(
+            dig_line, '858700000049 800001791819 107622050820 415823300017')

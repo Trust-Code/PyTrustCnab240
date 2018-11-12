@@ -1,5 +1,6 @@
 # -*- encoding: utf8 -*-
 
+import re
 from datetime import date, timedelta
 from decimal import Decimal
 from pycnab240 import bancos
@@ -438,6 +439,22 @@ def get_subsegments(bank_code, segment_name, code):
     if not SUBSEGMENTS[bank_code][segment_name].get(code):
         raise KeyError("{}: segment code not found!".format(code))
     return SUBSEGMENTS[bank_code][segment_name][code]
+
+
+def pretty_format_line(digitable_line):
+    line = re.sub('[^0-9]', '', digitable_line or '')
+    if len(line) == 47:
+        return "{}.{} {}.{} {}.{} {} {}".format(
+            line[0:5], line[5:10], line[10:15], line[15:21],
+            line[21:26], line[26:32], line[32:33], line[33:47])
+    elif len(line) == 48:
+        return "{} {} {} {}".format(
+            line[0:12],
+            line[12:24],
+            line[24:36],
+            line[36:48])
+    else:
+        raise Exception('Linha digitável com tamanho inválido!')
 
 
 def decode_digitable_line(digitable_line):
