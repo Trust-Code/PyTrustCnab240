@@ -41,85 +41,84 @@
             "formato": "num"
         },
         "07.3N": {
-            "nome": "dados_identificacao_tributo",
+            "nome": "identificacao_tributo",
             "posicao_inicio": 18,
+            "posicao_fim": 19,
+            "formato": "num"
+        },
+        "08.3N": {
+            "nome": "dados_identificacao_tributo",
+            "posicao_inicio": 20,
             "posicao_fim": 195,
             "subsegmentos": [
                 {
                     "nome": "GPS",
                     "campos": {
                         "01.3N1": {
-                            "nome": "identificacao_tributo",
-                            "posicao_inicio": 18,
-                            "posicao_fim": 19,
-                            "formato": "num",
-                            "default": 1
-                        },
-                        "02.3N1": {
                             "nome": "codigo_pagamento",
                             "posicao_inicio": 20,
                             "posicao_fim": 23,
                             "formato": "num"
                         },
-                        "03.3N1": {
+                        "02.3N1": {
                             "nome": "data_competencia",
                             "posicao_inicio": 24,
                             "posicao_fim": 29,
                             "formato": "num"
                         },
-                        "04.3N1": {
+                        "03.3N1": {
                             "nome": "identificador_contribuinte",
                             "posicao_inicio": 30,
                             "posicao_fim": 43,
                             "formato": "num"
                         },
-                        "05.3N1": {
+                        "04.3N1": {
                             "nome": "valor_tributo",
                             "posicao_inicio": 44,
                             "posicao_fim": 57,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "06.3N1": {
+                        "05.3N1": {
                             "nome": "valor_outros",
                             "posicao_inicio": 58,
                             "posicao_fim": 71,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "07.3N1": {
+                        "06.3N1": {
                             "nome": "atualizacao_monetaria",
                             "posicao_inicio": 72,
                             "posicao_fim": 85,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "08.3N1": {
+                        "07.3N1": {
                             "nome": "valor_arrecadado",
                             "posicao_inicio": 86,
                             "posicao_fim": 99,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "09.3N1": {
+                        "08.3N1": {
                             "nome": "data_arrecadacao",
                             "posicao_inicio": 100,
                             "posicao_fim": 107,
                             "formato": "num"
                         },
-                        "10.3N1": {
+                        "09.3N1": {
                             "nome": "vazio1n1",
                             "posicao_inicio": 108,
                             "posicao_fim": 115,
                             "formato": "alfa"
                         },
-                        "11.3N1": {
+                        "10.3N1": {
                             "nome": "vazio2n1",
                             "posicao_inicio": 116,
                             "posicao_fim": 165,
                             "formato": "alfa"
                         },
-                        "12.3N1": {
+                        "11.3N1": {
                             "nome": "contribuinte_nome",
                             "posicao_inicio": 166,
                             "posicao_fim": 195,
@@ -131,89 +130,82 @@
                     "nome": "DarfNormal",
                     "campos": {
                         "01.3N2": {
-                            "nome": "identificacao_tributo",
-                            "posicao_inicio": 18,
-                            "posicao_fim": 19,
-                            "formato": "num",
-                            "default": 2
-                        },
-                        "02.3N2": {
                             "nome": "codigo_receita",
                             "posicao_inicio": 20,
                             "posicao_fim": 23,
                             "formato": "num"
                         },
-                        "03.3N2": {
+                        "02.3N2": {
                             "nome": "contribuinte_inscricao_tipo",
                             "posicao_inicio": 24,
                             "posicao_fim": 24,
                             "formato": "num"
                         },
-                        "04.3N2": {
+                        "03.3N2": {
                             "nome": "contribuinte_inscricao_numero",
                             "posicao_inicio": 25,
                             "posicao_fim": 38,
                             "formato": "num"
                         },
-                        "05.3N2": {
+                        "04.3N2": {
                             "nome": "periodo_apuracao",
                             "posicao_inicio": 39,
                             "posicao_fim": 46,
                             "formato": "num"
                         },
-                        "06.3N2": {
+                        "05.3N2": {
                             "nome": "numero_referencia",
                             "posicao_inicio": 47,
                             "posicao_fim": 63,
                             "formato": "num"
                         },
-                        "07.3N2": {
+                        "06.3N2": {
                             "nome": "valor_principal",
                             "posicao_inicio": 64,
                             "posicao_fim": 77,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "08.3N2": {
+                        "07.3N2": {
                             "nome": "valor_multa",
                             "posicao_inicio": 78,
                             "posicao_fim": 91,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "09.3N2": {
+                        "08.3N2": {
                             "nome": "valor_juros_encargos",
                             "posicao_inicio": 92,
                             "posicao_fim": 105,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "10.3N2": {
+                        "09.3N2": {
                             "nome": "valor_total",
                             "posicao_inicio": 106,
                             "posicao_fim": 119,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "11.3N2": {
+                        "10.3N2": {
                             "nome": "data_vencimento",
                             "posicao_inicio": 120,
                             "posicao_fim": 127,
                             "formato": "num"
                         },
-                        "12.3N2": {
+                        "11.3N2": {
                             "nome": "data_pagamento",
                             "posicao_inicio": 128,
                             "posicao_fim": 135,
                             "formato": "num"
                         },
-                        "13.3N2": {
+                        "12.3N2": {
                             "nome": "vazio1n2",
                             "posicao_inicio": 136,
                             "posicao_fim": 165,
                             "formato": "alfa"
                         },
-                        "14.3N2": {
+                        "13.3N2": {
                             "nome": "contribuinte_nome",
                             "posicao_inicio": 166,
                             "posicao_fim": 195,
@@ -225,103 +217,96 @@
                     "nome": "DarfSimples",
                     "campos": {
                         "01.3N3": {
-                            "nome": "identificacao_tributo",
-                            "posicao_inicio": 18,
-                            "posicao_fim": 19,
-                            "formato": "num",
-                            "default": 3
-                        },
-                        "02.3N3": {
                             "nome": "codigo_receita",
                             "posicao_inicio": 20,
                             "posicao_fim": 23,
                             "formato": "num"
                         },
-                        "03.3N3": {
+                        "02.3N3": {
                             "nome": "contribuinte_inscricao_tipo",
                             "posicao_inicio": 24,
                             "posicao_fim": 24,
                             "formato": "num"
                         },
-                        "04.3N3": {
+                        "03.3N3": {
                             "nome": "contribuinte_inscricao_numero",
                             "posicao_inicio": 25,
                             "posicao_fim": 38,
                             "formato": "num"
                         },
-                        "05.3N3": {
+                        "04.3N3": {
                             "nome": "periodo_apuracao",
                             "posicao_inicio": 39,
                             "posicao_fim": 46,
                             "formato": "num"
                         },
-                        "06.3N3": {
+                        "05.3N3": {
                             "nome": "receita_bruta",
                             "posicao_inicio": 47,
                             "posicao_fim": 55,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "07.3N3": {
+                        "06.3N3": {
                             "nome": "percentual_receita_bruta",
                             "posicao_inicio": 56,
                             "posicao_fim": 59,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "08.3N3": {
+                        "07.3N3": {
                             "nome": "vazio1n3",
                             "posicao_inicio": 60,
                             "posicao_fim": 63,
                             "formato": "alfa"
                         },
-                        "09.3N3": {
+                        "08.3N3": {
                             "nome": "valor_principal",
                             "posicao_inicio": 64,
                             "posicao_fim": 77,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "10.3N3": {
+                        "09.3N3": {
                             "nome": "valor_multa",
                             "posicao_inicio": 78,
                             "posicao_fim": 91,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "11.3N3": {
+                        "10.3N3": {
                             "nome": "valor_juros_encargos",
                             "posicao_inicio": 92,
                             "posicao_fim": 105,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "12.3N3": {
+                        "11.3N3": {
                             "nome": "valor_total",
                             "posicao_inicio": 106,
                             "posicao_fim": 119,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "13.3N3": {
+                        "12.3N3": {
                             "nome": "data_vencimento",
                             "posicao_inicio": 120,
                             "posicao_fim": 127,
                             "formato": "num"
                         },
-                        "14.3N3": {
+                        "13.3N3": {
                             "nome": "data_pagamento",
                             "posicao_inicio": 128,
                             "posicao_fim": 135,
                             "formato": "num"
                         },
-                        "15.3N3": {
+                        "14.3N3": {
                             "nome": "vazio2n3",
                             "posicao_inicio": 136,
                             "posicao_fim": 165,
                             "formato": "alfa"
                         },
-                        "16.3N3": {
+                        "15.3N3": {
                             "nome": "contribuinte_nome",
                             "posicao_inicio": 166,
                             "posicao_fim": 195,
@@ -333,108 +318,101 @@
                     "nome": "DARJ",
                     "campos": {
                         "01.3N4": {
-                            "nome": "identificacao_tributo",
-                            "posicao_inicio": 18,
-                            "posicao_fim": 19,
-                            "formato": "num",
-                            "default": 4
-                        },
-                        "02.3N4": {
                             "nome": "codigo_receita",
                             "posicao_inicio": 20,
                             "posicao_fim": 23,
                             "formato": "num"
                         },
-                        "03.3N4": {
+                        "02.3N4": {
                             "nome": "contribuinte_inscricao_tipo",
                             "posicao_inicio": 24,
                             "posicao_fim": 24,
                             "formato": "num"
                         },
-                        "04.3N4": {
+                        "03.3N4": {
                             "nome": "contribuinte_inscricao_numero",
                             "posicao_inicio": 25,
                             "posicao_fim": 38,
                             "formato": "num"
                         },
-                        "05.3N4": {
+                        "04.3N4": {
                             "nome": "inscricao_estadual",
                             "posicao_inicio": 39,
                             "posicao_fim": 46,
                             "formato": "num"
                         },
-                        "06.3N4": {
+                        "05.3N4": {
                             "nome": "numero_documento_origem",
                             "posicao_inicio": 47,
                             "posicao_fim": 62,
                             "formato": "num"
                         },
-                        "07.3N4": {
+                        "06.3N4": {
                             "nome": "vazio1n4",
                             "posicao_inicio": 63,
                             "posicao_fim": 63,
                             "formato": "alfa"
                         },
-                        "08.3N4": {
+                        "07.3N4": {
                             "nome": "valor_principal",
                             "posicao_inicio": 64,
                             "posicao_fim": 77,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "09.3N4": {
+                        "08.3N4": {
                             "nome": "valor_atualizacao_monetaria",
                             "posicao_inicio": 78,
                             "posicao_fim": 91,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "10.3N4": {
+                        "09.3N4": {
                             "nome": "valor_mora",
                             "posicao_inicio": 92,
                             "posicao_fim": 105,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "11.3N4": {
+                        "10.3N4": {
                             "nome": "valor_multa",
                             "posicao_inicio": 106,
                             "posicao_fim": 119,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "12.3N4": {
+                        "11.3N4": {
                             "nome": "valor_total",
                             "posicao_inicio": 120,
                             "posicao_fim": 133,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "13.3N4": {
+                        "12.3N4": {
                             "nome": "data_vencimento",
                             "posicao_inicio": 134,
                             "posicao_fim": 141,
                             "formato": "num"
                         },
-                        "14.3N4": {
+                        "13.3N4": {
                             "nome": "data_pagamento",
                             "posicao_inicio": 142,
                             "posicao_fim": 149,
                             "formato": "num"
                         },
-                        "15.3N4": {
+                        "14.3N4": {
                             "nome": "periodo_parcela",
                             "posicao_inicio": 150,
                             "posicao_fim": 155,
                             "formato": "num"
                         },
-                        "16.3N4": {
+                        "15.3N4": {
                             "nome": "vazio2n4",
                             "posicao_inicio": 156,
                             "posicao_fim": 165,
                             "formato": "alfa"
                         },
-                        "17.3N4": {
+                        "16.3N4": {
                             "nome": "contribuinte_nome",
                             "posicao_inicio": 166,
                             "posicao_fim": 195,
@@ -446,101 +424,94 @@
                     "nome": "GareSP",
                     "campos": {
                         "01.3N5": {
-                            "nome": "identificacao_tributo",
-                            "posicao_inicio": 18,
-                            "posicao_fim": 19,
-                            "formato": "num",
-                            "default": 5
-                        },
-                        "02.3N5": {
                             "nome": "codigo_receita",
                             "posicao_inicio": 20,
                             "posicao_fim": 23,
                             "formato": "num"
                         },
-                        "03.3N5": {
+                        "02.3N5": {
                             "nome": "contribuinte_inscricao_tipo",
                             "posicao_inicio": 24,
                             "posicao_fim": 24,
                             "formato": "num"
                         },
-                        "04.3N5": {
+                        "03.3N5": {
                             "nome": "contribuinte_inscricao_numero",
                             "posicao_inicio": 25,
                             "posicao_fim": 38,
                             "formato": "num"
                         },
-                        "05.3N5": {
+                        "04.3N5": {
                             "nome": "inscricao_estadual",
                             "posicao_inicio": 39,
                             "posicao_fim": 50,
                             "formato": "num"
                         },
-                        "06.3N5": {
+                        "05.3N5": {
                             "nome": "divida_ativa_etiqueta",
                             "posicao_inicio": 51,
                             "posicao_fim": 63,
                             "formato": "num"
                         },
-                        "07.3N5": {
+                        "06.3N5": {
                             "nome": "data_referencia",
                             "posicao_inicio": 64,
                             "posicao_fim": 69,
                             "formato": "num"
                         },
-                        "08.3N5": {
+                        "07.3N5": {
                             "nome": "numero_parcela_notificacao",
                             "posicao_inicio": 70,
                             "posicao_fim": 82,
                             "formato": "num"
                         },
-                        "09.3N5": {
+                        "08.3N5": {
                             "nome": "valor_receita",
                             "posicao_inicio": 83,
                             "posicao_fim": 96,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "10.3N5": {
+                        "09.3N5": {
                             "nome": "valor_juros",
                             "posicao_inicio": 97,
                             "posicao_fim": 110,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "11.3N5": {
+                        "10.3N5": {
                             "nome": "valor_multa",
                             "posicao_inicio": 111,
                             "posicao_fim": 124,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "12.3N5": {
+                        "11.3N5": {
                             "nome": "valor_pagamento",
                             "posicao_inicio": 125,
                             "posicao_fim": 138,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "13.3N5": {
+                        "12.3N5": {
                             "nome": "data_vencimento",
                             "posicao_inicio": 139,
                             "posicao_fim": 146,
                             "formato": "num"
                         },
-                        "14.3N5": {
+                        "13.3N5": {
                             "nome": "data_pagamento",
                             "posicao_inicio": 147,
                             "posicao_fim": 154,
                             "formato": "num"
                         },
-                        "15.3N5": {
+                        "14.3N5": {
                             "nome": "vazio1n5",
                             "posicao_inicio": 155,
                             "posicao_fim": 165,
                             "formato": "alfa"
                         },
-                        "16.3N5": {
+                        "15.3N5": {
                             "nome": "contribuinte_nome",
                             "posicao_inicio": 166,
                             "posicao_fim": 195,
@@ -552,111 +523,105 @@
                     "nome": "IPVA_DPVAT",
                     "campos": {
                         "01.3N6": {
-                            "nome": "identificacao_tributo",
-                            "posicao_inicio": 18,
-                            "posicao_fim": 19,
-                            "formato": "num"
-                        },
-                        "02.3N6": {
                             "nome": "vazio1n6",
                             "posicao_inicio": 20,
                             "posicao_fim": 23,
                             "formato": "alfa"
                         },
-                        "03.3N6": {
+                        "02.3N6": {
                             "nome": "contribuinte_inscricao_tipo",
                             "posicao_inicio": 24,
                             "posicao_fim": 24,
                             "formato": "num"
                         },
-                        "04.3N6": {
+                        "03.3N6": {
                             "nome": "contribuinte_inscricao_numero",
                             "posicao_inicio": 25,
                             "posicao_fim": 38,
                             "formato": "num"
                         },
-                        "05.3N6": {
+                        "04.3N6": {
                             "nome": "ano_base",
                             "posicao_inicio": 39,
                             "posicao_fim": 42,
                             "formato": "num"
                         },
-                        "06.3N6": {
+                        "05.3N6": {
                             "nome": "codigo_renavam",
                             "posicao_inicio": 43,
                             "posicao_fim": 51,
                             "formato": "num"
                         },
-                        "07.3N6": {
+                        "06.3N6": {
                             "nome": "unidade_federacao",
                             "posicao_inicio": 52,
                             "posicao_fim": 53,
                             "formato": "alfa"
                         },
-                        "08.3N6": {
+                        "07.3N6": {
                             "nome": "codigo_municipio",
                             "posicao_inicio": 54,
                             "posicao_fim": 58,
                             "formato": "num"
                         },
-                        "09.3N6": {
+                        "08.3N6": {
                             "nome": "placa_veiculo",
                             "posicao_inicio": 59,
                             "posicao_fim": 65,
                             "formato": "alfa"
                         },
-                        "10.3N6": {
+                        "09.3N6": {
                             "nome": "opcao_pagamento",
                             "posicao_inicio": 66,
                             "posicao_fim": 66,
                             "formato": "alfa"
                         },
-                        "11.3N6": {
+                        "10.3N6": {
                             "nome": "valor_ipva_dpvat",
                             "posicao_inicio": 67,
                             "posicao_fim": 80,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "12.3N6": {
+                        "11.3N6": {
                             "nome": "valor_desconto",
                             "posicao_inicio": 81,
                             "posicao_fim": 94,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "13.3N6": {
+                        "12.3N6": {
                             "nome": "valor_pagamento",
                             "posicao_inicio": 95,
                             "posicao_fim": 108,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "14.3N6": {
+                        "13.3N6": {
                             "nome": "data_vencimento",
                             "posicao_inicio": 109,
                             "posicao_fim": 116,
                             "formato": "num"
                         },
-                        "15.3N6": {
+                        "14.3N6": {
                             "nome": "data_pagamento",
                             "posicao_inicio": 117,
                             "posicao_fim": 124,
                             "formato": "num"
                         },
-                        "16.3N6": {
+                        "15.3N6": {
                             "nome": "vazio2n6",
                             "posicao_inicio": 125,
                             "posicao_fim": 153,
                             "formato": "alfa"
                         },
-                        "17.3N6": {
+                        "16.3N6": {
                             "nome": "codigo_renavam_completo",
                             "posicao_inicio": 154,
                             "posicao_fim": 165,
                             "formato": "num"
                         },
-                        "18.3N6": {
+                        "17.3N6": {
                             "nome": "contribuinte_nome",
                             "posicao_inicio": 166,
                             "posicao_fim": 195,
@@ -668,74 +633,67 @@
                     "nome": "FGTS",
                     "campos": {
                         "01.3N7": {
-                            "nome": "identificacao_tributo",
-                            "posicao_inicio": 18,
-                            "posicao_fim": 19,
-                            "formato": "num",
-                            "default": 11
-                        },
-                        "02.3N7": {
                             "nome": "codigo_receita",
                             "posicao_inicio": 20,
                             "posicao_fim": 23,
                             "formato": "num"
                         },
-                        "03.3N7": {
+                        "02.3N7": {
                             "nome": "contribuinte_inscricao_tipo",
                             "posicao_inicio": 24,
                             "posicao_fim": 24,
                             "formato": "num"
                         },
-                        "04.3N7": {
+                        "03.3N7": {
                             "nome": "contribuinte_inscricao_numero",
                             "posicao_inicio": 25,
                             "posicao_fim": 38,
                             "formato": "num"
                         },
-                        "05.3N7": {
+                        "04.3N7": {
                             "nome": "codigo_de_barras_alfa",
                             "posicao_inicio": 39,
                             "posicao_fim": 86,
                             "formato": "alfa"
                         },
-                        "06.3N7": {
+                        "05.3N7": {
                             "nome": "identificador_fgts",
                             "posicao_inicio": 87,
                             "posicao_fim": 102,
                             "formato": "num"
                         },
-                        "07.3N7": {
+                        "06.3N7": {
                             "nome": "lacre_conectividade_social",
                             "posicao_inicio": 103,
                             "posicao_fim": 111,
                             "formato": "num"
                         },
-                        "08.3N7": {
+                        "07.3N7": {
                             "nome": "lacre_conectividade_social_dv",
                             "posicao_inicio": 112,
                             "posicao_fim": 113,
                             "formato": "num"
                         },
-                        "09.3N7": {
+                        "08.3N7": {
                             "nome": "contribuinte_nome",
                             "posicao_inicio": 114,
                             "posicao_fim": 143,
                             "formato": "alfa"
                         },
-                        "10.3N7": {
+                        "09.3N7": {
                             "nome": "data_pagamento",
                             "posicao_inicio": 144,
                             "posicao_fim": 151,
                             "formato": "num"
                         },
-                        "11.3N7": {
+                        "10.3N7": {
                             "nome": "valor_pagamento",
                             "posicao_inicio": 152,
                             "posicao_fim": 165,
                             "formato": "num",
                             "decimais": 2
                         },
-                        "12.3N7": {
+                        "11.3N7": {
                             "nome": "vazio1n7",
                             "posicao_inicio": 166,
                             "posicao_fim": 195,
@@ -745,20 +703,19 @@
                 }
             ]
         },
-
-        "08.3N": {
+        "09.3N": {
             "nome": "numero_empresa",
             "posicao_inicio": 196,
             "posicao_fim": 215,
             "formato": "alfa"
         },
-        "09.3N": {
+        "10.3N": {
             "nome": "nosso_numero",
             "posicao_inicio": 216,
             "posicao_fim": 230,
             "formato": "alfa"
         },
-        "10.3N": {
+        "11.3N": {
             "nome": "ocorrencias_retorno",
             "posicao_inicio": 231,
             "posicao_fim": 240,
