@@ -375,6 +375,13 @@ modalidade Risco Sacado pós Autorizado',
         'X2': 'Número da Nota Fiscal Inválido',
         'X3': 'Identificador de NF/CNPJ Inválido',
         'X4': 'Forma 32 Inválida'
+    },
+    '756': {
+        '00': 'Crédito ou Débito Efetivado',
+        'AJ': 'Tipo de Movimento Inválido / Erro CNAB',
+        'BD': 'Inclusão Efetuada com Sucesso',
+        'PD': 'Transação Pendente de Assinatura',
+        'BF': 'Transação Rejeitada',
     }
 }
 
