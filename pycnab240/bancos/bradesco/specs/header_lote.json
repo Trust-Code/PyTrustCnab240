@@ -154,8 +154,7 @@
             "nome": "cedente_cep_complemento",
             "posicao_inicio": 218,
             "posicao_fim": 220,
-            "formato": "num",
-            "default": 0
+            "formato": "alfa"
         },
         "25.1": {
             "nome": "cedente_uf",
