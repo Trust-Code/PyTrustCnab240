@@ -39,6 +39,15 @@ FORMA_DE_LANCAMENTO = {
     'itau': {
         '01': '41',  # 'Transferência (TED - outro titular)'
         '02': '03',  # 'Transferência (DOC "D" - outro titular)'
+        '03': '31',  # 'Pagamento de Títulos - Outros bancos'
+        '04': '91',  # Tributos com código de barras e GNRE
+        '05': '17',  # GPS - Guia de previdencia Social
+        '06': '16',  # DARF Normal
+        '07': '18',  # DARF Simples
+        '08': '35',  # FGTS
+        '09': '22',  # ICMS
+        '95': '30',  # 'Pagamento de Títulos - Itaú'
+        '96': '06',  # 'Credito em CC do Itaú - mesmo titular
         '97': '07',  # 'Transferência (DOC "C" - mesmo titular)'
         '98': '43',  # 'Transferência (TED - mesmo titular)'
         '99': '01',  # 'Credito em CC do itau')'

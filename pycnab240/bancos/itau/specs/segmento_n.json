@@ -44,7 +44,8 @@
             "nome": "identificacao_tributo",
             "posicao_inicio": 18,
             "posicao_fim": 19,
-            "formato": "num"
+            "formato": "num",
+            "default": 1
         },
         "08.3N": {
             "nome": "dados_identificacao_tributo",
@@ -61,26 +62,26 @@
                             "formato": "num"
                         },
                         "02.3N1": {
-                            "nome": "data_competencia",
+                            "nome": "mes_ano_competencia",
                             "posicao_inicio": 24,
                             "posicao_fim": 29,
                             "formato": "num"
                         },
                         "03.3N1": {
-                            "nome": "identificador_contribuinte",
+                            "nome": "cedente_inscricao_numero",
                             "posicao_inicio": 30,
                             "posicao_fim": 43,
                             "formato": "num"
                         },
                         "04.3N1": {
-                            "nome": "valor_tributo",
+                            "nome": "valor_previsto_inss",
                             "posicao_inicio": 44,
                             "posicao_fim": 57,
                             "formato": "num",
                             "decimais": 2
                         },
                         "05.3N1": {
-                            "nome": "valor_outros",
+                            "nome": "valor_outras_entidades",
                             "posicao_inicio": 58,
                             "posicao_fim": 71,
                             "formato": "num",
@@ -94,14 +95,14 @@
                             "decimais": 2
                         },
                         "07.3N1": {
-                            "nome": "valor_arrecadado",
+                            "nome": "valor_total_pagamento",
                             "posicao_inicio": 86,
                             "posicao_fim": 99,
                             "formato": "num",
                             "decimais": 2
                         },
                         "08.3N1": {
-                            "nome": "data_arrecadacao",
+                            "nome": "data_pagamento",
                             "posicao_inicio": 100,
                             "posicao_fim": 107,
                             "formato": "num"
@@ -130,19 +131,19 @@
                     "nome": "DarfNormal",
                     "campos": {
                         "01.3N2": {
-                            "nome": "codigo_receita",
+                            "nome": "codigo_receita_tributo",
                             "posicao_inicio": 20,
                             "posicao_fim": 23,
                             "formato": "num"
                         },
                         "02.3N2": {
-                            "nome": "contribuinte_inscricao_tipo",
+                            "nome": "cedente_inscricao_tipo",
                             "posicao_inicio": 24,
                             "posicao_fim": 24,
                             "formato": "num"
                         },
                         "03.3N2": {
-                            "nome": "contribuinte_inscricao_numero",
+                            "nome": "cedente_inscricao_numero",
                             "posicao_inicio": 25,
                             "posicao_fim": 38,
                             "formato": "num"
@@ -217,19 +218,19 @@
                     "nome": "DarfSimples",
                     "campos": {
                         "01.3N3": {
-                            "nome": "codigo_receita",
+                            "nome": "codigo_receita_tributo",
                             "posicao_inicio": 20,
                             "posicao_fim": 23,
                             "formato": "num"
                         },
                         "02.3N3": {
-                            "nome": "contribuinte_inscricao_tipo",
+                            "nome": "cedente_inscricao_tipo",
                             "posicao_inicio": 24,
                             "posicao_fim": 24,
                             "formato": "num"
                         },
                         "03.3N3": {
-                            "nome": "contribuinte_inscricao_numero",
+                            "nome": "cedente_inscricao_numero",
                             "posicao_inicio": 25,
                             "posicao_fim": 38,
                             "formato": "num"
@@ -318,19 +319,19 @@
                     "nome": "DARJ",
                     "campos": {
                         "01.3N4": {
-                            "nome": "codigo_receita",
+                            "nome": "codigo_receita_tributo",
                             "posicao_inicio": 20,
                             "posicao_fim": 23,
                             "formato": "num"
                         },
                         "02.3N4": {
-                            "nome": "contribuinte_inscricao_tipo",
+                            "nome": "cedente_inscricao_tipo",
                             "posicao_inicio": 24,
                             "posicao_fim": 24,
                             "formato": "num"
                         },
                         "03.3N4": {
-                            "nome": "contribuinte_inscricao_numero",
+                            "nome": "cedente_inscricao_numero",
                             "posicao_inicio": 25,
                             "posicao_fim": 38,
                             "formato": "num"
@@ -424,19 +425,19 @@
                     "nome": "GareSP",
                     "campos": {
                         "01.3N5": {
-                            "nome": "codigo_receita",
+                            "nome": "codigo_receita_tributo",
                             "posicao_inicio": 20,
                             "posicao_fim": 23,
                             "formato": "num"
                         },
                         "02.3N5": {
-                            "nome": "contribuinte_inscricao_tipo",
+                            "nome": "cedente_inscricao_tipo",
                             "posicao_inicio": 24,
                             "posicao_fim": 24,
                             "formato": "num"
                         },
                         "03.3N5": {
-                            "nome": "contribuinte_inscricao_numero",
+                            "nome": "cedente_inscricao_numero",
                             "posicao_inicio": 25,
                             "posicao_fim": 38,
                             "formato": "num"
@@ -529,13 +530,13 @@
                             "formato": "alfa"
                         },
                         "02.3N6": {
-                            "nome": "contribuinte_inscricao_tipo",
+                            "nome": "cedente_inscricao_tipo",
                             "posicao_inicio": 24,
                             "posicao_fim": 24,
                             "formato": "num"
                         },
                         "03.3N6": {
-                            "nome": "contribuinte_inscricao_numero",
+                            "nome": "cedente_inscricao_numero",
                             "posicao_inicio": 25,
                             "posicao_fim": 38,
                             "formato": "num"
@@ -633,19 +634,19 @@
                     "nome": "FGTS",
                     "campos": {
                         "01.3N7": {
-                            "nome": "codigo_receita",
+                            "nome": "codigo_receita_tributo",
                             "posicao_inicio": 20,
                             "posicao_fim": 23,
                             "formato": "num"
                         },
                         "02.3N7": {
-                            "nome": "contribuinte_inscricao_tipo",
+                            "nome": "cedente_inscricao_tipo",
                             "posicao_inicio": 24,
                             "posicao_fim": 24,
                             "formato": "num"
                         },
                         "03.3N7": {
-                            "nome": "contribuinte_inscricao_numero",
+                            "nome": "cedente_inscricao_numero",
                             "posicao_inicio": 25,
                             "posicao_fim": 38,
                             "formato": "num"
@@ -703,14 +704,15 @@
                 }
             ]
         },
+
         "09.3N": {
-            "nome": "numero_empresa",
+            "nome": "numero_documento_banco",
             "posicao_inicio": 196,
             "posicao_fim": 215,
             "formato": "alfa"
         },
         "10.3N": {
-            "nome": "nosso_numero",
+            "nome": "numero_documento_cliente",
             "posicao_inicio": 216,
             "posicao_fim": 230,
             "formato": "alfa"

@@ -113,7 +113,7 @@
             "formato": "alfa"
         },
         "18.3O": {
-            "nome": "numero_empresa",
+            "nome": "numero_documento_cliente",
             "posicao_inicio": 175,
             "posicao_fim": 194,
             "formato": "alfa"
@@ -125,7 +125,7 @@
             "formato": "alfa"
         },
         "20.3O": {
-            "nome": "nosso_numero",
+            "nome": "numero_documento_banco",
             "posicao_inicio": 216,
             "posicao_fim": 230,
             "formato": "alfa"
