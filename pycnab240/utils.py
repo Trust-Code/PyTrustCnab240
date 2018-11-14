@@ -14,7 +14,7 @@ BANK = {
 
 
 OPERATION_NAME = {
-    'OTHERS': {
+    'OTHER': {
         '01': 'TED_OTHER_BANK',
         '02': 'DOC_OTHER_BANK',
         '03': 'TITULOS',
@@ -716,19 +716,19 @@ def get_operation(bank_origin, bank_dest, titular_origin, titular_dest, op):
         same_titularity = titular_origin == titular_dest
         same_bank = bank_origin == bank_dest
         try:
-            if (int(op) > 4) and not same_bank and not same_titularity:
-                return get_forma_de_lancamento(
-                    bank_origin, OPERATION_NAME['OTHER'][op])
-            if same_titularity and not same_bank:
-                return get_forma_de_lancamento(
-                    bank_origin, OPERATION_NAME['SAME_TIT'][op])
-            if same_bank and not same_titularity:
-                return get_forma_de_lancamento(
-                    bank_origin, OPERATION_NAME['SAME_BANK'][op])
-            if same_titularity and same_bank:
-                return get_forma_de_lancamento(
-                    bank_origin, OPERATION_NAME['SAME_BOTH'][op])
+            if (int(op) < 3):
+                if same_titularity and not same_bank:
+                    return get_forma_de_lancamento(
+                        bank_origin, OPERATION_NAME['SAME_TIT'][op])
+                if same_bank and not same_titularity:
+                    return get_forma_de_lancamento(
+                        bank_origin, OPERATION_NAME['SAME_BANK'][op])
+                if same_titularity and same_bank:
+                    return get_forma_de_lancamento(
+                        bank_origin, OPERATION_NAME['SAME_BOTH'][op])
+            return get_forma_de_lancamento(
+                bank_origin, OPERATION_NAME['OTHER'][op])
         except KeyError:
             same_info = 'same bank' if same_bank else\
                 'same titularity' if same_titularity else ''
-            parse_keyerror_servico(bank_origin, op, same=same_info)
+            parse_keyerror_finality(bank_origin, op, same=same_info)
