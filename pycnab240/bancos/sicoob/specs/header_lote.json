@@ -170,7 +170,8 @@
             "posicao_inicio": 223,
             "posicao_fim": 224,
             "formato": "num",
-            "default": 1
+            "default": 1,
+            "ignore": true
         },
         "27.1": {
             "nome": "vazio3",
