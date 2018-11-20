@@ -302,6 +302,7 @@ CODIGOS_RETORNO = {
         'HL': 'Versão de Layout Inválida',
         'HU': 'Hora de Envio Inválida',
         'IJ': 'Competência ou Período de Referencia ou Numero da Parcela inválido',  # noqa
+        'IL': 'Código de pagamento/Empresa/Receita inválido',
         'IM': 'Município Invalido',
         'IN': 'Numero Declaração Invalido',
         'IO': 'Numero Etiqueta invalido',
