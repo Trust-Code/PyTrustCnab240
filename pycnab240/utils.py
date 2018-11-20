@@ -160,6 +160,40 @@ DOC_TED_FINALITY = {
             '12': '100',  # DOC para Depósito Judicial
             '13': '101',  # Pensão Alimentícia
         }
+    },
+    'sicoob': {
+        '02': {  # DOC
+            '01': '01',  # credito em conta
+            '02': '02',  # pagto de aluguel/cond
+            '03': '03',  # pagto de duplicata/titulos
+            '04': '04',  # pagto de dividendos
+            '05': '05',  # pagto mensalidade escolar
+            '06': '06',  # pagto salarios
+            '07': '07',  # pagto fornecedores
+            '08': '08',  # op cambio/fundos/bolsa
+            '09': '09',  # arrecadação/pagto de tributos
+            '11': '11',  # DOC para poupança
+            '12': '12',  # DOC para Depósito Judicial
+            '13': '13',  # Pensão Alimentícia
+            '14': '14',  # Restituição de Imposto de Renda
+            '99': '13',  # Outros
+        },
+        '01': {  # TED
+            '01': '10',  # credito em conta
+            '02': '7',  # pagto de aluguel/cond
+            '03': '8',  # pagto de duplicata/titulos
+            '04': '3',  # pagto de dividendos
+            '05': '9',  # pagto mensalidade escolar
+            '06': '4',  # pagto salarios
+            '07': '5',  # pagto fornecedores
+            '08': '204',  # op cambio/fundos/bolsa
+            '09': '1',  # arrecadação/pagto de tributos
+            '11': '10',  # DOC para poupança
+            '12': '10',  # DOC para Depósito Judicial
+            '13': '101',  # Pensão Alimentícia
+            '14': '300',  # Restituição de Imposto de Renda
+            '99': '10',  # Outros
+        }
     }
 }
 SUBSEGMENTS = {
