@@ -613,9 +613,7 @@ def get_forma_de_lancamento(bank_name, code):
     return value
 
 
-def get_ted_doc_finality(bank, mov_type, code):
-    if (int(code) > 3):
-            return ''
+def get_ted_doc_finality(bank, mov_type, code, ignore=False):
     try:
         value = DOC_TED_FINALITY[bank][mov_type][code]
     except KeyError:
