@@ -135,8 +135,22 @@ TIPO_DE_SERVICO = {
         '80': '80',  # Pagamento Representantes / Vendedores Autorizados
         '90': '90',  # Pagamento Beneficios
         '98': '98',  # Pagamentos Diversos
-    }
+    },
+    'bradesco': {
+        '10': '10',  # Pagamento Dividendos
+        '14': '14',  # Consulta de Tributos a Pagar DETRAN com RENAVAM
+        '20': '20',  # Pagamento Fornecedor
+        '22': '22',  # Pagamento de Contas, Tributos e Impostos
+        '29': '29',  # Alegacao do Sacado
+        '50': '50',  # Pagamento Sinistros Segurados
+        '60': '60',  # Pagamento Despesas Viajante em Transito
+        '80': '80',  # Pagamento Representantes / Vendedores Autorizados
+        '90': '90',  # Pagamento Beneficios
+        '98': '98',  # Pagamentos Diversos
+        }
 }
+
+
 DOC_TED_FINALITY = {
     'itau': {
         '02': {  # DOC
@@ -200,8 +214,44 @@ DOC_TED_FINALITY = {
             '14': '300',  # Restituição de Imposto de Renda
             '99': '10',  # Outros
         }
+    },
+    'bradesco': {
+        '02': {  # DOC
+            '01': '01',  # credito em conta
+            '02': '02',  # pagto de aluguel/cond
+            '03': '03',  # pagto de duplicata/titulos
+            '04': '04',  # pagto de dividendos
+            '05': '05',  # pagto mensalidade escolar
+            '06': '06',  # pagto salarios
+            '07': '07',  # pagto fornecedores
+            '08': '08',  # op cambio/fundos/bolsa
+            '09': '09',  # arrecadação/pagto de tributos
+            '11': '11',  # DOC para poupança
+            '12': '12',  # DOC para Depósito Judicial
+            '13': '13',  # Pensão Alimentícia
+            '14': '13',  # Restituição de Imposto de Renda
+            '99': '13',  # Outros
+        },
+        '01': {  # TED
+            '01': '01',  # credito em conta
+            '02': '02',  # pagto de aluguel/cond
+            '03': '03',  # pagto de duplicata/titulos
+            '04': '04',  # pagto de dividendos
+            '05': '05',  # pagto mensalidade escolar
+            '06': '06',  # pagto salarios
+            '07': '07',  # pagto fornecedores
+            '08': '08',  # op cambio/fundos/bolsa
+            '09': '09',  # arrecadação/pagto de tributos
+            '11': '11',  # DOC para poupança
+            '12': '12',  # DOC para Depósito Judicial
+            '13': '13',  # Pensão Alimentícia
+            '14': '13',  # Restituição de Imposto de Renda
+            '99': '13',  # Outros
+        }
     }
 }
+
+
 SUBSEGMENTS = {
     '033': {
         'SegmentoN': {
@@ -235,8 +285,17 @@ SUBSEGMENTS = {
             '08': 'SegmentoN_IPVA_DPVAT',
             '11': 'SegmentoN_FGTS',
         }
-    }
+    },
+    '237': {
+        'SegmentoN': {
+            '16': 'SegmentoN_DarfNormal',
+            '17': 'SegmentoN_GPS',
+            '18': 'SegmentoN_DarfSimples',
+            '22': 'SegmentoN_GareSP',
+        }
+    },
 }
+
 
 CODIGOS_RETORNO = {
     '033': {
