@@ -759,7 +759,7 @@ def get_operation(bank_origin, bank_dest, titular_origin, titular_dest, op):
         same_titularity = titular_origin == titular_dest
         same_bank = bank_origin == bank_dest
         try:
-            if (int(op) < 3):
+            if (int(op) < 4):
                 if same_titularity and not same_bank:
                     return get_forma_de_lancamento(
                         bank_origin, OPERATION_NAME['SAME_TIT'][op])
