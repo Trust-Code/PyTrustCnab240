@@ -53,14 +53,12 @@ FORMA_DE_LANCAMENTO = {
         'DARF_SIMPLES': '18',  # DARF Simples
         'FGTS': '11',  # FGTS
         # 'ICMS': '',  # ICMS
-        'CC': '01',  # 'Credito em CC - mesmo titular
         'DOC_SAME_TITUL': '03',  # 'Transferência (DOC "C" - mesmo titular)'
         'TED_SAME_TITUL': '03',  # 'Transferência (TED - mesmo titular)'
         'CC_OTHER_TITUL': '01',  # 'Credito em CC)'
+        'CC_SAME_TITUL': '01'
     },
     '756': {
-        # TODO: add esquema para quando doc e ted são
-        # para a mesma titularidade e tributos são do mesmo banco
         'TED_OTHER_BANK': '41',  # Transferências para outros bancos (TED)
         'DOC_OTHER_BANK': '03',  # Transferências para outros bancos (DOC)
         'DOC_SAME_TITUL': '03',  # 'Transferência (DOC "C" - mesmo titular)'
@@ -72,6 +70,9 @@ FORMA_DE_LANCAMENTO = {
         'DARF_NORMAL': '16',  # DARF Normal
         'DARF_SIMPLES': '18',  # DARF Simples
         'FGTS': '11',  # FGTS
+        'CC_OTHER_TITUL': '01',  # 'Credito em CC)'
+        'CC_SAME_TITUL': '01'
+        #  'ICMS': , #
     },
     '341': {
         'TED_OTHER_BANK': '41',  # 'Transferência (TED - outro titular)'
@@ -84,21 +85,26 @@ FORMA_DE_LANCAMENTO = {
         'FGTS': '35',  # FGTS
         'ICMS': '22',  # ICMS
         'TITULOS_SAME_BANK': '30',  # 'Pagamento de Títulos - Itaú'
-        'CC': '06',  # 'Credito em CC do Itaú - mesmo titular
+        'CC_SAME_TITUL': '06',  # 'Credito em CC do Itaú - mesmo titular
         'DOC_SAME_TITUL': '07',  # 'Transferência (DOC "C" - mesmo titular)'
         'TED_SAME_TITUL': '43',  # 'Transferência (TED - mesmo titular)'
         'CC_OTHER_TITUL': '01',  # 'Credito em CC do itau')'
     },
     '237': {
-        'TED_OTHER_BANK': '03',  # Transferências para outros bancos (DOC, TED)
-        'DOC_OTHER_BANK': '03',  # Transferências para outros bancos (DOC, TED)
+        'TED_OTHER_BANK': '41',  # Transferências para outros bancos (TED)
+        'DOC_OTHER_BANK': '03',  # Transferências para outros bancos (DOC)
+        'DOC_SAME_TITUL': '03',  # 'Transferência (DOC "C" - mesmo titular)'
+        'TED_SAME_TITUL': '43',  # 'Transferência (TED - mesmo titular)'
         'TITULOS': '31',  # Pagamento de Títulos
+        'TITULOS_SAME_BANK': '30',  # Pagamento de Títulos - Sicoob
         'BARCODE': '11',  # Tributos com código de barras
         'GPS': '17',  # GPS - Guia de previdencia Social
         'DARF_NORMAL': '16',  # DARF Normal
         'DARF_SIMPLES': '18',  # DARF Simples
-        # 'FGTS': '11',  # FGTS
-        'ICMS': '22',  # ICMS
+        #  'FGTS': '11',  # FGTS
+        'CC_OTHER_TITUL': '01',  # 'Credito em CC)'
+        'CC_SAME_TITUL': '01',  # 'Credito em CC - mesma titularidade)'
+        'ICMS': '22',  # GARE-SP
     }
 }
 
@@ -129,8 +135,22 @@ TIPO_DE_SERVICO = {
         '80': '80',  # Pagamento Representantes / Vendedores Autorizados
         '90': '90',  # Pagamento Beneficios
         '98': '98',  # Pagamentos Diversos
-    }
+    },
+    'bradesco': {
+        '10': '10',  # Pagamento Dividendos
+        '14': '14',  # Consulta de Tributos a Pagar DETRAN com RENAVAM
+        '20': '20',  # Pagamento Fornecedor
+        '22': '22',  # Pagamento de Contas, Tributos e Impostos
+        '29': '29',  # Alegacao do Sacado
+        '50': '50',  # Pagamento Sinistros Segurados
+        '60': '60',  # Pagamento Despesas Viajante em Transito
+        '80': '80',  # Pagamento Representantes / Vendedores Autorizados
+        '90': '90',  # Pagamento Beneficios
+        '98': '98',  # Pagamentos Diversos
+        }
 }
+
+
 DOC_TED_FINALITY = {
     'itau': {
         '02': {  # DOC
@@ -194,8 +214,44 @@ DOC_TED_FINALITY = {
             '14': '300',  # Restituição de Imposto de Renda
             '99': '10',  # Outros
         }
+    },
+    'bradesco': {
+        '02': {  # DOC
+            '01': '01',  # credito em conta
+            '02': '02',  # pagto de aluguel/cond
+            '03': '03',  # pagto de duplicata/titulos
+            '04': '04',  # pagto de dividendos
+            '05': '05',  # pagto mensalidade escolar
+            '06': '06',  # pagto salarios
+            '07': '07',  # pagto fornecedores
+            '08': '08',  # op cambio/fundos/bolsa
+            '09': '09',  # arrecadação/pagto de tributos
+            '11': '11',  # DOC para poupança
+            '12': '12',  # DOC para Depósito Judicial
+            '13': '13',  # Pensão Alimentícia
+            '14': '13',  # Restituição de Imposto de Renda
+            '99': '13',  # Outros
+        },
+        '01': {  # TED
+            '01': '01',  # credito em conta
+            '02': '02',  # pagto de aluguel/cond
+            '03': '03',  # pagto de duplicata/titulos
+            '04': '04',  # pagto de dividendos
+            '05': '05',  # pagto mensalidade escolar
+            '06': '06',  # pagto salarios
+            '07': '07',  # pagto fornecedores
+            '08': '08',  # op cambio/fundos/bolsa
+            '09': '09',  # arrecadação/pagto de tributos
+            '11': '11',  # DOC para poupança
+            '12': '12',  # DOC para Depósito Judicial
+            '13': '13',  # Pensão Alimentícia
+            '14': '13',  # Restituição de Imposto de Renda
+            '99': '13',  # Outros
+        }
     }
 }
+
+
 SUBSEGMENTS = {
     '033': {
         'SegmentoN': {
@@ -229,8 +285,17 @@ SUBSEGMENTS = {
             '08': 'SegmentoN_IPVA_DPVAT',
             '11': 'SegmentoN_FGTS',
         }
-    }
+    },
+    '237': {
+        'SegmentoN': {
+            '16': 'SegmentoN_DarfNormal',
+            '17': 'SegmentoN_GPS',
+            '18': 'SegmentoN_DarfSimples',
+            '22': 'SegmentoN_GareSP',
+        }
+    },
 }
+
 
 CODIGOS_RETORNO = {
     '033': {
@@ -607,10 +672,12 @@ def get_forma_de_lancamento(bank_name, code):
     return value
 
 
-def get_ted_doc_finality(bank, mov_type, code):
+def get_ted_doc_finality(bank, mov_type, code, ignore=False):
     try:
         value = DOC_TED_FINALITY[bank][mov_type][code]
     except KeyError:
+        if ignore:
+            return ''
         parse_keyerror_finality(bank, code, finality=mov_type)
     return value
 
@@ -751,7 +818,7 @@ def get_operation(bank_origin, bank_dest, titular_origin, titular_dest, op):
         same_titularity = titular_origin == titular_dest
         same_bank = bank_origin == bank_dest
         try:
-            if (int(op) < 3):
+            if (int(op) < 4):
                 if same_titularity and not same_bank:
                     return get_forma_de_lancamento(
                         bank_origin, OPERATION_NAME['SAME_TIT'][op])

@@ -104,7 +104,8 @@
             "nome": "numero_nota_fiscal",
             "posicao_inicio": 163,
             "posicao_fim": 171,
-            "formato": "num"
+            "formato": "num",
+            "default": 0
         },
         "17.3O": {
             "nome": "vazio2",
