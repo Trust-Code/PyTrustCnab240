@@ -141,7 +141,8 @@
             "nome": "data_real_pagamento",
             "posicao_inicio": 155,
             "posicao_fim": 162,
-            "formato": "num"
+            "formato": "num",
+            "default": 0
         },
         "23.3A": {
             "nome": "valor_real_pagamento",

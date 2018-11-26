@@ -12,56 +12,93 @@ BANK = {
     '237': bancos.bradesco
 }
 
+
+OPERATION_NAME = {
+    'OTHER': {
+        '01': 'TED_OTHER_BANK',
+        '02': 'DOC_OTHER_BANK',
+        '03': 'TITULOS',
+        '04': 'BARCODE',
+        '05': 'GPS',
+        '06': 'DARF_NORMAL',
+        '07': 'DARF_SIMPLES',
+        '08': 'FGTS',
+        '09': 'ICMS'
+        },
+    'SAME_BANK': {
+        '01': 'CC_OTHER_TITUL',
+        '02': 'CC_OTHER_TITUL',
+        '03': 'TITULOS_SAME_BANK'
+    },
+    'SAME_TIT': {
+        '01': 'TED_SAME_TITUL',
+        '02': 'DOC_SAME_TITUL'
+    },
+    'SAME_BOTH': {
+        '01': 'CC_SAME_TITUL',
+        '02': 'CC_SAME_TITUL'
+    }
+}
+
 FORMA_DE_LANCAMENTO = {
     # Usar os códigos do Santander como base
-    'santander': {
-        '01': '03',  # Transferências para outros bancos (DOC, TED)
-        '02': '03',  # Transferências para outros bancos (DOC, TED)
-        '03': '31',  # Pagamento de Títulos
-        '04': '11',  # Tributos com código de barras
-        '05': '17',  # GPS - Guia de previdencia Social
-        '06': '16',  # DARF Normal
-        '07': '18',  # DARF Simples
-        '08': '11',  # FGTS
-        # '09': '',  # ICMS
+    '033': {
+        'TED_OTHER_BANK': '03',  # Transferências para outros bancos (DOC, TED)
+        'DOC_OTHER_BANK': '03',  # Transferências para outros bancos (DOC, TED)
+        'TITULOS': '31',  # Pagamento de Títulos
+        'TITULOS_SAME_BANK': '30',
+        'BARCODE': '11',  # Tributos com código de barras
+        'GPS': '17',  # GPS - Guia de previdencia Social
+        'DARF_NORMAL': '16',  # DARF Normal
+        'DARF_SIMPLES': '18',  # DARF Simples
+        'FGTS': '11',  # FGTS
+        # 'ICMS': '',  # ICMS
+        'CC': '01',  # 'Credito em CC - mesmo titular
+        'DOC_SAME_TITUL': '03',  # 'Transferência (DOC "C" - mesmo titular)'
+        'TED_SAME_TITUL': '03',  # 'Transferência (TED - mesmo titular)'
+        'CC_OTHER_TITUL': '01',  # 'Credito em CC)'
     },
-    'sicoob': {  # TODO: add esquema para quando doc e ted são
-                # para a mesma titularidade e tributos são do mesmo banco
-                '01': '41',  # Transferências para outros bancos (TED)
-                '02': '03',  # Transferências para outros bancos (DOC)
-                '03': '31',  # Pagamento de Títulos
-                '04': '11',  # Tributos com código de barras
-                '05': '17',  # GPS - Guia de previdencia Social
-                '06': '16',  # DARF Normal
-                '07': '18',  # DARF Simples
-                '08': '11',  # FGTS
+    '756': {
+        # TODO: add esquema para quando doc e ted são
+        # para a mesma titularidade e tributos são do mesmo banco
+        'TED_OTHER_BANK': '41',  # Transferências para outros bancos (TED)
+        'DOC_OTHER_BANK': '03',  # Transferências para outros bancos (DOC)
+        'DOC_SAME_TITUL': '03',  # 'Transferência (DOC "C" - mesmo titular)'
+        'TED_SAME_TITUL': '43',  # 'Transferência (TED - mesmo titular)'
+        'TITULOS': '31',  # Pagamento de Títulos
+        'TITULOS_SAME_BANK': '30',  # Pagamento de Títulos - Sicoob
+        'BARCODE': '11',  # Tributos com código de barras
+        'GPS': '17',  # GPS - Guia de previdencia Social
+        'DARF_NORMAL': '16',  # DARF Normal
+        'DARF_SIMPLES': '18',  # DARF Simples
+        'FGTS': '11',  # FGTS
     },
-    'itau': {
-        '01': '41',  # 'Transferência (TED - outro titular)'
-        '02': '03',  # 'Transferência (DOC "D" - outro titular)'
-        '03': '31',  # 'Pagamento de Títulos - Outros bancos'
-        '04': '91',  # Tributos com código de barras e GNRE
-        '05': '17',  # GPS - Guia de previdencia Social
-        '06': '16',  # DARF Normal
-        '07': '18',  # DARF Simples
-        '08': '35',  # FGTS
-        '09': '22',  # ICMS
-        '95': '30',  # 'Pagamento de Títulos - Itaú'
-        '96': '06',  # 'Credito em CC do Itaú - mesmo titular
-        '97': '07',  # 'Transferência (DOC "C" - mesmo titular)'
-        '98': '43',  # 'Transferência (TED - mesmo titular)'
-        '99': '01',  # 'Credito em CC do itau')'
+    '341': {
+        'TED_OTHER_BANK': '41',  # 'Transferência (TED - outro titular)'
+        'DOC_OTHER_BANK': '03',  # 'Transferência (DOC "D" - outro titular)'
+        'TITULOS': '31',  # 'Pagamento de Títulos - Outros bancos'
+        'BARCODE': '91',  # Tributos com código de barras e GNRE
+        'GPS': '17',  # GPS - Guia de previdencia Social
+        'DARF_NORMAL': '16',  # DARF Normal
+        'DARF_SIMPLES': '18',  # DARF Simples
+        'FGTS': '35',  # FGTS
+        'ICMS': '22',  # ICMS
+        'TITULOS_SAME_BANK': '30',  # 'Pagamento de Títulos - Itaú'
+        'CC': '06',  # 'Credito em CC do Itaú - mesmo titular
+        'DOC_SAME_TITUL': '07',  # 'Transferência (DOC "C" - mesmo titular)'
+        'TED_SAME_TITUL': '43',  # 'Transferência (TED - mesmo titular)'
+        'CC_OTHER_TITUL': '01',  # 'Credito em CC do itau')'
     },
-    'bradesco': {
-        '01': '03',  # Transferências para outros bancos (DOC, TED)
-        '02': '03',  # Transferências para outros bancos (DOC, TED)
-        '03': '31',  # Pagamento de Títulos
-        '04': '11',  # Tributos com código de barras
-        '05': '17',  # GPS - Guia de previdencia Social
-        '06': '16',  # DARF Normal
-        '07': '18',  # DARF Simples
-        # '08': '11',  # FGTS
-        '09': '22',  # ICMS
+    '237': {
+        'TED_OTHER_BANK': '03',  # Transferências para outros bancos (DOC, TED)
+        'DOC_OTHER_BANK': '03',  # Transferências para outros bancos (DOC, TED)
+        'TITULOS': '31',  # Pagamento de Títulos
+        'BARCODE': '11',  # Tributos com código de barras
+        'GPS': '17',  # GPS - Guia de previdencia Social
+        'DARF_NORMAL': '16',  # DARF Normal
+        'DARF_SIMPLES': '18',  # DARF Simples
+        # 'FGTS': '11',  # FGTS
+        'ICMS': '22',  # ICMS
     }
 }
 
@@ -122,6 +159,40 @@ DOC_TED_FINALITY = {
             '09': '001',  # Repasse de Arrecadação / Pagamento de Tributos
             '12': '100',  # DOC para Depósito Judicial
             '13': '101',  # Pensão Alimentícia
+        }
+    },
+    'sicoob': {
+        '02': {  # DOC
+            '01': '01',  # credito em conta
+            '02': '02',  # pagto de aluguel/cond
+            '03': '03',  # pagto de duplicata/titulos
+            '04': '04',  # pagto de dividendos
+            '05': '05',  # pagto mensalidade escolar
+            '06': '06',  # pagto salarios
+            '07': '07',  # pagto fornecedores
+            '08': '08',  # op cambio/fundos/bolsa
+            '09': '09',  # arrecadação/pagto de tributos
+            '11': '11',  # DOC para poupança
+            '12': '12',  # DOC para Depósito Judicial
+            '13': '13',  # Pensão Alimentícia
+            '14': '14',  # Restituição de Imposto de Renda
+            '99': '13',  # Outros
+        },
+        '01': {  # TED
+            '01': '10',  # credito em conta
+            '02': '7',  # pagto de aluguel/cond
+            '03': '8',  # pagto de duplicata/titulos
+            '04': '3',  # pagto de dividendos
+            '05': '9',  # pagto mensalidade escolar
+            '06': '4',  # pagto salarios
+            '07': '5',  # pagto fornecedores
+            '08': '204',  # op cambio/fundos/bolsa
+            '09': '1',  # arrecadação/pagto de tributos
+            '11': '10',  # DOC para poupança
+            '12': '10',  # DOC para Depósito Judicial
+            '13': '101',  # Pensão Alimentícia
+            '14': '300',  # Restituição de Imposto de Renda
+            '99': '10',  # Outros
         }
     }
 }
@@ -540,7 +611,7 @@ def get_ted_doc_finality(bank, mov_type, code):
     try:
         value = DOC_TED_FINALITY[bank][mov_type][code]
     except KeyError:
-        parse_keyerror_finality(mov_type, bank, code)
+        parse_keyerror_finality(bank, code, finality=mov_type)
     return value
 
 
@@ -571,9 +642,13 @@ def parse_keyerror_servico(bank_name, code):
     raise KeyError("Code {} not found to {}!".format(code, bank_name))
 
 
-def parse_keyerror_finality(finality, bank_name, code):
-    raise KeyError("Code {} not found to operation {} in {}!".format(
-        code, finality, bank_name))
+def parse_keyerror_finality(bank_name, code, finality=False, same=False):
+    if same:
+        raise KeyError("Code {} not found to operation {} in {}!".format(
+            code, same, bank_name))
+    else:
+        raise KeyError("Code {} not found to operation {} in {}!".format(
+            code, finality, bank_name))
 
 
 def get_subsegments_from_line(segment_name, line):
@@ -670,3 +745,25 @@ def decode_digitable_line(digitable_line):
         }
     else:
         raise Exception('Código de barras com tamanho inválido!')
+
+
+def get_operation(bank_origin, bank_dest, titular_origin, titular_dest, op):
+        same_titularity = titular_origin == titular_dest
+        same_bank = bank_origin == bank_dest
+        try:
+            if (int(op) < 3):
+                if same_titularity and not same_bank:
+                    return get_forma_de_lancamento(
+                        bank_origin, OPERATION_NAME['SAME_TIT'][op])
+                if same_bank and not same_titularity:
+                    return get_forma_de_lancamento(
+                        bank_origin, OPERATION_NAME['SAME_BANK'][op])
+                if same_titularity and same_bank:
+                    return get_forma_de_lancamento(
+                        bank_origin, OPERATION_NAME['SAME_BOTH'][op])
+            return get_forma_de_lancamento(
+                bank_origin, OPERATION_NAME['OTHER'][op])
+        except KeyError:
+            same_info = 'same bank' if same_bank else\
+                'same titularity' if same_titularity else ''
+            parse_keyerror_finality(bank_origin, op, same=same_info)
