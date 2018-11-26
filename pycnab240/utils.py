@@ -617,6 +617,8 @@ def get_ted_doc_finality(bank, mov_type, code, ignore=False):
     try:
         value = DOC_TED_FINALITY[bank][mov_type][code]
     except KeyError:
+        if ignore:
+            return ''
         parse_keyerror_finality(bank, code, finality=mov_type)
     return value
 
