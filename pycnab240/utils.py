@@ -59,8 +59,6 @@ FORMA_DE_LANCAMENTO = {
         'CC_OTHER_TITUL': '01',  # 'Credito em CC)'
     },
     '756': {
-        # TODO: add esquema para quando doc e ted são
-        # para a mesma titularidade e tributos são do mesmo banco
         'TED_OTHER_BANK': '41',  # Transferências para outros bancos (TED)
         'DOC_OTHER_BANK': '03',  # Transferências para outros bancos (DOC)
         'DOC_SAME_TITUL': '03',  # 'Transferência (DOC "C" - mesmo titular)'
@@ -90,7 +88,7 @@ FORMA_DE_LANCAMENTO = {
         'CC_OTHER_TITUL': '01',  # 'Credito em CC do itau')'
     },
     '237': {
-        'TED_OTHER_BANK': '03',  # Transferências para outros bancos (DOC, TED)
+        'TED_OTHER_BANK': '41',  # Transferências para outros bancos (DOC, TED)
         'DOC_OTHER_BANK': '03',  # Transferências para outros bancos (DOC, TED)
         'TITULOS': '31',  # Pagamento de Títulos
         'BARCODE': '11',  # Tributos com código de barras
@@ -608,6 +606,8 @@ def get_forma_de_lancamento(bank_name, code):
 
 
 def get_ted_doc_finality(bank, mov_type, code):
+    if (int(code) > 3):
+            return ''
     try:
         value = DOC_TED_FINALITY[bank][mov_type][code]
     except KeyError:
