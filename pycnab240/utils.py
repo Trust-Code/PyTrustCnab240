@@ -53,10 +53,10 @@ FORMA_DE_LANCAMENTO = {
         'DARF_SIMPLES': '18',  # DARF Simples
         'FGTS': '11',  # FGTS
         # 'ICMS': '',  # ICMS
-        'CC': '01',  # 'Credito em CC - mesmo titular
         'DOC_SAME_TITUL': '03',  # 'Transferência (DOC "C" - mesmo titular)'
         'TED_SAME_TITUL': '03',  # 'Transferência (TED - mesmo titular)'
         'CC_OTHER_TITUL': '01',  # 'Credito em CC)'
+        'CC_SAME_TITUL': '01'
     },
     '756': {
         'TED_OTHER_BANK': '41',  # Transferências para outros bancos (TED)
@@ -70,6 +70,9 @@ FORMA_DE_LANCAMENTO = {
         'DARF_NORMAL': '16',  # DARF Normal
         'DARF_SIMPLES': '18',  # DARF Simples
         'FGTS': '11',  # FGTS
+        'CC_OTHER_TITUL': '01',  # 'Credito em CC)'
+        'CC_SAME_TITUL': '01'
+        #  'ICMS': , #
     },
     '341': {
         'TED_OTHER_BANK': '41',  # 'Transferência (TED - outro titular)'
@@ -82,21 +85,26 @@ FORMA_DE_LANCAMENTO = {
         'FGTS': '35',  # FGTS
         'ICMS': '22',  # ICMS
         'TITULOS_SAME_BANK': '30',  # 'Pagamento de Títulos - Itaú'
-        'CC': '06',  # 'Credito em CC do Itaú - mesmo titular
+        'CC_SAME_TITUL': '06',  # 'Credito em CC do Itaú - mesmo titular
         'DOC_SAME_TITUL': '07',  # 'Transferência (DOC "C" - mesmo titular)'
         'TED_SAME_TITUL': '43',  # 'Transferência (TED - mesmo titular)'
         'CC_OTHER_TITUL': '01',  # 'Credito em CC do itau')'
     },
     '237': {
-        'TED_OTHER_BANK': '41',  # Transferências para outros bancos (DOC, TED)
-        'DOC_OTHER_BANK': '03',  # Transferências para outros bancos (DOC, TED)
+        'TED_OTHER_BANK': '41',  # Transferências para outros bancos (TED)
+        'DOC_OTHER_BANK': '03',  # Transferências para outros bancos (DOC)
+        'DOC_SAME_TITUL': '03',  # 'Transferência (DOC "C" - mesmo titular)'
+        'TED_SAME_TITUL': '43',  # 'Transferência (TED - mesmo titular)'
         'TITULOS': '31',  # Pagamento de Títulos
+        'TITULOS_SAME_BANK': '30',  # Pagamento de Títulos - Sicoob
         'BARCODE': '11',  # Tributos com código de barras
         'GPS': '17',  # GPS - Guia de previdencia Social
         'DARF_NORMAL': '16',  # DARF Normal
         'DARF_SIMPLES': '18',  # DARF Simples
-        # 'FGTS': '11',  # FGTS
-        'ICMS': '22',  # ICMS
+        #  'FGTS': '11',  # FGTS
+        'CC_OTHER_TITUL': '01',  # 'Credito em CC)'
+        'CC_SAME_TITUL': '01',  # 'Credito em CC - mesma titularidade)'
+        'ICMS': '22',  # GARE-SP
     }
 }
 
