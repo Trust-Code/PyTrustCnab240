@@ -848,7 +848,7 @@ def test_dv_48(line):
  digite a linha novamente.')
 
 
-def calc_verif_dig_10(self, strfield):
+def calc_verif_dig_10(strfield):
     seq = [2, 1, 2, 1, 2, 1, 2, 1, 2, 1]
     i, total = 0, ''
     for dig in reversed(strfield):
@@ -860,7 +860,7 @@ def calc_verif_dig_10(self, strfield):
     return 0 if dv == 10 else dv
 
 
-def calc_verif_dig_11(self, strfield):
+def calc_verif_dig_11(strfield):
     seq = [2, 3, 4, 5, 6, 7, 8, 9]
     i, total = 0, ''
     for dig in reversed(strfield):
