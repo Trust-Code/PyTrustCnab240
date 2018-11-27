@@ -801,6 +801,7 @@ def decode_digitable_line(digitable_line):
     barcode = ''
     DATA_BASE = date(1997, 10, 7)
     if len(digitable_line) == 47:
+        test_dv_47(digitable_line)
         barcode = "{}{}{}{}{}{}".format(
             digitable_line[0:4],
             digitable_line[32],
@@ -815,6 +816,7 @@ def decode_digitable_line(digitable_line):
             'valor': Decimal("{:.2f}".format(int(barcode[9:19]) / 100.0)),
         }
     elif len(digitable_line) == 48:
+        test_dv_48(digitable_line)
         barcode = "{}{}{}{}".format(
             digitable_line[0:11],
             digitable_line[12:23],
@@ -830,7 +832,23 @@ def decode_digitable_line(digitable_line):
         raise Exception('Código de barras com tamanho inválido!')
 
 
-def calc_verif_dig(self, strfield):
+def test_dv_47(line):
+    dv1 = calc_verif_dig_10(line[:10])
+    dv2 = calc_verif_dig_10(line[11:21])
+    dv3 = calc_verif_dig_10(line[22:32])
+    if dv1 != line[10] or dv2 != line[21] or dv3 != line[32]:
+        raise Exception('Informações inconsistentes! DV não confere,\
+ digite a linha novamente.')
+
+
+def test_dv_48(line):
+    dv = calc_verif_dig_11(line)
+    if dv != line[4]:
+        raise Exception('Informações inconsistentes! DV não confere,\
+ digite a linha novamente.')
+
+
+def calc_verif_dig_10(self, strfield):
     seq = [2, 1, 2, 1, 2, 1, 2, 1, 2, 1]
     i, total = 0, ''
     for dig in reversed(strfield):
@@ -840,6 +858,18 @@ def calc_verif_dig(self, strfield):
     total_num = sum([int(algarism) for algarism in total])
     dv = 10 - (total_num % 10)
     return 0 if dv == 10 else dv
+
+
+def calc_verif_dig_11(self, strfield):
+    seq = [2, 3, 4, 5, 6, 7, 8, 9]
+    i, total = 0, ''
+    for dig in reversed(strfield):
+        mult = str(int(dig)*seq[i])
+        total += mult
+        i = i + 1 if i < 7 else 0
+    res_div = sum([int(algarism) for algarism in total]) % 11
+    dv = 0 if (res_div < 2) else (11 - res_div)
+    return dv
 
 
 def get_operation(bank_origin, bank_dest, titular_origin, titular_dest, op):
