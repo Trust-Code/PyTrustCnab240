@@ -131,9 +131,9 @@ class Lot(object):
         self._events.append(new_event)
         return new_event
 
-    def get_active_event(self, create=False):
+    def get_active_event(self, seg_name, create=False):
         for event in self._events:
-            if event._is_open:
+            if event._is_open and seg_name not in [x.__class__.__name__ for x in event.segments]:
                 return event
         if create:
             return self.create_new_event()
@@ -210,7 +210,7 @@ class File(object):
         elif seg_name == 'TrailerLote':
             lot.add_trailer(vals)
         else:
-            event = lot.get_active_event(create=True)
+            event = lot.get_active_event(seg_name, create=True)
             event.add_segment(seg_name, vals)
 
     def close_file(self):
