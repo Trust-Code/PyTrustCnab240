@@ -25,7 +25,7 @@ class TestPyCnab240(unittest.TestCase):
         self.assertEqual(self.comparison_file[1],
                          str(self.file.get_active_lot().header))
         self.assertEqual(self.comparison_file[2],
-                         str(self.file.get_active_lot().get_active_event().
+                         str(self.file.get_active_lot().get_active_event(None).
                          segments[0]))
 
     def test_close_file(self):
