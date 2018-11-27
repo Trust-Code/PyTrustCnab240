@@ -830,6 +830,18 @@ def decode_digitable_line(digitable_line):
         raise Exception('Código de barras com tamanho inválido!')
 
 
+def calc_verif_dig(self, strfield):
+    seq = [2, 1, 2, 1, 2, 1, 2, 1, 2, 1]
+    i, total = 0, ''
+    for dig in reversed(strfield):
+        mult = str(int(dig)*seq[i])
+        total += mult
+        i += 1
+    total_num = sum([int(algarism) for algarism in total])
+    dv = 10 - (total_num % 10)
+    return 0 if dv == 10 else dv
+
+
 def get_operation(bank_origin, bank_dest, titular_origin, titular_dest, op):
         same_titularity = titular_origin == titular_dest
         same_bank = bank_origin == bank_dest
