@@ -801,7 +801,7 @@ def decode_digitable_line(digitable_line):
     barcode = ''
     DATA_BASE = date(1997, 10, 7)
     if len(digitable_line) == 47:
-        test_dv_47(digitable_line)
+        validate_dv_47(digitable_line)
         barcode = "{}{}{}{}{}{}".format(
             digitable_line[0:4],
             digitable_line[32],
@@ -816,7 +816,7 @@ def decode_digitable_line(digitable_line):
             'valor': Decimal("{:.2f}".format(int(barcode[9:19]) / 100.0)),
         }
     elif len(digitable_line) == 48:
-        test_dv_48(digitable_line)
+        validate_dv_48(digitable_line)
         barcode = "{}{}{}{}".format(
             digitable_line[0:11],
             digitable_line[12:23],
@@ -832,30 +832,50 @@ def decode_digitable_line(digitable_line):
         raise Exception('Código de barras com tamanho inválido!')
 
 
-def test_dv_47(line):
-    dv1 = str(calc_verif_dig_10(str(line[:9])))
-    dv2 = str(calc_verif_dig_10(str(line[10:20])))
-    dv3 = str(calc_verif_dig_10(str(line[21:31])))
-    if dv1 != line[9] or dv2 != line[20] or dv3 != line[31]:
+# Quando é 47 é mod 10
+# DARF é mod 10
+# FGTS é mod 11
+# ISS é mod 11
+def validate_dv_48(digitable_line):
+    if not (validate_48_mod11(digitable_line) or
+            validade_48_mod10(digitable_line)):
         raise Exception('Informações inconsistentes! DV não confere,\
  digite a linha novamente.')
 
 
-# não é assim haahaha deve ser com mod 11.
-# Descobrir qq ta diferente. ideia: ta passando o valor do dv pro calculo do dv
-def test_dv_48(line):
+def validate_dv_47(line):
+    dv1 = str(calc_verif_dig_10(str(line[:9])))
+    dv2 = str(calc_verif_dig_10(str(line[10:20])))
+    dv3 = str(calc_verif_dig_10(str(line[21:31])))
+    if dv1 != line[9] or dv2 != line[20] or dv3 != line[31]:
+        raise Exception('Informações inconsistentes! DV não confere, \
+ digite a linha novamente.')
+
+
+def validade_48_mod10(line):
     dv1 = str(calc_verif_dig_10(str(line[:11])))
     dv2 = str(calc_verif_dig_10(str(line[12:23])))
     dv3 = str(calc_verif_dig_10(str(line[24:35])))
     dv4 = str(calc_verif_dig_10(str(line[36:47])))
     if (dv1 != line[11] or dv2 != line[23] or
             dv3 != line[35] or dv4 != line[47]):
-        raise Exception('Informações inconsistentes! DV não confere,\
- digite a linha novamente.{}={}- {}={} - {}={} - {}={}'.format(dv1, line[11], dv2, line[23], dv3, line[35], dv4, line[47]))
+        return False
+    return True
+
+
+def validate_48_mod11(line):
+    dv1 = str(calc_verif_dig_11(str(line[:11])))
+    dv2 = str(calc_verif_dig_11(str(line[12:23])))
+    dv3 = str(calc_verif_dig_11(str(line[24:35])))
+    dv4 = str(calc_verif_dig_11(str(line[36:47])))
+    if (dv1 != line[11] or dv2 != line[23] or
+            dv3 != line[35] or dv4 != line[47]):
+        return False
+    return True
 
 
 def calc_verif_dig_10(strfield):
-    seq = [2, 1] * 25
+    seq = [2, 1] * 10
     i, total = 0, ''
     for dig in reversed(strfield):
         mult = str(int(dig)*seq[i])
@@ -867,12 +887,12 @@ def calc_verif_dig_10(strfield):
 
 
 def calc_verif_dig_11(strfield):
-    i, total = 2, ''
+    i, total = 2, 0
     for dig in reversed(strfield):
-        mult = str(int(dig)*i)
+        mult = int(dig)*i
         total += mult
         i = i + 1 if i < 9 else 2
-    res_div = sum([int(algarism) for algarism in total]) % 11
+    res_div = total % 11
     dv = 0 if (res_div < 2) else (11 - res_div)
     return dv
 
