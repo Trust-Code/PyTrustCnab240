@@ -833,23 +833,29 @@ def decode_digitable_line(digitable_line):
 
 
 def test_dv_47(line):
-    dv1 = calc_verif_dig_10(line[:10])
-    dv2 = calc_verif_dig_10(line[11:21])
-    dv3 = calc_verif_dig_10(line[22:32])
-    if dv1 != line[10] or dv2 != line[21] or dv3 != line[32]:
+    dv1 = str(calc_verif_dig_10(str(line[:9])))
+    dv2 = str(calc_verif_dig_10(str(line[10:20])))
+    dv3 = str(calc_verif_dig_10(str(line[21:31])))
+    if dv1 != line[9] or dv2 != line[20] or dv3 != line[31]:
         raise Exception('Informações inconsistentes! DV não confere,\
  digite a linha novamente.')
 
 
+# não é assim haahaha deve ser com mod 11.
+# Descobrir qq ta diferente. ideia: ta passando o valor do dv pro calculo do dv
 def test_dv_48(line):
-    dv = calc_verif_dig_11(line)
-    if dv != line[4]:
+    dv1 = str(calc_verif_dig_10(str(line[:11])))
+    dv2 = str(calc_verif_dig_10(str(line[12:23])))
+    dv3 = str(calc_verif_dig_10(str(line[24:35])))
+    dv4 = str(calc_verif_dig_10(str(line[36:47])))
+    if (dv1 != line[11] or dv2 != line[23] or
+            dv3 != line[35] or dv4 != line[47]):
         raise Exception('Informações inconsistentes! DV não confere,\
- digite a linha novamente.')
+ digite a linha novamente.{}={}- {}={} - {}={} - {}={}'.format(dv1, line[11], dv2, line[23], dv3, line[35], dv4, line[47]))
 
 
 def calc_verif_dig_10(strfield):
-    seq = [2, 1, 2, 1, 2, 1, 2, 1, 2, 1]
+    seq = [2, 1] * 25
     i, total = 0, ''
     for dig in reversed(strfield):
         mult = str(int(dig)*seq[i])
@@ -857,16 +863,15 @@ def calc_verif_dig_10(strfield):
         i += 1
     total_num = sum([int(algarism) for algarism in total])
     dv = 10 - (total_num % 10)
-    return 0 if dv == 10 else dv
+    return dv if dv != 10 else 0
 
 
 def calc_verif_dig_11(strfield):
-    seq = [2, 3, 4, 5, 6, 7, 8, 9]
-    i, total = 0, ''
+    i, total = 2, ''
     for dig in reversed(strfield):
-        mult = str(int(dig)*seq[i])
+        mult = str(int(dig)*i)
         total += mult
-        i = i + 1 if i < 7 else 0
+        i = i + 1 if i < 9 else 2
     res_div = sum([int(algarism) for algarism in total]) % 11
     dv = 0 if (res_div < 2) else (11 - res_div)
     return dv
