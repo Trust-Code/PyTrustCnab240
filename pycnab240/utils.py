@@ -3,7 +3,7 @@
 import re
 from datetime import date, timedelta
 from decimal import Decimal
-from pycnab240 import bancos
+from pycnab240 import bancos, errors
 
 BANK = {
     '756': bancos.sicoob,
@@ -808,6 +808,7 @@ def decode_digitable_line(digitable_line):
             digitable_line[4:9],
             digitable_line[10:20],
             digitable_line[21:31])
+        validate_dv_geral_47(barcode)
         return {
             'barcode': barcode,
             'banco': barcode[:3],
@@ -821,6 +822,7 @@ def decode_digitable_line(digitable_line):
             digitable_line[24:35],
             digitable_line[36:47],
         )
+        validate_dv_geral_48(barcode)
         return {
             'barcode': barcode,
             'banco': barcode[:3],
@@ -828,6 +830,42 @@ def decode_digitable_line(digitable_line):
         }
     else:
         raise Exception('Código de barras com tamanho inválido!')
+
+
+def validate_dv_geral_48(barcode):
+    dv10 = str(calc_dv_mod10(str(barcode[:3]) + str(barcode[4:])))
+    dv11 = str(calc_dv_mod11(str(barcode[:3]) + str(barcode[4:])))
+    if (dv11 != barcode[3] and dv10 != barcode[3]):
+        raise errors.DvNotValidError()
+
+
+def validate_dv_geral_47(barcode):
+    dv = str(calc_dv_mod11(str(barcode[:4]) + str(barcode[5:])))
+    if (dv != barcode[4]):
+        raise errors.DvNotValidError()
+
+
+def calc_dv_mod10(strfield):
+    seq = [2, 1] * 25
+    i, total = 0, ''
+    for dig in reversed(strfield):
+        mult = str(int(dig)*seq[i])
+        total += mult
+        i += 1
+    total_num = sum([int(algarism) for algarism in total])
+    dv = 10 - (total_num % 10)
+    return dv if dv != 10 else 0
+
+
+def calc_dv_mod11(strfield):
+    i, total = 2, 0
+    for dig in reversed(strfield):
+        mult = int(dig)*i
+        total += mult
+        i = i + 1 if i < 9 else 2
+    res_div = total % 11
+    dv = 0 if (res_div < 2) else (11 - res_div)
+    return dv
 
 
 def get_operation(bank_origin, bank_dest, titular_origin, titular_dest, op):

@@ -56,6 +56,10 @@ class NoEventError(Cnab240Error):
     """Trying to write a Lot without any Event"""
 
 
+class DvNotValidError(Cnab240Error):
+    """Barcode verification digit is not valid"""
+
+
 class SpecErrors(Exception):
     """Invalid Spec File"""
 
