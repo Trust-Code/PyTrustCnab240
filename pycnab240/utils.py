@@ -3,7 +3,7 @@
 import re
 from datetime import date, timedelta
 from decimal import Decimal
-from pycnab240 import bancos
+from pycnab240 import bancos, errors
 
 BANK = {
     '756': bancos.sicoob,
@@ -801,7 +801,6 @@ def decode_digitable_line(digitable_line):
     barcode = ''
     DATA_BASE = date(1997, 10, 7)
     if len(digitable_line) == 47:
-        validate_dv_47(digitable_line)
         barcode = "{}{}{}{}{}{}".format(
             digitable_line[0:4],
             digitable_line[32],
@@ -809,6 +808,7 @@ def decode_digitable_line(digitable_line):
             digitable_line[4:9],
             digitable_line[10:20],
             digitable_line[21:31])
+        validate_dv_geral_47(barcode)
         return {
             'barcode': barcode,
             'banco': barcode[:3],
@@ -816,13 +816,13 @@ def decode_digitable_line(digitable_line):
             'valor': Decimal("{:.2f}".format(int(barcode[9:19]) / 100.0)),
         }
     elif len(digitable_line) == 48:
-        validate_dv_48(digitable_line)
         barcode = "{}{}{}{}".format(
             digitable_line[0:11],
             digitable_line[12:23],
             digitable_line[24:35],
             digitable_line[36:47],
         )
+        validate_dv_geral_48(barcode)
         return {
             'barcode': barcode,
             'banco': barcode[:3],
@@ -832,50 +832,21 @@ def decode_digitable_line(digitable_line):
         raise Exception('Código de barras com tamanho inválido!')
 
 
-# Quando é 47 é mod 10
-# DARF é mod 10
-# FGTS é mod 11
-# ISS é mod 11
-def validate_dv_48(digitable_line):
-    if not (validate_48_mod11(digitable_line) or
-            validade_48_mod10(digitable_line)):
-        raise Exception('Informações inconsistentes! DV não confere,\
- digite a linha novamente.')
+def validate_dv_geral_48(barcode):
+    dv10 = str(calc_dv_mod10(str(barcode[:3]) + str(barcode[4:])))
+    dv11 = str(calc_dv_mod11(str(barcode[:3]) + str(barcode[4:])))
+    if (dv11 != barcode[3] and dv10 != barcode[3]):
+        raise errors.DvNotValidError()
 
 
-def validate_dv_47(line):
-    dv1 = str(calc_verif_dig_10(str(line[:9])))
-    dv2 = str(calc_verif_dig_10(str(line[10:20])))
-    dv3 = str(calc_verif_dig_10(str(line[21:31])))
-    if dv1 != line[9] or dv2 != line[20] or dv3 != line[31]:
-        raise Exception('Informações inconsistentes! DV não confere, \
- digite a linha novamente.')
+def validate_dv_geral_47(barcode):
+    dv = str(calc_dv_mod11(str(barcode[:4]) + str(barcode[5:])))
+    if (dv != barcode[4]):
+        raise errors.DvNotValidError()
 
 
-def validade_48_mod10(line):
-    dv1 = str(calc_verif_dig_10(str(line[:11])))
-    dv2 = str(calc_verif_dig_10(str(line[12:23])))
-    dv3 = str(calc_verif_dig_10(str(line[24:35])))
-    dv4 = str(calc_verif_dig_10(str(line[36:47])))
-    if (dv1 != line[11] or dv2 != line[23] or
-            dv3 != line[35] or dv4 != line[47]):
-        return False
-    return True
-
-
-def validate_48_mod11(line):
-    dv1 = str(calc_verif_dig_11(str(line[:11])))
-    dv2 = str(calc_verif_dig_11(str(line[12:23])))
-    dv3 = str(calc_verif_dig_11(str(line[24:35])))
-    dv4 = str(calc_verif_dig_11(str(line[36:47])))
-    if (dv1 != line[11] or dv2 != line[23] or
-            dv3 != line[35] or dv4 != line[47]):
-        return False
-    return True
-
-
-def calc_verif_dig_10(strfield):
-    seq = [2, 1] * 10
+def calc_dv_mod10(strfield):
+    seq = [2, 1] * 25
     i, total = 0, ''
     for dig in reversed(strfield):
         mult = str(int(dig)*seq[i])
@@ -886,7 +857,7 @@ def calc_verif_dig_10(strfield):
     return dv if dv != 10 else 0
 
 
-def calc_verif_dig_11(strfield):
+def calc_dv_mod11(strfield):
     i, total = 2, 0
     for dig in reversed(strfield):
         mult = int(dig)*i
