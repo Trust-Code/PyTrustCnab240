@@ -157,7 +157,7 @@
             "formato": "alfa"
         },
         "25.3A": {
-            "nome": "complemento_servico",
+            "nome": "finalidade_doc",
             "posicao_inicio": 218,
             "posicao_fim": 219,
             "formato": "alfa"
@@ -169,7 +169,7 @@
             "formato": "alfa"
         },
         "27.3A": {
-            "nome": "finalidade_pagamento",
+            "nome": "finalidade_complementar",
             "posicao_inicio": 225,
             "posicao_fim": 226,
             "formato": "alfa"
