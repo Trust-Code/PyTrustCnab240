@@ -152,6 +152,38 @@ TIPO_DE_SERVICO = {
 
 
 DOC_TED_FINALITY = {
+    'santander': {
+        '02': {  # DOC
+            '01': '01',  # Crédito em Conta Corrente
+            '02': '02',  # Pagamento de Aluguel / Condomínio
+            '03': '03',  # Pagamento de Duplicatas e Títulos
+            '04': '04',  # Pagamento de Dividendos
+            '05': '05',  # Pagamento de Mensalidades Escolares
+            '06': '06',  # Pagamento de Salários
+            '07': '07',  # Pagamento a Fornecedor / Honorários
+            '08': '08',  # Pagamento de Câmbio/Fundos/Bolsas
+            '09': '09',  # Repasse de Arrecadação / Pagamento de Tributos
+            '11': '11',  # DOC para Poupança'
+            '12': '12',  # Depósito Judicial
+            '13': '13',  # Pensão Alimentícia
+            '99': '99',  # Outros
+        },
+        '01': {  # TED
+            '01': '00010',  # Crédito em Conta Corrente
+            '02': '00007',  # Pagamento de Aluguel / Condomínio
+            '03': '00008',  # Pagamento de Duplicatas e Títulos
+            '04': '00003',  # Pagamento de Dividendos
+            '05': '00009',  # Pagamento de Mensalidades Escolares
+            '06': '00004',  # Pagamento de Salários
+            '07': '00005',  # Pagamento a Fornecedor / Honorários
+            '08': '99999',  # Pagamento de Câmbio/Fundos/Bolsas
+            '09': '00001',  # Repasse de Arrecadação / Pagamento de Tributos
+            '11': '99999',  # DOC para Poupança'
+            '12': '00100',  # Depósito Judicial
+            '13': '00101',  # Pensão Alimentícia
+            '99': '99999',  # Outros
+        }
+    },
     'itau': {
         '02': {  # DOC
             '01': '01',  # Crédito em Conta Corrente
@@ -164,89 +196,88 @@ DOC_TED_FINALITY = {
             '08': '08',  # Pagamento de Câmbio/Fundos/Bolsas
             '09': '09',  # Repasse de Arrecadação / Pagamento de Tributos
             '11': '11',  # DOC para Poupança'
-            '12': '12',  # DOC para Depósito Judicial
+            '12': '12',  # Depósito Judicial
             '13': '13',  # Pensão Alimentícia
             '99': '99',  # Outros
         },
         '01': {  # TED
-            '01': '010',  # Crédito em Conta Corrente
-            '02': '007',  # Pagamento de Aluguel / Condomínio
-            '03': '008',  # Pagamento de Duplicatas e Títulos
-            '04': '003',  # Pagamento de Dividendos
-            '06': '004',  # Pagamento de Salários
-            '07': '005',  # Pagamento a Fornecedor / Honorários
-            '08': '204',  # Pagamento de Câmbio/Fundos/Bolsas
-            '09': '001',  # Repasse de Arrecadação / Pagamento de Tributos
-            '12': '100',  # DOC para Depósito Judicial
-            '13': '101',  # Pensão Alimentícia
+            '01': '00010',  # Crédito em Conta Corrente
+            '02': '00007',  # Pagamento de Aluguel / Condomínio
+            '03': '00008',  # Pagamento de Duplicatas e Títulos
+            '04': '00003',  # Pagamento de Dividendos
+            '05': '00009',  # Pagamento de Mensalidades Escolares
+            '06': '00004',  # Pagamento de Salários
+            '07': '00005',  # Pagamento a Fornecedor / Honorários
+            '08': '99999',  # Pagamento de Câmbio/Fundos/Bolsas
+            '09': '00001',  # Repasse de Arrecadação / Pagamento de Tributos
+            '11': '99999',  # DOC para Poupança'
+            '12': '00100',  # Depósito Judicial
+            '13': '00101',  # Pensão Alimentícia
+            '99': '99999',  # Outros
         }
     },
     'sicoob': {
         '02': {  # DOC
-            '01': '01',  # credito em conta
-            '02': '02',  # pagto de aluguel/cond
-            '03': '03',  # pagto de duplicata/titulos
-            '04': '04',  # pagto de dividendos
-            '05': '05',  # pagto mensalidade escolar
-            '06': '06',  # pagto salarios
-            '07': '07',  # pagto fornecedores
-            '08': '08',  # op cambio/fundos/bolsa
-            '09': '09',  # arrecadação/pagto de tributos
-            '11': '11',  # DOC para poupança
-            '12': '12',  # DOC para Depósito Judicial
+            '01': '01',  # Crédito em Conta Corrente
+            '02': '02',  # Pagamento de Aluguel / Condomínio
+            '03': '03',  # Pagamento de Duplicatas e Títulos
+            '04': '04',  # Pagamento de Dividendos
+            '05': '05',  # Pagamento de Mensalidades Escolares
+            '06': '06',  # Pagamento de Salários
+            '07': '07',  # Pagamento a Fornecedor / Honorários
+            '08': '08',  # Pagamento de Câmbio/Fundos/Bolsas
+            '09': '09',  # Repasse de Arrecadação / Pagamento de Tributos
+            '11': '11',  # DOC para Poupança'
+            '12': '12',  # Depósito Judicial
             '13': '13',  # Pensão Alimentícia
-            '14': '14',  # Restituição de Imposto de Renda
             '99': '13',  # Outros
         },
         '01': {  # TED
-            '01': '10',  # credito em conta
-            '02': '7',  # pagto de aluguel/cond
-            '03': '8',  # pagto de duplicata/titulos
-            '04': '3',  # pagto de dividendos
-            '05': '9',  # pagto mensalidade escolar
-            '06': '4',  # pagto salarios
-            '07': '5',  # pagto fornecedores
-            '08': '204',  # op cambio/fundos/bolsa
-            '09': '1',  # arrecadação/pagto de tributos
-            '11': '10',  # DOC para poupança
-            '12': '10',  # DOC para Depósito Judicial
-            '13': '101',  # Pensão Alimentícia
-            '14': '300',  # Restituição de Imposto de Renda
-            '99': '10',  # Outros
-        }
+            '01': '00010',  # Crédito em Conta Corrente
+            '02': '00007',  # Pagamento de Aluguel / Condomínio
+            '03': '00008',  # Pagamento de Duplicatas e Títulos
+            '04': '00003',  # Pagamento de Dividendos
+            '05': '00009',  # Pagamento de Mensalidades Escolares
+            '06': '00004',  # Pagamento de Salários
+            '07': '00005',  # Pagamento a Fornecedor / Honorários
+            '08': '99999',  # Pagamento de Câmbio/Fundos/Bolsas
+            '09': '00001',  # Repasse de Arrecadação / Pagamento de Tributos
+            '11': '99999',  # DOC para Poupança'
+            '12': '00100',  # Depósito Judicial
+            '13': '00101',  # Pensão Alimentícia
+            '99': '99999',  # Outros
+        },
     },
     'bradesco': {
         '02': {  # DOC
-            '01': '01',  # credito em conta
-            '02': '02',  # pagto de aluguel/cond
-            '03': '03',  # pagto de duplicata/titulos
-            '04': '04',  # pagto de dividendos
-            '05': '05',  # pagto mensalidade escolar
-            '06': '06',  # pagto salarios
-            '07': '07',  # pagto fornecedores
-            '08': '08',  # op cambio/fundos/bolsa
-            '09': '09',  # arrecadação/pagto de tributos
-            '11': '11',  # DOC para poupança
-            '12': '12',  # DOC para Depósito Judicial
+            '01': '01',  # Crédito em Conta Corrente
+            '02': '02',  # Pagamento de Aluguel / Condomínio
+            '03': '03',  # Pagamento de Duplicatas e Títulos
+            '04': '04',  # Pagamento de Dividendos
+            '05': '05',  # Pagamento de Mensalidades Escolares
+            '06': '06',  # Pagamento de Salários
+            '07': '07',  # Pagamento a Fornecedor / Honorários
+            '08': '08',  # Pagamento de Câmbio/Fundos/Bolsas
+            '09': '09',  # Repasse de Arrecadação / Pagamento de Tributos
+            '11': '11',  # DOC para Poupança'
+            '12': '12',  # Depósito Judicial
             '13': '13',  # Pensão Alimentícia
-            '14': '13',  # Restituição de Imposto de Renda
             '99': '13',  # Outros
         },
         '01': {  # TED
-            '01': '01',  # credito em conta
-            '02': '02',  # pagto de aluguel/cond
-            '03': '03',  # pagto de duplicata/titulos
-            '04': '04',  # pagto de dividendos
-            '05': '05',  # pagto mensalidade escolar
-            '06': '06',  # pagto salarios
-            '07': '07',  # pagto fornecedores
-            '08': '08',  # op cambio/fundos/bolsa
-            '09': '09',  # arrecadação/pagto de tributos
-            '11': '11',  # DOC para poupança
-            '12': '12',  # DOC para Depósito Judicial
-            '13': '13',  # Pensão Alimentícia
-            '14': '13',  # Restituição de Imposto de Renda
-            '99': '13',  # Outros
+            '01': '00010',  # Crédito em Conta Corrente
+            '02': '00007',  # Pagamento de Aluguel / Condomínio
+            '03': '00008',  # Pagamento de Duplicatas e Títulos
+            '04': '00003',  # Pagamento de Dividendos
+            '05': '00009',  # Pagamento de Mensalidades Escolares
+            '06': '00004',  # Pagamento de Salários
+            '07': '00005',  # Pagamento a Fornecedor / Honorários
+            '08': '99999',  # Pagamento de Câmbio/Fundos/Bolsas
+            '09': '00001',  # Repasse de Arrecadação / Pagamento de Tributos
+            '11': '99999',  # DOC para Poupança'
+            '12': '00100',  # Depósito Judicial
+            '13': '00101',  # Pensão Alimentícia
+            '99': '99999',  # Outros
         }
     }
 }

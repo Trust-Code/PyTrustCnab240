@@ -241,7 +241,7 @@
             "formato": "num"
         },
         "25.3A": {
-            "nome": "finalidade_doc_status",
+            "nome": "finalidade_doc",
             "posicao_inicio": 218,
             "posicao_fim": 219,
             "formato": "alfa"
@@ -260,7 +260,7 @@
             "default": ""
         },
         "28.3A": {
-            "nome": "aviso",
+            "nome": "favorecido_emissao_aviso_alfa",
             "posicao_inicio": 230,
             "posicao_fim": 230,
             "formato": "alfa"
