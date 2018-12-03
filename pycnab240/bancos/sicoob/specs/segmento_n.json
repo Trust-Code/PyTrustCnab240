@@ -71,7 +71,7 @@
             "formato": "num"
         },
         "12.3N": {
-            "nome": "valor_total_pagamento",
+            "nome": "valor_pagamento",
             "posicao_inicio": 96,
             "posicao_fim": 110,
             "formato": "num",
