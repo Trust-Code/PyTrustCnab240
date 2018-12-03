@@ -82,7 +82,7 @@
             "nome": "favorecido_conta_dv",
             "posicao_inicio": 42,
             "posicao_fim": 42,
-            "formato": "num"
+            "formato": "alfa"
         },
         "14.3A": {
             "nome": "favorecido_agencia_conta_dv",
