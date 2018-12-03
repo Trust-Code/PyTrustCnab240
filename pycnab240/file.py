@@ -279,9 +279,12 @@ class File(object):
             return self.bank.records[segments[0]]
 
         elif len(segments) > 1:
-            return self.bank.records[
-                utils.get_subsegments_from_line(
+            try:
+                subsegment = utils.get_subsegments_from_line(
                     segment_name=record_name,
-                    line=line)]
+                    line=line)
+                return self.bank.records[subsegment]
+            except KeyError:
+                return self.bank.records[segments[0]]
         raise KeyError("Can't find segment %s for bank %s" % (
             record_name, line[0:3]))
