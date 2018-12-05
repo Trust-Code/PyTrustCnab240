@@ -721,7 +721,7 @@ def get_forma_de_lancamento(bank_name, code):
 
 def get_ted_doc_finality(bank, mov_type, code, ignore=False):
     try:
-        value = DOC_TED_FINALITY[bank][mov_type][code]
+        value = DOC_TED_FINALITY[bank][code][mov_type]
     except KeyError:
         if ignore:
             return ''
