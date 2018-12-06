@@ -895,8 +895,8 @@ def calc_dv_mod11(strfield):
         total += mult
         i = i + 1 if i < 9 else 2
     res_div = total % 11
-    dv = 0 if (res_div < 2) else (11 - res_div)
-    return dv
+    dv = 11 - res_div
+    return dv if (dv > 1 and dv < 10) else 1
 
 
 def get_operation(bank_origin, bank_dest, titular_origin, titular_dest, op):
