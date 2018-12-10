@@ -719,13 +719,13 @@ def get_forma_de_lancamento(bank_name, code):
     return value
 
 
-def get_ted_doc_finality(bank, mov_type, code, ignore=False):
+def get_ted_doc_finality(bank, finality, code, ignore=False):
     try:
-        value = DOC_TED_FINALITY[bank][mov_type][code]
+        value = DOC_TED_FINALITY[bank][code][finality]
     except KeyError:
         if ignore:
             return ''
-        parse_keyerror_finality(bank, code, finality=mov_type)
+        parse_keyerror_finality(bank, code, finality=finality)
     return value
 
 
