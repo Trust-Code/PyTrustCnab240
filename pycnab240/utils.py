@@ -853,7 +853,7 @@ def decode_digitable_line(digitable_line):
             digitable_line[24:35],
             digitable_line[36:47],
         )
-        validate_dv_geral_48(barcode)
+        validate_dv_campo(digitable_line)
         return {
             'barcode': barcode,
             'banco': barcode[:3],
@@ -863,16 +863,20 @@ def decode_digitable_line(digitable_line):
         raise Exception('Código de barras com tamanho inválido!')
 
 
-def validate_dv_geral_48(barcode):
-    dv10 = str(calc_dv_mod10(str(barcode[:3]) + str(barcode[4:])))
-    dv11 = str(calc_dv_mod11(str(barcode[:3]) + str(barcode[4:])))
-    if (dv11 != barcode[3] and dv10 != barcode[3]):
+def validate_dv_campo(line):
+    dv1 = str(calc_dv_mod11(line[0:11]))
+    dv2 = str(calc_dv_mod11(line[12:23]))
+    dv3 = str(calc_dv_mod11(line[24:35]))
+    dv4 = str(calc_dv_mod11(line[36:47]))
+    if (dv1 != line[11] and dv2 != line[23]
+            and dv3 != line[35] and dv4 != line[47]):
         raise errors.DvNotValidError()
 
 
 def validate_dv_geral_47(barcode):
-    dv = str(calc_dv_mod11(str(barcode[:4]) + str(barcode[5:])))
-    if (dv != barcode[4]):
+    dv = calc_dv_mod11(str(barcode[:4]) + str(barcode[5:]))
+    dv = dv if (dv > 1 and dv < 10) else 1
+    if (str(dv) != barcode[4]):
         raise errors.DvNotValidError()
 
 
@@ -896,7 +900,7 @@ def calc_dv_mod11(strfield):
         i = i + 1 if i < 9 else 2
     res_div = total % 11
     dv = 11 - res_div
-    return dv if (dv > 1 and dv < 10) else 1
+    return dv
 
 
 def get_operation(bank_origin, bank_dest, titular_origin, titular_dest, op):
