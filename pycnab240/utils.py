@@ -52,7 +52,7 @@ FORMA_DE_LANCAMENTO = {
         'DARF_NORMAL': '16',  # DARF Normal
         'DARF_SIMPLES': '18',  # DARF Simples
         'FGTS': '11',  # FGTS
-        # 'ICMS': '',  # ICMS
+        'ICMS': '22',  # ICMS
         'DOC_SAME_TITUL': '03',  # 'Transferência (DOC "C" - mesmo titular)'
         'TED_SAME_TITUL': '03',  # 'Transferência (TED - mesmo titular)'
         'CC_OTHER_TITUL': '01',  # 'Credito em CC)'
@@ -101,7 +101,7 @@ FORMA_DE_LANCAMENTO = {
         'GPS': '17',  # GPS - Guia de previdencia Social
         'DARF_NORMAL': '16',  # DARF Normal
         'DARF_SIMPLES': '18',  # DARF Simples
-        #  'FGTS': '11',  # FGTS
+        # 'FGTS': '11',  # FGTS
         'CC_OTHER_TITUL': '01',  # 'Credito em CC)'
         'CC_SAME_TITUL': '01',  # 'Credito em CC - mesma titularidade)'
         'ICMS': '22',  # GARE-SP
@@ -715,7 +715,7 @@ def get_forma_de_lancamento(bank_name, code):
     try:
         value = FORMA_DE_LANCAMENTO[bank_name][code]
     except KeyError:
-        parse_keyerror(FORMA_DE_LANCAMENTO, bank_name, code)
+        parse_keyerror_servico(bank_name, code)
     return value
 
 
@@ -906,20 +906,15 @@ def calc_dv_mod11(strfield):
 def get_operation(bank_origin, bank_dest, titular_origin, titular_dest, op):
         same_titularity = titular_origin == titular_dest
         same_bank = bank_origin == bank_dest
-        try:
-            if (int(op) < 4):
-                if same_titularity and not same_bank:
-                    return get_forma_de_lancamento(
-                        bank_origin, OPERATION_NAME['SAME_TIT'][op])
-                if same_bank and not same_titularity:
-                    return get_forma_de_lancamento(
-                        bank_origin, OPERATION_NAME['SAME_BANK'][op])
-                if same_titularity and same_bank:
-                    return get_forma_de_lancamento(
-                        bank_origin, OPERATION_NAME['SAME_BOTH'][op])
-            return get_forma_de_lancamento(
-                bank_origin, OPERATION_NAME['OTHER'][op])
-        except KeyError:
-            same_info = 'same bank' if same_bank else\
-                'same titularity' if same_titularity else ''
-            parse_keyerror_finality(bank_origin, op, same=same_info)
+        if (int(op) < 4):
+            if same_titularity and not same_bank:
+                return get_forma_de_lancamento(
+                    bank_origin, OPERATION_NAME['SAME_TIT'][op])
+            if same_bank and not same_titularity:
+                return get_forma_de_lancamento(
+                    bank_origin, OPERATION_NAME['SAME_BANK'][op])
+            if same_titularity and same_bank:
+                return get_forma_de_lancamento(
+                    bank_origin, OPERATION_NAME['SAME_BOTH'][op])
+        return get_forma_de_lancamento(
+            bank_origin, OPERATION_NAME['OTHER'][op])

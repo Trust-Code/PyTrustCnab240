@@ -461,7 +461,7 @@
                             "formato": "num"
                         },
                         "07.3N5": {
-                            "nome": "numero_parcela_notificacao",
+                            "nome": "numero_parcela",
                             "posicao_inicio": 70,
                             "posicao_fim": 82,
                             "formato": "num"
