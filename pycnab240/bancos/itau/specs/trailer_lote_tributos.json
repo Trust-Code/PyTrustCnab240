@@ -1,5 +1,5 @@
 {
-    "nome": "TrailerLote",
+    "nome": "TrailerLoteTributos",
     "campos": {
         "01.5": {
             "nome": "controle_banco",
@@ -68,7 +68,8 @@
             "nome": "vazio3",
             "posicao_inicio": 80,
             "posicao_fim": 230,
-            "formato": "alfa"
+            "formato": "alfa",
+            "default": ""
         },
         "11.5": {
             "nome": "ocorrencias_retorno",

@@ -21,7 +21,10 @@ RECORD_NAMES = {
         'W': 'SegmentoW',
         'Z': 'SegmentoZ',
     },
-    '5': 'TrailerLote',
+    '5': {
+        True: 'TrailerLote',
+        False: 'TrailerLoteTributos'
+    },
     '9': 'TrailerArquivo'
 }
 
@@ -89,14 +92,14 @@ class Lot(object):
     def code(self):
         return self._code
 
-    def add_header(self, header):
+    def add_header(self, header, seg_name):
         if type(header) == dict:
-            header = self.bank.records.HeaderLote(**header)
+            header = self.bank.records[seg_name](**header)
         self.header = header
 
-    def add_trailer(self, trailer):
+    def add_trailer(self, trailer, seg_name):
         if type(trailer) == dict:
-            trailer = self.bank.records.TrailerLote(**trailer)
+            trailer = self.bank.records[seg_name](**trailer)
         self.trailer = trailer
 
     @code.setter
@@ -106,9 +109,9 @@ class Lot(object):
             self.header.controle_lote = value
         if self.trailer is not None:
             self.trailer.controle_lote = value
-        self.upadte_event_code()
+        self.update_event_code()
 
-    def upadte_event_code(self):
+    def update_event_code(self):
         for event in self._events:
             event.lot_code = self._code
 
@@ -205,13 +208,13 @@ class File(object):
 
     def add_segment(self, seg_name, vals):
         lot = self.get_active_lot(create=True)
-        if seg_name == 'HeaderLote':
-            lot.add_header(vals)
-        elif seg_name == 'TrailerLote':
-            lot.add_trailer(vals)
+        if 'Header' in seg_name:
+            lot.add_header(vals, seg_name)
+        elif "Trailer" in seg_name:
+            lot.add_trailer(vals, seg_name)
         else:
             event = lot.get_active_event(seg_name, create=True)
-            event.add_segment(seg_name, vals)
+            return event.add_segment(seg_name, vals)
 
     def close_file(self):
         lot = self.get_active_lot()
@@ -265,6 +268,8 @@ class File(object):
         record_code = line[7]
         if record_code == '3':
             return RECORD_NAMES[record_code][line[13]]
+        if record_code == '5':
+            return RECORD_NAMES[record_code][line[58] == ' ']
         else:
             return RECORD_NAMES[record_code]
 
