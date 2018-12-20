@@ -268,7 +268,7 @@ class File(object):
         record_code = line[7]
         if record_code == '3':
             return RECORD_NAMES[record_code][line[13]]
-        if record_code == '5':
+        if record_code == '5' and line[:3] == '341':
             return RECORD_NAMES[record_code][line[58] == ' ']
         else:
             return RECORD_NAMES[record_code]
