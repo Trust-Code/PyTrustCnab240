@@ -22,8 +22,8 @@ RECORD_NAMES = {
         'Z': 'SegmentoZ',
     },
     '5': {
-        True: 'TrailerLote',
-        False: 'TrailerLoteTributos'
+        'default': 'TrailerLote',
+        'itauTributos': 'TrailerLoteTributos'
     },
     '9': 'TrailerArquivo'
 }
@@ -268,8 +268,10 @@ class File(object):
         record_code = line[7]
         if record_code == '3':
             return RECORD_NAMES[record_code][line[13]]
-        if record_code == '5' and line[:3] == '341':
-            return RECORD_NAMES[record_code][line[58] == ' ']
+        if record_code == '5':
+            if line[:3] == '341' and line[58] != ' ':
+                return RECORD_NAMES[record_code]['itauTributos']
+            return RECORD_NAMES[record_code]['default']
         else:
             return RECORD_NAMES[record_code]
 
