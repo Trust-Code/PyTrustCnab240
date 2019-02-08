@@ -45,7 +45,8 @@
             "nome": "codigo_convenio",
             "posicao_inicio": 33,
             "posicao_fim": 52,
-            "formato": "num"
+            "formato": "alfa",
+            "default": ""
         },
         "08.0": {
             "nome": "cedente_agencia",
