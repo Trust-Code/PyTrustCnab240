@@ -130,7 +130,7 @@
             "formato": "num"
         },
         "21.3J": {
-            "nome": "numero_empresa",
+            "nome": "numero_documento_cliente",
             "posicao_inicio": 183,
             "posicao_fim": 202,
             "formato": "alfa"
