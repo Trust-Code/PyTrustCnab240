@@ -164,13 +164,20 @@
             "default": ""
         },
         "26.1": {
-            "nome": "vazio3",
+            "nome": "indicativo_forma_pagamento",
             "posicao_inicio": 223,
-            "posicao_fim": 230,
+            "posicao_fim": 224,
             "formato": "alfa",
             "default": ""
         },
         "27.1": {
+            "nome": "vazio3",
+            "posicao_inicio": 225,
+            "posicao_fim": 230,
+            "formato": "alfa",
+            "default": ""
+        },
+        "28.1": {
             "nome": "ocorrencias_retorno",
             "posicao_inicio": 231,
             "posicao_fim": 240,
