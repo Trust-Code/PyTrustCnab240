@@ -129,7 +129,7 @@
             "posicao_inicio": 164,
             "posicao_fim": 166,
             "formato": "num",
-            "default": 80
+            "default": 89
         },
         "21.0": {
             "nome": "unidade_densidade",
