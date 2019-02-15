@@ -44,8 +44,7 @@
             "nome": "numero_versao_lote",
             "posicao_inicio": 14,
             "posicao_fim": 16,
-            "formato": "num",
-            "default": 40
+            "formato": "num"
         },
         "08.1": {
             "nome": "vazio1",

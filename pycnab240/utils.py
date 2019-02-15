@@ -125,6 +125,7 @@ TIPO_DE_SERVICO = {
         '98': '98',  # Pagamentos Diversos
     },
     'itau': {
+        '03': '98',  # Bloqueto Eletronico (Não tem no Itau)
         '10': '10',  # Pagamento Dividendos
         '14': '14',  # Consulta de Tributos a Pagar DETRAN com RENAVAM
         '20': '20',  # Pagamento Fornecedor
