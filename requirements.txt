@@ -1,5 +1,5 @@
 coveralls
 ordereddict
 pytest
-pytest-cov
+pytest-cov>=3.6
 future
