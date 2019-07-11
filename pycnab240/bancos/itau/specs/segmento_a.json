@@ -93,7 +93,7 @@
                             "formato": "num"
                         },
                         "06.3A1": {
-                            "nome": "vazio4a1",
+                            "nome": "vazio_dac",
                             "posicao_inicio": 42,
                             "posicao_fim": 42,
                             "formato": "alfa"
