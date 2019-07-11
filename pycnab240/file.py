@@ -269,7 +269,7 @@ class File(object):
         if record_code == '3':
             return RECORD_NAMES[record_code][line[13]]
         if record_code == '5':
-            if line[:3] == '341' and line[58] != ' ':
+            if line[:3] == '341' and line[65] != ' ':
                 return RECORD_NAMES[record_code]['itauTributos']
             return RECORD_NAMES[record_code]['default']
         else:

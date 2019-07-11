@@ -232,7 +232,8 @@
             "nome": "numero_documento",
             "posicao_inicio": 198,
             "posicao_fim": 203,
-            "formato": "num"
+            "formato": "num",
+            "ignore": true
         },
         "24.3A": {
             "nome": "numero_inscricao",
