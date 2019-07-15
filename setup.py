@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pycnab240',
-    version='0.1.26',
+    version='0.1.27',
     author='Trustcode',
     author_email='suporte@trustcode.com.br',
     url='https://github.com/Trust-Code/PyTrustCnab240',

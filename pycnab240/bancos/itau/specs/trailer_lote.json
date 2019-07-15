@@ -53,7 +53,8 @@
             "nome": "vazio3",
             "posicao_inicio": 57,
             "posicao_fim": 230,
-            "formato": "alfa"
+            "formato": "alfa",
+            "default": ""
         },
         "09.5": {
             "nome": "ocorrencias_retorno",
