@@ -75,7 +75,8 @@
             "nome": "vazio2",
             "posicao_inicio": 37,
             "posicao_fim": 52,
-            "formato": "alfa"
+            "formato": "alfa",
+            "default": ""
         },
         "13.1": {
             "nome": "cedente_agencia",
@@ -97,10 +98,11 @@
             "formato": "num"
         },
         "16.1": {
-            "nome": "cedente_conta_dv",
+            "nome": "vazio3",
             "posicao_inicio": 71,
             "posicao_fim": 71,
-            "formato": "alfa"
+            "formato": "alfa",
+            "default": ""
         },
         "17.1": {
             "nome": "dac",

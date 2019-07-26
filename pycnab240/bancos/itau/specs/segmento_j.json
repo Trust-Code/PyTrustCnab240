@@ -6,7 +6,7 @@
             "posicao_inicio": 1,
             "posicao_fim": 3,
             "formato": "num",
-            "default": 33
+            "default": 341
         },
         "02.3J": {
             "nome": "controle_lote",
@@ -65,14 +65,14 @@
             "formato": "num"
         },
         "11.3J": {
-            "nome": "codigo_de_barras_valor",
+            "nome": "codigo_de_barras",
             "posicao_inicio": 27,
             "posicao_fim": 36,
             "formato": "num",
             "decimais": 2
         },
         "12.3J": {
-            "nome": "codigo_de_barras_campo_livre",
+            "nome": "codigo_de_barras",
             "posicao_inicio": 37,
             "posicao_fim": 61,
             "formato": "num"
@@ -90,28 +90,28 @@
             "formato": "num"
         },
         "15.3J": {
-            "nome": "valor_titulo",
+            "nome": "valor_nominal_titulo",
             "posicao_inicio": 100,
             "posicao_fim": 114,
             "formato": "num",
             "decimais": 2
         },
         "16.3J": {
-            "nome": "valor_descontos",
+            "nome": "valor_desconto_abatimento",
             "posicao_inicio": 115,
             "posicao_fim": 129,
             "formato": "num",
             "decimais": 2
         },
         "17.3J": {
-            "nome": "valor_acrescimos",
+            "nome": "valor_multa_juros",
             "posicao_inicio": 130,
             "posicao_fim": 144,
             "formato": "num",
             "decimais": 2
         },
         "18.3J": {
-            "nome": "data_pagamento",
+            "nome": "data_real_pagamento",
             "posicao_inicio": 145,
             "posicao_fim": 152,
             "formato": "num"
@@ -124,10 +124,11 @@
             "decimais": 2
         },
         "20.3J": {
-            "nome": "vazio1",
+            "nome": "vazio_num",
             "posicao_inicio": 168,
             "posicao_fim": 182,
-            "formato": "num"
+            "formato": "num",
+            "default": 0
         },
         "21.3J": {
             "nome": "numero_empresa",

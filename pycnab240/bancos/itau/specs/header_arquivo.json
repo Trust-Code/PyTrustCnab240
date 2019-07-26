@@ -63,7 +63,7 @@
             "formato": "num"
         },
         "10.0": {
-            "nome": "cedente_agencia_dv",
+            "nome": "vazio3",
             "posicao_inicio": 58,
             "posicao_fim": 58,
             "formato": "alfa",
@@ -76,7 +76,7 @@
             "formato": "num"
         },
         "12.0": {
-            "nome": "cedente_conta_dv",
+            "nome": "vazio4",
             "posicao_inicio": 71,
             "posicao_fim": 71,
             "formato": "alfa",
