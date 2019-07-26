@@ -23,7 +23,7 @@
             "default": 0
         },
         "04.0": {
-            "nome": "vazio1",
+            "nome": "vazio",
             "posicao_inicio": 9,
             "posicao_fim": 14,
             "formato": "alfa",
@@ -50,7 +50,7 @@
             "formato": "num"
         },
         "08.0": {
-            "nome": "vazio2",
+            "nome": "vazio1",
             "posicao_inicio": 33,
             "posicao_fim": 52,
             "formato": "alfa",
@@ -63,7 +63,7 @@
             "formato": "num"
         },
         "10.0": {
-            "nome": "vazio3",
+            "nome": "vazio2",
             "posicao_inicio": 58,
             "posicao_fim": 58,
             "formato": "alfa",
@@ -76,7 +76,7 @@
             "formato": "num"
         },
         "12.0": {
-            "nome": "vazio4",
+            "nome": "vazio3",
             "posicao_inicio": 71,
             "posicao_fim": 71,
             "formato": "alfa",
@@ -102,7 +102,7 @@
             "default": "Itau"
         },
         "16.0": {
-            "nome": "vazio3",
+            "nome": "vazio4",
             "posicao_inicio": 133,
             "posicao_fim": 142,
             "formato": "alfa",
@@ -128,7 +128,7 @@
             "formato": "num"
         },
         "20.0": {
-            "nome": "vazio4",
+            "nome": "vazio5",
             "posicao_inicio": 158,
             "posicao_fim": 166,
             "formato": "num"
@@ -140,7 +140,7 @@
             "formato": "num"
         },
         "22.0": {
-            "nome": "vazio5",
+            "nome": "vazio6",
             "posicao_inicio": 172,
             "posicao_fim": 240,
             "formato": "alfa",
