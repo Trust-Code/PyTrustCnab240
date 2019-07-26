@@ -65,7 +65,7 @@
             "formato": "num"
         },
         "11.3J": {
-            "nome": "codigo_de_barras",
+            "nome": "valor_pagamento",
             "posicao_inicio": 27,
             "posicao_fim": 36,
             "formato": "num",
@@ -117,7 +117,7 @@
             "formato": "num"
         },
         "19.3J": {
-            "nome": "valor_pagamento",
+            "nome": "valor_real_pagamento",
             "posicao_inicio": 153,
             "posicao_fim": 167,
             "formato": "num",
